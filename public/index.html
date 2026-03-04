@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Show Control System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+
+    <!-- CENTER TITLE -->
+    <div class="gala-title-container">
+        <h2 class="gala-title">GENERATION GALA</h2>
+    </div>
+
+    <div class="index-container">
+        <div class="neon-glow"></div>
+
+        <h1 class="main-title">GAME SHOW CONTROL</h1>
+
+        <div class="subtitle-text">Generation Gala</div>
+
+        <div class="button-grid">
+            <a href="host-foff.html" class="control-button foff-btn">
+                <div class="button-icon">🎯</div>
+                <div class="button-text">Face Off Round</div>
+                <div class="button-description">FOFF</div>
+            </a>
+
+            <a href="host-fm.html" class="control-button fm-btn">
+                <div class="button-icon">💰</div>
+                <div class="button-text">Fast Money Round</div>
+                <div class="button-description">FM</div>
+            </a>
+
+            <a href="display.html" class="control-button display-btn">
+                <div class="button-icon">📺</div>
+                <div class="button-text">Face Off Display</div>
+                <div class="button-description">FOFF AUDIENCE</div>
+            </a>
+
+            <a href="display-fm.html" class="control-button display-fm-btn">
+                <div class="button-icon">📺</div>
+                <div class="button-text">Fast Money Display</div>
+                <div class="button-description">FM AUDIENCE</div>
+            </a>
+        </div>
+
+        <div class="footer-credit">
+            <p>Welcome to the Game Show System</p>
+            <p style="font-size: 0.9em; opacity: 0.8;">Open all three pages in different windows/tabs</p>
+        </div>
+    </div>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .index-page {
+            background: linear-gradient(135deg, #0a0015 0%, #1a0033 50%, #0a0015 100%);
+            min-
+            font-family: 'Arial', sans-serif;
+            
+            position: relative;
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            
+        }
+
+        .stars::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            top: 20%;
+            left: 10%;
+            opacity: 0.8;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+
+            0%,
+            100% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .index-container {
+            position: relative;
+            z-index: 10;
+            min-
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .neon-glow {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 400px;
+            background: radial-gradient(ellipse at center, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+            filter: blur(40px);
+            pointer-events: none;
+        }
+
+        .main-title {
+            font-size: 4.5rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 10px;
+            color: #ffd700;
+            text-shadow:
+                0 0 20px rgba(255, 215, 0, 0.8),
+                0 0 40px rgba(255, 215, 0, 0.4),
+                2px 2px 4px rgba(0, 0, 0, 0.8);
+            letter-spacing: 3px;
+            animation: titleGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes titleGlow {
+
+            0%,
+            100% {
+                text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 215, 0, 0.4), 2px 2px 4px rgba(0, 0, 0, 0.8);
+            }
+
+            50% {
+                text-shadow: 0 0 30px rgba(255, 215, 0, 1), 0 0 60px rgba(255, 215, 0, 0.6), 2px 2px 4px rgba(0, 0, 0, 0.8);
+            }
+        }
+
+        .subtitle-text {
+            font-size: 1.8rem;
+            color: #ff69b4;
+            margin-bottom: 50px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.6);
+        }
+
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin-bottom: 60px;
+        }
+
+        .control-button {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid;
+            position: relative;
+            
+        }
+
+        .control-button::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .control-button:hover::before {
+            opacity: 1;
+        }
+
+        .foff-btn {
+            background: linear-gradient(135deg, #ff1744 0%, #c41c3b 100%);
+            border-color: #ff5252;
+            color: white;
+            box-shadow: 0 0 20px rgba(255, 23, 68, 0.4), inset 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+
+        .foff-btn:hover {
+            box-shadow: 0 0 40px rgba(255, 23, 68, 0.8), inset 0 0 20px rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .fm-btn {
+            background: linear-gradient(135deg, #00e676 0%, #00c853 100%);
+            border-color: #1de9b6;
+            color: white;
+            box-shadow: 0 0 20px rgba(0, 230, 118, 0.4), inset 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+
+        .fm-btn:hover {
+            box-shadow: 0 0 40px rgba(0, 230, 118, 0.8), inset 0 0 20px rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .display-btn {
+            background: linear-gradient(135deg, #2979f0 0%, #1565c0 100%);
+            border-color: #42a5f5;
+            color: white;
+            box-shadow: 0 0 20px rgba(41, 121, 240, 0.4), inset 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+
+        .display-btn:hover {
+            box-shadow: 0 0 40px rgba(41, 121, 240, 0.8), inset 0 0 20px rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .display-fm-btn {
+            background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+            border-color: #ba68c8;
+            color: white;
+            box-shadow: 0 0 20px rgba(156, 39, 176, 0.4), inset 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+
+        .display-fm-btn:hover {
+            box-shadow: 0 0 40px rgba(156, 39, 176, 0.8), inset 0 0 20px rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .button-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .button-text {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .button-description {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            letter-spacing: 1px;
+        }
+
+        .footer-credit {
+            text-align: center;
+            color: #aaa;
+            font-size: 0.95rem;
+            margin-top: 40px;
+        }
+
+        .footer-credit p {
+            margin: 5px 0;
+        }
+
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 3rem;
+            }
+
+            .subtitle-text {
+                font-size: 1.3rem;
+            }
+
+            .button-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+    <!-- GLOBAL BRANDING FOOTER -->
+    <footer class="global-footer">
+        <div class="vsm-branding">
+                Made with <span class="heart-icon">❤️</span> by VSM Generation Gala ● All Rights Reserved
+            </div>
+    </footer>
+</body>
+
+</html>
+
+
+
+
+

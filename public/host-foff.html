@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOFF Host Control - Game Show</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+</head>
+
+<body>
+
+
+
+    <!-- CENTER TITLE -->
+    <div class="gala-title-container">
+        <h2 class="gala-title">GENERATION GALA</h2>
+    </div>
+
+    <div class="host-container">
+        <!-- Header -->
+        <div class="host-header">
+            <h1>FACE OFF HOST CONTROL</h1>
+            <div class="header-buttons">
+                <a href="index.html" class="btn btn-secondary">← Back to Menu</a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="host-content">
+            <!-- Left Panel: Controls -->
+            <div class="control-panel">
+                <!-- Round Selector -->
+                <div class="control-section">
+                    <h3>Round Selection</h3>
+                    <select id="roundSelector" class="input-field">
+                        <option value="">Select Round</option>
+                        <option value="round1">Sub Round 1</option>
+                        <option value="round2">Sub Round 2</option>
+                    </select>
+                </div>
+
+                <!-- Team Management -->
+                <div class="control-section">
+                    <h3>Team Names</h3>
+                    <input type="text" id="teamA" placeholder="Team A Name" class="input-field" value="Team A">
+                    <input type="text" id="teamB" placeholder="Team B Name" class="input-field" value="Team B">
+                    <button class="btn btn-primary" onclick="updateTeams()">Update Teams</button>
+                    <button class="btn btn-secondary" onclick="resetGame()">Reset Game</button>
+                </div>
+
+                <!-- Score Management -->
+                <div class="control-section">
+                    <h3>Score Control</h3>
+                    <div id="qualifyMessage"
+                        style="color: var(--primary-gold); font-weight: bold; margin-bottom: 10px; text-align: center;">
+                    </div>
+                    <input type="number" id="pointsInput" placeholder="Points" class="input-field" value="0">
+                    <div class="button-row">
+                        <button class="btn btn-success" onclick="addScore('A')">+A</button>
+                        <button class="btn btn-success" onclick="addScore('B')">+B</button>
+                    </div>
+                    <div class="button-row">
+                        <button class="btn btn-danger" onclick="deductScore('A')">-A</button>
+                        <button class="btn btn-danger" onclick="deductScore('B')">-B</button>
+                    </div>
+                </div>
+
+                <!-- Strike System -->
+                <div class="control-section">
+                    <h3>Strikes</h3>
+                    <div class="button-row">
+                        <button class="btn btn-strike" onclick="addStrike('A')">Strike A ❌</button>
+                        <button class="btn btn-strike" onclick="addStrike('B')">Strike B ❌</button>
+                    </div>
+                    <button class="btn btn-secondary" onclick="resetStrikes()">Reset Strikes</button>
+                </div>
+
+                <!-- Question Navigation -->
+                <div class="control-section">
+                    <h3>Question Navigation</h3>
+                    <button class="btn btn-secondary" onclick="previousQuestion()">← Previous</button>
+                    <button class="btn btn-secondary" onclick="nextQuestion()">Next →</button>
+                </div>
+            </div>
+
+            <!-- Right Panel: Question & Answers -->
+            <div class="answer-panel">
+                <div class="question-display">
+                    <h2>Question:</h2>
+                    <div id="questionText" class="question-text">Load a round to start...</div>
+                </div>
+
+                <div class="answers-container">
+                    <h3>Answers:</h3>
+                    <div id="answersList" class="answers-list">
+                        <p>Select a round to display answers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="host-foff.js"></script>
+    <!-- GLOBAL BRANDING FOOTER -->
+    <footer class="global-footer">
+        <div class="vsm-branding">
+                Made with <span class="heart-icon">❤️</span> by VSM Generation Gala ● All Rights Reserved
+            </div>
+    </footer>
+</body>
+
+</html>
+
+
+
+
+

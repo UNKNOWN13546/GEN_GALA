@@ -1,0 +1,103 @@
+{
+  "event_name": "Generation Gala - Family Feud Format",
+  "total_sets": 10,
+  "teams_per_match": 2,
+  "sets": [
+    {
+      "set_number": 1,
+      "questions": [
+        {
+          "question": "Name something people do when they are bored.",
+          "multiplier": 1,
+          "answers": [
+            {"answer": "Scroll social media", "weight": 28},
+            {"answer": "Watch TV / Netflix", "weight": 20},
+            {"answer": "Sleep", "weight": 16},
+            {"answer": "Eat snacks", "weight": 12},
+            {"answer": "Call a friend", "weight": 8},
+            {"answer": "Listen to music", "weight": 7},
+            {"answer": "Play games", "weight": 5},
+            {"answer": "Clean room", "weight": 4}
+          ]
+        },
+        {
+          "question": "Name something people forget often.",
+          "multiplier": 2,
+          "answers": [
+            {"answer": "Password", "weight": 22},
+            {"answer": "Keys", "weight": 20},
+            {"answer": "Phone", "weight": 16},
+            {"answer": "Birthday", "weight": 14},
+            {"answer": "Wallet", "weight": 10},
+            {"answer": "Charger", "weight": 8},
+            {"answer": "Names", "weight": 6},
+            {"answer": "Anniversary", "weight": 4}
+          ]
+        },
+        {
+          "question": "Name something people pretend to like.",
+          "multiplier": 3,
+          "answers": [
+            {"answer": "Waking up early", "weight": 24},
+            {"answer": "Dieting", "weight": 18},
+            {"answer": "Gym", "weight": 16},
+            {"answer": "Small talk", "weight": 14},
+            {"answer": "Family functions", "weight": 12},
+            {"answer": "Long meetings", "weight": 8},
+            {"answer": "Healthy food", "weight": 5},
+            {"answer": "Cleaning", "weight": 3}
+          ]
+        }
+      ]
+    },
+
+    {
+      "set_number": 2,
+      "questions": [
+        {
+          "question": "Name something people do first after getting paid.",
+          "multiplier": 1,
+          "answers": [
+            {"answer": "Shop", "weight": 26},
+            {"answer": "Pay bills", "weight": 20},
+            {"answer": "Order food", "weight": 16},
+            {"answer": "Transfer money", "weight": 12},
+            {"answer": "Save it", "weight": 10},
+            {"answer": "Party", "weight": 8},
+            {"answer": "Buy gadgets", "weight": 5},
+            {"answer": "Check balance again", "weight": 3}
+          ]
+        },
+        {
+          "question": "Name something people lose at home.",
+          "multiplier": 2,
+          "answers": [
+            {"answer": "Phone", "weight": 24},
+            {"answer": "Remote", "weight": 20},
+            {"answer": "Keys", "weight": 16},
+            {"answer": "Charger", "weight": 14},
+            {"answer": "Socks", "weight": 10},
+            {"answer": "Wallet", "weight": 8},
+            {"answer": "Glasses", "weight": 5},
+            {"answer": "Temper", "weight": 3}
+          ]
+        },
+        {
+          "question": "Name something people complain about daily.",
+          "multiplier": 3,
+          "answers": [
+            {"answer": "Work", "weight": 22},
+            {"answer": "Traffic", "weight": 20},
+            {"answer": "Weather", "weight": 16},
+            {"answer": "Money", "weight": 14},
+            {"answer": "Lack of sleep", "weight": 10},
+            {"answer": "WiFi", "weight": 8},
+            {"answer": "Family", "weight": 6},
+            {"answer": "Weight", "weight": 4}
+          ]
+        }
+      ]
+    }
+
+  ]
+}

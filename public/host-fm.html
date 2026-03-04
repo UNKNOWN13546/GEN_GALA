@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FM Host Control - Game Show</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+</head>
+
+<body>
+
+
+
+    <!-- CENTER TITLE -->
+    <div class="gala-title-container">
+        <h2 class="gala-title">GENERATION GALA</h2>
+    </div>
+
+    <div class="host-container">
+        <!-- Header -->
+        <div class="host-header">
+            <h1>FAST MONEY HOST CONTROL</h1>
+            <div class="header-buttons">
+                <a href="index.html" class="btn btn-secondary">← Back to Menu</a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="host-content">
+            <!-- Left Panel: Controls -->
+            <div class="control-panel">
+                <!-- Team Management -->
+                <div class="control-section">
+                    <h3>Team Setup</h3>
+                    <label>Team A Name</label>
+                    <input type="text" id="teamA" placeholder="Team A" class="input-field" value="Team A">
+                    <label>Team A - Player 1</label>
+                    <input type="text" id="playerA1" placeholder="Player A1" class="input-field" value="Player A1">
+                    <label>Team A - Player 2</label>
+                    <input type="text" id="playerA2" placeholder="Player A2" class="input-field" value="Player A2">
+
+                    <label style="margin-top: 15px;">Team B Name</label>
+                    <input type="text" id="teamB" placeholder="Team B" class="input-field" value="Team B">
+                    <label>Team B - Player 1</label>
+                    <input type="text" id="playerB1" placeholder="Player B1" class="input-field" value="Player B1">
+                    <label>Team B - Player 2</label>
+                    <input type="text" id="playerB2" placeholder="Player B2" class="input-field" value="Player B2">
+
+                    <button class="btn btn-primary" onclick="updatePlayers()">Update Players</button>
+                </div>
+
+                <!-- Active Player -->
+                <div class="control-section">
+                    <h3>Active Player</h3>
+                    <select id="activePlayerSelector" class="input-field" onchange="setActivePlayer()">
+                        <option value="none">None (Hide Banner)</option>
+                        <option value="A1">Team A - Player 1</option>
+                        <option value="A2">Team A - Player 2</option>
+                        <option value="B1">Team B - Player 1</option>
+                        <option value="B2">Team B - Player 2</option>
+                    </select>
+                </div>
+
+                <!-- Score Management -->
+                <div class="control-section">
+                    <h3>Scores</h3>
+                    <div class="score-display">
+                        <div class="score-item">
+                            <span>Team A:</span>
+                            <input type="number" id="scoreA" class="score-input" value="0" readonly>
+                        </div>
+                        <div class="score-item">
+                            <span>Team B:</span>
+                            <input type="number" id="scoreB" class="score-input" value="0" readonly>
+                        </div>
+                    </div>
+                    <input type="number" id="pointsInput" placeholder="Points" class="input-field" value="0">
+                    <div class="button-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                        <button class="btn btn-success" onclick="addScore('A', 0)">+A1</button>
+                        <button class="btn btn-success" onclick="addScore('A', 1)">+A2</button>
+                    </div>
+                    <div class="button-row"
+                        style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px;">
+                        <button class="btn btn-success" onclick="addScore('B', 0)">+B1</button>
+                        <button class="btn btn-success" onclick="addScore('B', 1)">+B2</button>
+                    </div>
+
+                    <h4 style="margin-top:20px; color:#aaa;">Reveal Team Totals on Display:</h4>
+                    <div class="button-row"
+                        style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px;">
+                        <button class="btn btn-primary" onclick="revealTotal('A')">Reveal Total A</button>
+                        <button class="btn btn-primary" onclick="revealTotal('B')">Reveal Total B</button>
+                    </div>
+                </div>
+
+
+
+                <!-- Timer System -->
+                <div class="control-section">
+                    <h3>Timer (60 sec)</h3>
+                    <div class="timer-display" id="timerDisplay">00:00</div>
+                    <input type="number" id="timerInput" placeholder="Seconds" class="input-field" value="60" min="1"
+                        max="300">
+                    <button class="btn btn-primary" onclick="startTimer()">Start Timer</button>
+                    <button class="btn btn-secondary" onclick="stopTimer()">Pause Timer</button>
+                    <button class="btn btn-secondary" onclick="resetTimer()">Reset Timer</button>
+                </div>
+
+                <!-- End Game Sequence -->
+                <div class="control-section">
+                    <h3>🎬 End Game Sequence</h3>
+                    <p style="color:#aaa; font-size:0.85rem; margin-bottom:10px;">Run these in order at end of round:
+                    </p>
+                    <div style="display:flex; flex-direction:column; gap:8px;">
+                        <button class="btn btn-primary" onclick="showTeamScore('A')">📊 Show Team A Score</button>
+                        <button class="btn btn-primary" onclick="showTeamScore('B')">📊 Show Team B Score</button>
+                        <button class="btn btn-success" onclick="showWinner()">🏆 Announce Winner</button>
+                        <button class="btn btn-secondary" onclick="hideRevealScreen()">✕ Hide Reveal Screen</button>
+                        <button class="btn btn-end-game" onclick="showThankYou()">🎉 Thank You Screen</button>
+                        <button class="btn btn-secondary" onclick="resetGame()" style="margin-top:6px;">🔄 Reset
+                            Game</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel: Question & Answers -->
+            <div class="answer-panel">
+                <div class="fm-controls">
+                    <h3>Current Question</h3>
+                    <select id="questionSelector" class="input-field" onchange="selectQuestion()"
+                        style="margin-bottom: 10px;">
+                        <option value="">Load a question...</option>
+                    </select>
+                    <div class="button-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                        <button class="btn btn-secondary" onclick="prevQuestion()">⭠ Previous</button>
+                        <button class="btn btn-primary" onclick="nextQuestion()">Next ⭢</button>
+                    </div>
+                    <div class="button-row"
+                        style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px;">
+                        <button class="btn btn-secondary" onclick="clearBoard()">🧹 Clear Board</button>
+                        <button class="btn btn-strike" onclick="markCross()">❌ Mark Pass / Cross</button>
+                    </div>
+                </div>
+
+                <div class="question-display">
+                    <div id="questionText" class="question-text">Load a question to start...</div>
+                </div>
+
+                <div class="answers-container">
+                    <h3>Answers:</h3>
+                    <div id="answersList" class="answers-list">
+                        <p>Select a question to display answers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="host-fm.js"></script>
+    <!-- GLOBAL BRANDING FOOTER -->
+    <footer class="global-footer">
+        <div class="vsm-branding">
+                Made with <span class="heart-icon">❤️</span> by VSM Generation Gala ● All Rights Reserved
+            </div>
+    </footer>
+</body>
+
+</html>
+
+
+
+
+

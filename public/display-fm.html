@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FM Display - Game Show</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+        }
+
+        .fm-container {
+            width: 100%;
+            max-width: 1400px;
+            padding: 20px;
+        }
+
+        .fm-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .fm-title {
+            font-size: 5rem;
+            color: #ffd700;
+            text-shadow: 0 0 40px rgba(255, 215, 0, 0.9);
+            margin-bottom: 20px;
+            letter-spacing: 5px;
+            font-weight: 900;
+        }
+
+        .fm-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        /* TIMER SECTION - HUGE & CENTER */
+        .timer-section {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 215, 0, 0.05) 100%);
+            border: 4px solid #ffd700;
+            border-radius: 30px;
+            padding: 60px 100px;
+            text-align: center;
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.3);
+            min-width: 500px;
+        }
+
+        .timer-label {
+            font-size: 2.5rem;
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+            margin-bottom: 25px;
+            letter-spacing: 4px;
+            font-weight: 800;
+        }
+
+        .timer-display {
+            font-size: 12rem;
+            font-weight: 900;
+            color: #ffd700;
+            text-shadow: 0 0 40px rgba(255, 215, 0, 0.9),
+                0 0 80px rgba(255, 215, 0, 0.5);
+            font-family: 'Courier New', monospace;
+            letter-spacing: 15px;
+            line-height: 1;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 30px rgba(255, 215, 0, 0.8),
+                    0 0 60px rgba(255, 215, 0, 0.4);
+            }
+
+            to {
+                text-shadow: 0 0 40px rgba(255, 215, 0, 1),
+                    0 0 80px rgba(255, 215, 0, 0.6);
+            }
+        }
+
+        /* WARNING STATE - RED */
+        .timer-display.warning {
+            color: #ff1744;
+            text-shadow: 0 0 30px rgba(255, 23, 68, 0.8),
+                0 0 60px rgba(255, 23, 68, 0.4);
+            animation: pulse-warning 0.4s infinite;
+        }
+
+        @keyframes pulse-warning {
+
+            0%,
+            100% {
+                transform: scale(1);
+                text-shadow: 0 0 30px rgba(255, 23, 68, 0.8),
+                    0 0 60px rgba(255, 23, 68, 0.4);
+            }
+
+            50% {
+                transform: scale(1.05);
+                text-shadow: 0 0 50px rgba(255, 23, 68, 1),
+                    0 0 80px rgba(255, 23, 68, 0.6);
+            }
+        }
+
+        .timer-section.warning {
+            border-color: #ff1744;
+            box-shadow: 0 0 40px rgba(255, 23, 68, 0.3);
+            background: linear-gradient(135deg, rgba(255, 23, 68, 0.1) 0%, rgba(255, 23, 68, 0.05) 100%);
+        }
+
+        /* SCOREBOARD */
+        .scoreboard {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        .team-box {
+            background: linear-gradient(135deg, rgba(100, 100, 255, 0.1) 0%, rgba(100, 100, 255, 0.05) 100%);
+            border: 3px solid;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .team-a {
+            border-color: #ff6b6b;
+        }
+
+        .team-a:hover {
+            box-shadow: 0 0 30px rgba(255, 107, 107, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .team-b {
+            border-color: #4ecdc4;
+        }
+
+        .team-b:hover {
+            box-shadow: 0 0 30px rgba(78, 205, 196, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .team-name {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+        }
+
+        .team-a .team-name {
+            color: #ff6b6b;
+            text-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+        }
+
+        .team-b .team-name {
+            color: #4ecdc4;
+            text-shadow: 0 0 10px rgba(78, 205, 196, 0.5);
+        }
+
+        .score {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: white;
+            text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            font-family: 'Courier New', monospace;
+        }
+
+        .status {
+            font-size: 1.2rem;
+            color: #aaa;
+            margin-top: 20px;
+            font-style: italic;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .player-scores {
+            font-size: 2rem;
+            color: #ccc;
+            margin-top: 20px;
+            font-weight: 800;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .player-scores span {
+            color: #ffd700;
+            font-weight: 900;
+        }
+
+        .strike.filled {
+            color: #ff1744;
+            text-shadow: 0 0 20px #ff1744;
+            font-size: 2.5rem;
+        }
+
+        .strike.empty {
+            font-size: 2.5rem;
+        }
+
+        .answer-board {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .board-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem 3rem;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .answer-box {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            font-size: 2.2rem;
+            font-weight: 800;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(255, 255, 255, 0.1);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+            color: white;
+        }
+
+        .answer-box.revealed {
+            background: linear-gradient(180deg, #1565C0 0%, #2979F0 100%);
+            border-color: #64B5F6;
+            box-shadow: 0 0 30px rgba(41, 121, 240, 0.2), inset 0 0 20px rgba(255, 255, 255, 0.2);
+            transform: scale(1.02) rotateX(360deg);
+        }
+
+        .answer-box .text {
+            flex: 1;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+
+        .answer-box .weight {
+            background: #FFD700;
+            color: #000;
+            padding: 0.2rem 1rem;
+            border-radius: 8px;
+            font-size: 2rem;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .answer-box.placeholder {
+            justify-content: center;
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px dashed rgba(255, 255, 255, 0.1);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1200px) {
+            .timer-display {
+                font-size: 6rem;
+                letter-spacing: 8px;
+            }
+
+            .timer-section {
+                min-width: 400px;
+                padding: 40px 60px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .timer-display {
+                font-size: 4rem;
+                letter-spacing: 5px;
+            }
+
+            .timer-section {
+                min-width: 300px;
+                padding: 30px 40px;
+            }
+
+            .fm-title {
+                font-size: 2rem;
+            }
+
+            .scoreboard {
+                gap: 20px;
+            }
+        }
+
+        /* MASSIVE STRIKE OVERLAY */
+        .massive-strike {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            
+            background: rgba(255, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40rem;
+            color: #ff1744;
+            text-shadow: 0 0 100px #ff1744;
+            z-index: 9999;
+            animation: explodeIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            pointer-events: none;
+        }
+
+        @keyframes explodeIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* ACTIVE PLAYER BANNER */
+        .active-player-banner {
+            background: linear-gradient(90deg, transparent, rgba(78, 205, 196, 0.2), transparent);
+            border-top: 2px solid #4ecdc4;
+            border-bottom: 2px solid #4ecdc4;
+            padding: 10px 40px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px #4ecdc4;
+            animation: pulseGlow 2s infinite alternate;
+            display: inline-block;
+        }
+
+        @keyframes pulseGlow {
+            from {
+                box-shadow: inset 0 0 10px rgba(78, 205, 196, 0.2);
+            }
+
+            to {
+                box-shadow: inset 0 0 30px rgba(78, 205, 196, 0.6);
+                border-color: #fff;
+            }
+        }
+
+        /* THANK YOU SCREEN */
+        .thank-you-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            
+            background: radial-gradient(ellipse at center, #1a0050 0%, #0a001a 70%, #000000 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            flex-direction: column;
+            animation: fadeInScreen 1s ease-in-out;
+        }
+
+        @keyframes fadeInScreen {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .thank-you-content {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .thank-you-title {
+            font-size: 10rem;
+            font-weight: 900;
+            color: #ffd700;
+            text-shadow: 0 0 40px rgba(255, 215, 0, 0.8), 0 0 80px rgba(255, 215, 0, 0.4);
+            letter-spacing: 10px;
+            animation: thankYouPulse 2s infinite alternate;
+            margin-bottom: 20px;
+        }
+
+        @keyframes thankYouPulse {
+            from {
+                text-shadow: 0 0 40px rgba(255, 215, 0, 0.8), 0 0 80px rgba(255, 215, 0, 0.4);
+            }
+
+            to {
+                text-shadow: 0 0 60px rgba(255, 215, 0, 1), 0 0 120px rgba(255, 215, 0, 0.7);
+            }
+        }
+
+        .thank-you-subtitle {
+            font-size: 2.5rem;
+            color: #fff;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .thank-you-event {
+            font-size: 4rem;
+            color: #4ecdc4;
+            text-shadow: 0 0 20px rgba(78, 205, 196, 0.8);
+            letter-spacing: 5px;
+            font-weight: 900;
+        }
+
+        .confetti {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            
+        }
+
+        /* REVEAL ANIMATIONS */
+        @keyframes revealPop {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            70% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes trophySpin {
+            0% {
+                transform: translateY(-100px) rotate(-180deg) scale(0);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0) rotate(0) scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+</head>
+
+<body>
+
+
+
+    <!-- CENTER TITLE -->
+    <div class="gala-title-container">
+        <h2 class="gala-title">GENERATION GALA</h2>
+    </div>
+
+    <div class="fm-container">
+        <!-- Thank You Screen (Hidden by default) -->
+        <div id="thankYouScreen" class="thank-you-screen" style="display: none;">
+            <div class="thank-you-content">
+                <h1 class="thank-you-title">THANK YOU</h1>
+                <h2 class="thank-you-subtitle">FOR PARTICIPATING IN</h2>
+                <p class="thank-you-event">FAST MONEY</p>
+            </div>
+            <div class="confetti"></div>
+        </div>
+
+
+
+        <!-- ===== TEAM SCORE REVEAL OVERLAY ===== -->
+        <div id="teamScoreReveal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:9000;
+            background: radial-gradient(ellipse at center, #0d0030 0%, #000010 100%);
+            flex-direction:column; align-items:center; justify-content:center; text-align:center;">
+            <div id="revealTeamLabel"
+                style="font-size:1.6rem; letter-spacing:6px; color:#aaa; text-transform:uppercase; margin-bottom:10px;">
+                TEAM</div>
+            <div id="revealTeamName" style="font-size:6rem; font-weight:900; color:#ffd700;
+                text-shadow:0 0 40px rgba(255,215,0,0.9);">Team A</div>
+            <div id="revealPlayerScores" style="display:flex; gap:60px; margin:30px 0;"></div>
+            <div style="font-size:1.4rem; color:#aaa; letter-spacing:3px; margin-bottom:10px;">TOTAL SCORE</div>
+            <div id="revealTeamTotal" style="font-size:10rem; font-weight:900; color:#4ecdc4;
+                text-shadow:0 0 60px rgba(78,205,196,0.9);">0</div>
+        </div>
+
+        <!-- ===== WINNER OVERLAY ===== -->
+        <div id="winnerReveal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:9500;
+            background: radial-gradient(ellipse at center, #1a0600 0%, #000 100%);
+            flex-direction:column; align-items:center; justify-content:center; text-align:center;">
+            <div id="winnerTrophy" style="font-size:7rem;">🏆</div>
+            <div style="font-size:1.8rem; letter-spacing:8px; color:#aaa; text-transform:uppercase; margin:10px 0;">
+                CONGRATULATIONS!</div>
+            <div style="font-size:2.5rem; color:#fff; letter-spacing:4px; margin-bottom:10px;">THE WINNER IS</div>
+            <div id="winnerName" style="font-size:7rem; font-weight:900; letter-spacing:4px;
+                color:#ffd700; text-shadow:0 0 60px rgba(255,215,0,1);">—</div>
+            <div style="display:flex; gap:80px; margin-top:40px; align-items:center;">
+                <div style="text-align:center;">
+                    <div id="winnerTeamALabel"
+                        style="font-size:1.4rem; letter-spacing:3px; color:#aaa; margin-bottom:6px;"></div>
+                    <div id="winnerTeamAScore" style="font-size:4rem; color:#ff6b6b; font-weight:900;"></div>
+                </div>
+                <div style="font-size:2.5rem; color:#444;">VS</div>
+                <div style="text-align:center;">
+                    <div id="winnerTeamBLabel"
+                        style="font-size:1.4rem; letter-spacing:3px; color:#aaa; margin-bottom:6px;"></div>
+                    <div id="winnerTeamBScore" style="font-size:4rem; color:#4ecdc4; font-weight:900;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="gameScreen" class="fm-content-wrapper">
+            <div class="round-header" style="margin-top: 40px;">
+                <div id="activePlayerBanner" class="active-player-banner" style="display: none; margin-bottom: 20px;">
+                    CURRENTLY PLAYING: <span id="activePlayerName" style="color: #ffd700;"></span>
+                </div>
+                <h1 class="round-title">FAST MONEY</h1>
+            </div>
+
+            <div class="fm-content">
+                <!-- TIMER SECTION -->
+                <div class="timer-section" id="timerSection">
+                    <div class="timer-label">TIME REMAINING</div>
+                    <div class="timer-display" id="timerDisplay">00:00</div>
+                </div>
+
+                <!-- SCOREBOARD & PLAYERS -->
+                <div class="scoreboard" style="margin-top: 10px; gap: 20px;">
+                    <div class="team-box team-a" style="padding: 20px;">
+                        <div class="team-name" id="teamAName">Team A</div>
+                        <div class="score" id="teamAScore">0</div>
+
+                        <div class="player-scores">
+                            <div><span id="playerA1Name"
+                                    style="color: #fff; font-weight: normal; font-size: 1.2rem;">Player
+                                    1</span>: <span id="scoreA1">0</span></div>
+                            <div><span id="playerA2Name"
+                                    style="color: #fff; font-weight: normal; font-size: 1.2rem;">Player
+                                    2</span>: <span id="scoreA2">0</span></div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="team-box team-b" style="padding: 20px;">
+                        <div class="team-name" id="teamBName">Team B</div>
+                        <div class="score" id="teamBScore">0</div>
+
+                        <div class="player-scores">
+                            <div><span id="playerB1Name"
+                                    style="color: #fff; font-weight: normal; font-size: 1.2rem;">Player
+                                    1</span>: <span id="scoreB1">0</span></div>
+                            <div><span id="playerB2Name"
+                                    style="color: #fff; font-weight: normal; font-size: 1.2rem;">Player
+                                    2</span>: <span id="scoreB2">0</span></div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <!-- ANSWER BOARD -->
+                <div class="answer-board" style="width: 100%; margin-top: 20px;">
+                    <div id="answerBoard" class="board-grid">
+                        <div class="answer-box placeholder">?</div>
+                        <div class="answer-box placeholder">?</div>
+                        <div class="answer-box placeholder">?</div>
+                        <div class="answer-box placeholder">?</div>
+                        <div class="answer-box placeholder">?</div>
+                        <div class="answer-box placeholder">?</div>
+                        <div class="answer-box placeholder">?</div>
+                        <div class="answer-box placeholder">?</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const socket = io();
+
+            let audioContext = null;
+
+            function initAudioContext() {
+                if (!audioContext) {
+                    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                }
+                return audioContext;
+            }
+
+            // Warning buzzer when time is low
+            function playTimerWarning() {
+                try {
+                    const ctx = initAudioContext();
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+
+                    osc.connect(gain);
+                    gain.connect(ctx.destination);
+
+                    osc.frequency.value = 1000;
+                    osc.type = 'square';
+
+                    gain.gain.setValueAtTime(0.2, ctx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.05);
+
+                    osc.start(ctx.currentTime);
+                    osc.stop(ctx.currentTime + 0.05);
+                } catch (error) {
+                    console.error('Error playing warning:', error);
+                }
+            }
+            // Final buzzer when time is up
+            function playFinalBuzzer() {
+                try {
+                    const ctx = initAudioContext();
+
+                    for (let i = 0; i < 3; i++) {
+                        const delay = i * 0.2;
+                        const osc = ctx.createOscillator();
+                        const gain = ctx.createGain();
+
+                        osc.connect(gain);
+                        gain.connect(ctx.destination);
+
+                        osc.frequency.value = 1200;
+                        osc.type = 'sine';
+
+                        gain.gain.setValueAtTime(0.3, ctx.currentTime + delay);
+                        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + delay + 0.1);
+
+                        osc.start(ctx.currentTime + delay);
+                        osc.stop(ctx.currentTime + delay + 0.1);
+                    }
+                } catch (error) {
+                    console.error('Error playing final buzzer:', error);
+                }
+            }
+
+            // Strike Buzzer
+            socket.on('playBuzzer', () => {
+                try {
+                    const ctx = initAudioContext();
+                    const oscillator = ctx.createOscillator();
+                    const gainNode = ctx.createGain();
+
+                    oscillator.connect(gainNode);
+                    gainNode.connect(ctx.destination);
+
+                    oscillator.frequency.value = 800;
+                    oscillator.type = "sine";
+
+                    gainNode.gain.setValueAtTime(0.3, ctx.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.15);
+
+                    oscillator.start(ctx.currentTime);
+                    oscillator.start(ctx.currentTime);
+                    oscillator.stop(ctx.currentTime + 0.15);
+                } catch (error) {
+                    console.error("Error playing buzzer:", error);
+                }
+
+                // Massive strike overlay logic
+                const strikeOverlay = document.getElementById("massiveStrikeOverlay");
+                if (strikeOverlay) {
+                    strikeOverlay.style.display = "flex";
+                    setTimeout(() => {
+                        strikeOverlay.style.display = "none";
+                    }, 1500); // hide after 1.5 seconds
+                }
+            });
+
+            // Update teams
+            socket.on('teamUpdate', (teams) => {
+                document.getElementById('teamAName').textContent = teams.teamA.name;
+                document.getElementById('teamBName').textContent = teams.teamB.name;
+            });
+
+            // Update scores
+            socket.on('scoreUpdate', (scores) => {
+                document.getElementById('teamAScore').textContent = scores.teamA;
+                document.getElementById('teamBScore').textContent = scores.teamB;
+            });
+
+            // Timer update
+            socket.on('timerUpdate', (seconds) => {
+                const timerDisplay = document.getElementById('timerDisplay');
+                const timerSection = document.getElementById('timerSection');
+
+                const mins = Math.floor(seconds / 60);
+                const secs = seconds % 60;
+                const timeString = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+                timerDisplay.textContent = timeString;
+
+                // Warning at 10 seconds
+                if (seconds <= 10 && seconds > 0) {
+                    timerDisplay.classList.add('warning');
+                    timerSection.classList.add('warning');
+
+                    if (seconds % 1 === 0) {
+                        playTimerWarning();
+                    }
+                } else if (seconds > 10) {
+                    timerDisplay.classList.remove('warning');
+                    timerSection.classList.remove('warning');
+                }
+            });
+
+            // Timer finished
+            socket.on('timerFinished', () => {
+                const timerDisplay = document.getElementById('timerDisplay');
+                const timerSection = document.getElementById('timerSection');
+
+                timerDisplay.textContent = '00:00';
+                timerDisplay.classList.add('warning');
+                timerSection.classList.add('warning');
+
+                playFinalBuzzer();
+            });
+
+            // State update
+            socket.on('stateUpdate', (state) => {
+                document.getElementById('teamAName').textContent = state.teamA.name;
+                document.getElementById('teamBName').textContent = state.teamB.name;
+                document.getElementById('teamAScore').textContent = state.teamA.score;
+                document.getElementById('teamBScore').textContent = state.teamB.score;
+
+                if (state.teamA.players) {
+                    document.getElementById('playerA1Name').textContent = state.teamA.players[0] || 'Player 1';
+                    document.getElementById('playerA2Name').textContent = state.teamA.players[1] || 'Player 2';
+                }
+                if (state.teamB.players) {
+                    document.getElementById('playerB1Name').textContent = state.teamB.players[0] || 'Player 1';
+                    document.getElementById('playerB2Name').textContent = state.teamB.players[1] || 'Player 2';
+                }
+
+                // Active Player Banner Logic
+                const banner = document.getElementById('activePlayerBanner');
+                const nameSpan = document.getElementById('activePlayerName');
+
+                if (state.activePlayer && state.activePlayer !== 'none') {
+                    banner.style.display = 'inline-block';
+                    let playerName = '';
+                    if (state.activePlayer === 'A1') playerName = (state.teamA.players[0] || 'Player 1') + ` (${state.teamA.name})`;
+                    if (state.activePlayer === 'A2') playerName = (state.teamA.players[1] || 'Player 2') + ` (${state.teamA.name})`;
+                    if (state.activePlayer === 'B1') playerName = (state.teamB.players[0] || 'Player 1') + ` (${state.teamB.name})`;
+                    if (state.activePlayer === 'B2') playerName = (state.teamB.players[1] || 'Player 2') + ` (${state.teamB.name})`;
+                    nameSpan.textContent = playerName;
+                } else {
+                    if (banner) banner.style.display = 'none';
+                }
+
+                if (state.teamA.playerScores) {
+                    document.getElementById('scoreA1').textContent = state.teamA.playerScores[0];
+                    document.getElementById('scoreA2').textContent = state.teamA.playerScores[1];
+                }
+                if (state.teamB.playerScores) {
+                    document.getElementById('scoreB1').textContent = state.teamB.playerScores[0];
+                    document.getElementById('scoreB2').textContent = state.teamB.playerScores[1];
+                }
+
+                updateStrikesDisplay("A", state.teamA.strikes);
+                updateStrikesDisplay("B", state.teamB.strikes);
+
+                // Sync answer board from server state on every update (handles reconnects)
+                syncAnswerBoard(state.revealedAnswers || []);
+
+                if (state.showThankYou) {
+                    const gameScreen = document.getElementById('gameScreen');
+                    const thankYouScreen = document.getElementById('thankYouScreen');
+                    if (gameScreen) gameScreen.style.display = 'none';
+                    if (thankYouScreen) thankYouScreen.style.display = 'flex';
+                }
+            });
+
+            socket.on('strikeUpdate', (strikes) => {
+                updateStrikesDisplay("A", strikes.teamA);
+                updateStrikesDisplay("B", strikes.teamB);
+            });
+
+            socket.on('revealTotal', (data) => {
+                const team = data.team;
+                const p1Node = document.getElementById(`score${team}1`);
+                const p2Node = document.getElementById(`score${team}2`);
+                const totalNode = document.getElementById(`team${team}Score`);
+
+                if (p1Node && p2Node && totalNode) {
+                    p1Node.style.color = "#ff1744";
+                    p1Node.style.transform = "scale(1.5)";
+                    p2Node.style.color = "#ff1744";
+                    p2Node.style.transform = "scale(1.5)";
+                    p1Node.style.transition = "all 0.5s";
+                    p2Node.style.transition = "all 0.5s";
+
+                    setTimeout(() => {
+                        p1Node.style.color = "#ffd700";
+                        p1Node.style.transform = "scale(1)";
+                        p2Node.style.color = "#ffd700";
+                        p2Node.style.transform = "scale(1)";
+
+                        totalNode.style.color = "#4ecdc4";
+                        totalNode.style.transform = "scale(1.5)";
+                        totalNode.style.transition = "all 0.5s";
+                    }, 1500);
+
+                    setTimeout(() => {
+                        totalNode.style.color = "white";
+                        totalNode.style.transform = "scale(1)";
+                    }, 3000);
+                }
+            });
+
+            // NOTE: answerRevealed is handled via stateUpdate → syncAnswerBoard()
+            // Keeping a separate answerRevealed handler caused double-box renders.
+
+
+            function updateStrikesDisplay(team, count) {
+                const element = document.getElementById(`strikes${team}`);
+                if (!element) return;
+                let strikeHTML = "";
+                const totalSlots = Math.max(3, count); // Always show at least 3 slots, but dynamically expand if more strikes
+                for (let i = 0; i < totalSlots; i++) {
+                    if (i < count) {
+                        strikeHTML += '<span class="strike filled">✕</span>';
+                    } else {
+                        strikeHTML += '<span class="strike empty" style="color: rgba(255,255,255,0.2);">○</span>';
+                    }
+                }
+                element.innerHTML = strikeHTML;
+            }
+
+            function resetAnswerBoard() {
+                const board = document.getElementById("answerBoard");
+                if (!board) return;
+                board.innerHTML = "";
+                for (let i = 0; i < 8; i++) {
+                    const box = document.createElement("div");
+                    box.className = "answer-box placeholder";
+                    box.textContent = "?";
+                    board.appendChild(box);
+                }
+            }
+
+            function syncAnswerBoard(answers) {
+                const board = document.getElementById("answerBoard");
+                if (!board) return;
+                board.innerHTML = "";
+
+                // Render each revealed answer
+                for (let i = 0; i < 8; i++) {
+                    const box = document.createElement("div");
+                    if (i < answers.length) {
+                        const a = answers[i];
+                        box.className = "answer-box revealed";
+                        if (a.answer === "❌") {
+                            box.innerHTML = `<div class="text" style="color:#ff1744; font-size:3rem; width:100%; text-align:center;">❌</div>`;
+                        } else {
+                            box.innerHTML = `<div class="text">${a.answer}</div><div class="weight">${a.weight}</div>`;
+                        }
+                    } else {
+                        box.className = "answer-box placeholder";
+                        box.textContent = "?";
+                    }
+                    board.appendChild(box);
+                }
+            }
+
+            socket.on("showThankYouScreen", (show) => {
+                const gameScreen = document.getElementById("gameScreen");
+                const thankYouScreen = document.getElementById("thankYouScreen");
+
+                if (!gameScreen || !thankYouScreen) return;
+
+                if (show) {
+                    gameScreen.style.display = "none";
+                    thankYouScreen.style.display = "flex";
+                } else {
+                    gameScreen.style.display = "block";
+                    thankYouScreen.style.display = "none";
+                }
+
+                // Also hide reveal screens
+                document.getElementById('teamScoreReveal').style.display = 'none';
+                document.getElementById('winnerReveal').style.display = 'none';
+            });
+
+            // FM Reveal Sequence Listeners
+            socket.on('showTeamScoreScreen', (data) => {
+                const reveal = document.getElementById('teamScoreReveal');
+                const winner = document.getElementById('winnerReveal');
+                const thankYou = document.getElementById('thankYouScreen');
+                const game = document.getElementById('gameScreen');
+
+                winner.style.display = 'none';
+                thankYou.style.display = 'none';
+                game.style.display = 'none';
+                reveal.style.display = 'flex';
+
+                document.getElementById('revealTeamLabel').textContent = `${data.name}`;
+                document.getElementById('revealTeamName').textContent = data.team === 'A' ? 'TEAM A' : 'TEAM B';
+                document.getElementById('revealTeamTotal').textContent = data.score;
+
+                const pList = document.getElementById('revealPlayerScores');
+                pList.innerHTML = '';
+                data.players.forEach((name, i) => {
+                    const pDiv = document.createElement('div');
+                    pDiv.innerHTML = `
+                        <div style="font-size:1.2rem; color:#aaa; margin-bottom:5px;">${name}</div>
+                        <div style="font-size:4rem; color:#fff; font-weight:900;">${data.playerScores[i]}</div>
+                    `;
+                    pList.appendChild(pDiv);
+                });
+            });
+
+            socket.on('showWinnerScreen', (data) => {
+                const winner = document.getElementById('winnerReveal');
+                const reveal = document.getElementById('teamScoreReveal');
+                const thankYou = document.getElementById('thankYouScreen');
+                const game = document.getElementById('gameScreen');
+
+                reveal.style.display = 'none';
+                thankYou.style.display = 'none';
+                game.style.display = 'none';
+                winner.style.display = 'flex';
+
+                const winnerName = document.getElementById('winnerName');
+                const trophy = document.getElementById('winnerTrophy');
+
+                if (data.winner === 'tie') {
+                    winnerName.textContent = "IT'S A TIE!";
+                    trophy.textContent = "🤝";
+                } else {
+                    const winningName = data.winner === 'A' ? data.teamAName : data.teamBName;
+                    winnerName.textContent = winningName || (data.winner === 'A' ? 'TEAM A' : 'TEAM B');
+                    trophy.textContent = "🏆";
+                }
+
+                document.getElementById('winnerTeamALabel').textContent = data.teamAName || 'TEAM A';
+                document.getElementById('winnerTeamAScore').textContent = data.teamAScore;
+                document.getElementById('winnerTeamBLabel').textContent = data.teamBName || 'TEAM B';
+                document.getElementById('winnerTeamBScore').textContent = data.teamBScore;
+            });
+
+            socket.on('hideRevealScreen', () => {
+                document.getElementById('teamScoreReveal').style.display = 'none';
+                document.getElementById('winnerReveal').style.display = 'none';
+                document.getElementById('gameScreen').style.display = 'block';
+            });
+
+            socket.on('connect', () => {
+                console.log('FM Display connected to server');
+            });
+        </script>
+        <!-- GLOBAL BRANDING FOOTER -->
+        <footer class="global-footer">
+            <div class="vsm-branding">
+                    Made with <span class="heart-icon">❤️</span> by VSM Generation Gala ● All Rights Reserved
+                </div>
+        </footer>
+</body>
+
+</html>
+
+
+
+
+
+

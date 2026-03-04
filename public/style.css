@@ -1,0 +1,1556 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap');
+
+/* ====================================
+   GLOBAL STYLES & DESIGN TOKENS
+   ==================================== */
+:root {
+    /* Color Palette */
+    --primary-gold: #FFD700;
+    --primary-gold-dim: rgba(255, 215, 0, 0.2);
+    --primary-red: #FF1744;
+    --primary-red-dim: rgba(255, 23, 68, 0.2);
+    --primary-green: #00E676;
+    --primary-green-dim: rgba(0, 230, 118, 0.2);
+    --primary-blue: #2979F0;
+    --primary-blue-dim: rgba(41, 121, 240, 0.2);
+
+    /* Backgrounds */
+    --bg-dark: #0A0015;
+    --bg-darker: #05000A;
+    --panel-bg: rgba(26, 0, 51, 0.6);
+    --panel-border: rgba(255, 255, 255, 0.1);
+
+    /* Text */
+    --text-primary: #FFFFFF;
+    --text-secondary: #B39DDB;
+    --text-muted: #7E57C2;
+
+    /* Effects */
+    --glow-spread: 15px;
+    --glass-blur: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background: url('/user_bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: var(--text-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Lowering background brightness */
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-darker);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--panel-border);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+/* Animated Elements */
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -2;
+}
+
+.stars::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    top: 20%;
+    left: 10%;
+    opacity: 0.8;
+    animation: twinkle 3s infinite;
+}
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.neon-glow {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(ellipse at center, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+    filter: blur(40px);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ====================================
+   TYPOGRAPHY
+   ==================================== */
+h1 {
+    font-size: 4.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    background: linear-gradient(to right, var(--text-primary), var(--primary-gold));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 40px var(--primary-gold-dim);
+}
+
+h2 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--primary-gold);
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--panel-border);
+    padding-bottom: 0.5rem;
+}
+
+/* ====================================
+   COMPONENTS - GLASSMORPHISM PANELS
+   ==================================== */
+.host-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    min-height: 100vh;
+}
+
+.host-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--panel-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--panel-border);
+    border-radius: 16px;
+    padding: 1.5rem 3rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.host-content {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 2rem;
+    flex: 1;
+}
+
+.control-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: calc(100vh - 180px);
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.control-section {
+    background: var(--panel-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--panel-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.control-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.answer-panel {
+    background: var(--panel-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--panel-border);
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* ====================================
+   INPUTS & BUTTONS
+   ==================================== */
+.input-field {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--panel-border);
+    border-radius: 10px;
+    padding: 1.5rem 2rem;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--primary-gold);
+    box-shadow: 0 0 15px var(--primary-gold-dim);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 3rem;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    margin-bottom: 0.8rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+    left: 150%;
+}
+
+.button-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.button-row .btn {
+    margin-bottom: 0;
+}
+
+/* Button Variants */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-blue), #1565C0);
+    color: white;
+    box-shadow: 0 4px 15px var(--primary-blue-dim);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 25px rgba(41, 121, 240, 0.5);
+    transform: scale(1.02);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    border: 1px solid var(--panel-border);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, var(--primary-green), #00C853);
+    color: #000;
+    box-shadow: 0 4px 15px var(--primary-green-dim);
+}
+
+.btn-success:hover {
+    box-shadow: 0 0 25px rgba(0, 230, 118, 0.5);
+    transform: scale(1.02);
+}
+
+.btn-danger,
+.btn-strike {
+    background: linear-gradient(135deg, var(--primary-red), #D50000);
+    color: white;
+    box-shadow: 0 4px 15px var(--primary-red-dim);
+}
+
+.btn-danger:hover,
+.btn-strike:hover {
+    box-shadow: 0 0 25px rgba(255, 23, 68, 0.5);
+    transform: scale(1.02);
+}
+
+/* ====================================
+   QUESTION & ANSWERS AREA
+   ==================================== */
+.question-display {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--panel-border);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.question-text {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.3;
+    color: var(--text-primary);
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.5s ease;
+}
+
+.answers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.answer-row {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--panel-border);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    animation: slideIn 0.4s ease forwards;
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+/* Staggered animation delays for answers */
+.answer-row:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.answer-row:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.answer-row:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.answer-row:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.answer-row:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.answer-row:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+.answer-row:nth-child(7) {
+    animation-delay: 0.7s;
+}
+
+.answer-row:nth-child(8) {
+    animation-delay: 0.8s;
+}
+
+.answer-row:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.01) !important;
+}
+
+.answer-text {
+    font-size: 1.4rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.answer-weight {
+    background: var(--primary-gold);
+    color: #000;
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: 900;
+    box-shadow: 0 0 10px var(--primary-gold-dim);
+}
+
+.answer-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-small {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    width: auto;
+}
+
+.btn-team-a {
+    background: rgba(41, 121, 240, 0.2);
+    border: 1px solid var(--primary-blue);
+    color: var(--primary-blue);
+}
+
+.btn-team-a:hover:not([disabled]) {
+    background: var(--primary-blue);
+    color: white;
+    box-shadow: 0 0 15px var(--primary-blue-dim);
+}
+
+.btn-team-b {
+    background: rgba(255, 23, 68, 0.2);
+    border: 1px solid var(--primary-red);
+    color: var(--primary-red);
+}
+
+.btn-team-b:hover:not([disabled]) {
+    background: var(--primary-red);
+    color: white;
+    box-shadow: 0 0 15px var(--primary-red-dim);
+}
+
+button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    filter: grayscale(1);
+}
+
+/* ====================================
+   ANIMATIONS
+   ==================================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ====================================
+   RESPONSIVE
+   ==================================== */
+@media (max-width: 1200px) {
+    .host-content {
+        grid-template-columns: 1fr;
+    }
+
+    .control-panel {
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+/* ====================================
+   DISPLAY SCREEN SPECIFIC
+   ==================================== */
+.display-screen {
+    background: var(--bg-darker);
+    overflow: hidden;
+}
+
+.display-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 4rem;
+    position: relative;
+    z-index: 10;
+}
+
+.display-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+    border-bottom: 2px solid var(--primary-gold-dim);
+}
+
+.header-title {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--primary-gold);
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    letter-spacing: 4px;
+    animation: titleGlow 3s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+
+    0%,
+    100% {
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+
+    50% {
+        text-shadow: 0 0 40px rgba(255, 215, 0, 0.8), 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+}
+
+/* Scoreboard Layer */
+.scoreboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--panel-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--panel-border);
+    border-radius: 20px;
+    padding: 2rem 4rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), inset 0 0 30px rgba(255, 255, 255, 0.05);
+}
+
+.score-team {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-name {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.team-a .team-name {
+    color: #64B5F6;
+}
+
+.team-b .team-name {
+    color: #FF8A80;
+}
+
+.team-score {
+    font-size: 6rem;
+    font-weight: 900;
+    color: var(--primary-gold);
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+    line-height: 1;
+}
+
+.strikes {
+    font-size: 3rem;
+    margin-top: 1rem;
+    letter-spacing: 0.5rem;
+}
+
+.strike {
+    color: var(--primary-red);
+    text-shadow: 0 0 20px var(--primary-red);
+    animation: pulseRed 2s infinite;
+}
+
+.strike.empty {
+    color: rgba(255, 255, 255, 0.2);
+    text-shadow: none;
+    animation: none;
+}
+
+@keyframes pulseRed {
+
+    0%,
+    100% {
+        text-shadow: 0 0 10px rgba(255, 23, 68, 0.5);
+    }
+
+    50% {
+        text-shadow: 0 0 30px rgba(255, 23, 68, 0.9);
+        transform: scale(1.1);
+    }
+}
+
+/* Answer Board Display Layout */
+.answer-board {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 3rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.answer-box {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    font-size: 2.2rem;
+    font-weight: 800;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(255, 255, 255, 0.1);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+}
+
+.answer-box.revealed {
+    background: linear-gradient(180deg, #1565C0 0%, var(--primary-blue) 100%);
+    border-color: #64B5F6;
+    box-shadow: 0 0 30px var(--primary-blue-dim), inset 0 0 20px rgba(255, 255, 255, 0.2);
+    transform: scale(1.02) rotateX(360deg);
+}
+
+.answer-box .text {
+    flex: 1;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.answer-box .weight {
+    background: var(--primary-gold);
+    color: #000;
+    padding: 0.2rem 1rem;
+    border-radius: 8px;
+    font-size: 2rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.answer-box.placeholder {
+    justify-content: center;
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px dashed rgba(255, 255, 255, 0.1);
+}
+
+/* Timer Display for FM */
+.timer-display {
+    font-size: 5rem;
+    font-weight: 900;
+    color: var(--primary-green);
+    text-shadow: 0 0 30px var(--primary-green-dim);
+    font-variant-numeric: tabular-nums;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1rem 3rem;
+    border-radius: 20px;
+    border: 2px solid var(--primary-green-dim);
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8);
+}
+
+.timer-warning {
+    color: var(--primary-red);
+    text-shadow: 0 0 30px var(--primary-red-dim);
+    border-color: var(--primary-red-dim);
+    animation: flashRed 1s infinite alternate;
+}
+
+@keyframes flashRed {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0.5;
+    }
+}
+
+/* Chance Overlay Display */
+.chance-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 0, 21, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    backdrop-filter: blur(15px);
+}
+
+.chance-content {
+    text-align: center;
+    animation: bounceIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    background: var(--panel-bg);
+    padding: 3rem 6rem;
+    border: 2px solid var(--primary-red);
+    border-radius: 24px;
+    box-shadow: 0 0 50px rgba(255, 23, 68, 0.5), inset 0 0 20px rgba(255, 23, 68, 0.2);
+}
+
+.chance-title {
+    font-size: 6rem;
+    font-weight: 900;
+    color: var(--primary-red);
+    text-shadow: 0 0 30px var(--primary-red-dim);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+
+    70% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Thank You Screen Display */
+.thank-you-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, var(--panel-bg) 0%, var(--bg-darker) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    backdrop-filter: blur(20px);
+}
+
+.thank-you-content {
+    text-align: center;
+    animation: zoomIn 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.thank-you-title {
+    font-size: 8rem;
+    font-weight: 900;
+    background: linear-gradient(to right, var(--primary-gold), #FFF8E1, var(--primary-gold));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 50px rgba(255, 215, 0, 0.6);
+    margin-bottom: 1rem;
+}
+
+.thank-you-subtitle {
+    font-size: 4rem;
+    color: var(--text-primary);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    margin-bottom: 2rem;
+}
+
+.thank-you-event {
+    font-size: 2rem;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Confetti Implementation Placeholder for UI */
+.confetti {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.2) 1%, transparent 10%);
+    background-size: 50px 50px;
+    animation: rain 10s linear infinite;
+}
+
+@keyframes rain {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 0 100vh;
+    }
+}
+
+/* ====================================
+   GLOBAL BRANDING (HEADER & FOOTER)
+   ==================================== */
+.global-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.brand-logo {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.5));
+    pointer-events: auto;
+}
+
+.global-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
+    text-align: center;
+    z-index: 1000;
+}
+
+.vsm-branding {
+    font-size: 1.4rem;
+    letter-spacing: 8px;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}/* ====================================
+   REFINED BRANDING (FORCE OVERRIDE)
+   ==================================== */
+body {
+    background: url('/user_bg.jpg') no-repeat center center fixed !important;
+    background-size: cover !important;
+}
+
+body::after {
+    background: rgba(0, 0, 0, 0.6) !important;
+}
+
+.gala-title-container {
+    position: fixed;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+    text-align: center;
+    pointer-events: none;
+}
+
+.gala-title {
+    font-size: 3.5rem !important;
+    font-weight: 900 !important;
+    color: #ffd700 !important;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px 60px;
+    border: 5px solid #ffd700;
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgba(255, 214, 0, 0.7), inset 0 0 25px rgba(255, 214, 0, 0.4);
+    text-shadow: 0 0 15px rgba(255, 214, 0, 1);
+    margin: 0 !important;
+}
+
+.brand-logo {
+    width: 320px !important;
+    height: 180px !important;
+    object-fit: contain !important;
+    filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.5)) !important;
+    mix-blend-mode: screen !important; 
+}
+
+.global-footer {
+    position: fixed !important;
+    bottom: 40px !important;
+    left: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    pointer-events: none !important;
+    z-index: 1000 !important;
+    background: transparent !important;
+}
+
+.footer-box {
+    background: rgba(0, 0, 0, 0.8) !important;
+    padding: 15px 50px !important;
+    border: 3px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 60px !important;
+    backdrop-filter: blur(15px) !important;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7) !important;
+    pointer-events: auto !important;
+}
+
+.vsm-branding {
+    font-size: 1.6rem !important;
+    letter-spacing: 3px !important;
+    font-weight: 900 !important;
+    color: rgba(255, 255, 255, 1) !important;
+    text-transform: uppercase !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 15px !important;
+    text-shadow: none !important;
+}
+
+.heart-icon {
+    color: #ff1744 !important;
+    font-size: 2.2rem !important;
+    filter: drop-shadow(0 0 10px rgba(255, 23, 68, 0.8)) !important;
+    animation: pulseHeart 1.5s infinite !important;
+}
+
+@keyframes pulseHeart {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.round-header {
+    width: 100% !important;
+    text-align: center !important;
+    margin-bottom: 3rem !important;
+    margin-top: 50px !important;
+}
+
+.round-title {
+    font-size: 5.5rem !important;
+    font-weight: 900 !important;
+    color: var(--primary-gold) !important;
+    text-shadow: 0 0 40px rgba(255, 215, 0, 0.6) !important;
+    letter-spacing: 8px !important;
+    text-transform: uppercase !important;
+}
+
+.btn {
+    font-size: 1.6rem !important;
+    padding: 1.8rem 3.5rem !important;
+}
+
+h1, .h1 {
+    font-size: 4.5rem !important;
+}
+
+h2, .h2 {
+    font-size: 3rem !important;
+}
+/* ====================================
+   AESTHETIC REFINEMENT (FINAL V3)
+   ==================================== */
+
+/* Remove unnecessary boxes for a cleaner look */
+.footer-box {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+}
+
+.gala-title {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    font-size: 4rem !important; /* Larger */
+    letter-spacing: 12px !important;
+    color: #ffd700 !important;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.5), 0 0 30px rgba(255, 215, 0, 0.3) !important;
+}
+
+.brand-logo {
+    width: 380px !important; /* Bigger logos */
+    height: 220px !important;
+    mix-blend-mode: screen !important; /* Removes black backgrounds */
+}
+
+.vsm-branding {
+    font-size: 1.2rem !important;
+    opacity: 0.7 !important;
+    color: #fff !important;
+    letter-spacing: 5px !important;
+}
+
+/* Upscaling Names and Information in Boxes */
+.team-name {
+    font-size: 3.5rem !important; /* Huge names */
+    font-weight: 900 !important;
+    text-transform: uppercase;
+}
+
+.score {
+    font-size: 6rem !important; /* Massive scores */
+}
+
+.answer-box .text, .fm-answer-slot .text {
+    font-size: 2.2rem !important; /* Visible answers */
+    font-weight: 800 !important;
+}
+
+.question-text {
+    font-size: 3rem !important;
+    font-weight: 900 !important;
+    color: #ffd700 !important;
+}
+
+.btn, .control-button {
+    font-size: 1.8rem !important;
+    padding: 1.5rem 3rem !important;
+}
+
+/* Ensure round titles are giant */
+.round-title {
+    font-size: 6.5rem !important;
+    letter-spacing: 15px !important;
+}
+
+/* Darker background overlay for better contrast */
+body::after {
+    background: rgba(0, 0, 0, 0.7) !important;
+}
+/* ====================================
+   RESPONSIVE BRANDING & VISIBILITY FIX
+   ==================================== */
+
+.global-header {
+    display: flex !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 30px;
+    justify-content: space-between;
+    align-items: flex-start;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.brand-logo {
+    height: 12vh !important; /* Responsive height */
+    max-height: 150px;
+    width: auto !important;
+    object-fit: contain !important;
+    mix-blend-mode: screen !important;
+    pointer-events: auto;
+}
+
+.logo-left {
+    height: 15vh !important; /* NITTE logo bigger as requested */
+    max-height: 180px;
+}
+
+/* Fix overlapping at 100% zoom */
+@media (max-width: 1400px) {
+    .brand-logo {
+        height: 10vh !important;
+    }
+    .gala-title {
+        font-size: 2.5rem !important;
+    }
+}
+
+/* Natural Footer */
+.global-footer {
+    background: transparent !important;
+    box-shadow: none !important;
+    bottom: 20px !important;
+}
+
+.footer-box {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.vsm-branding {
+    font-size: 1.1rem !important;
+    font-weight: 500 !important; /* Not bold */
+    color: rgba(255, 255, 255, 0.45) !important; /* Blended */
+    letter-spacing: 2px !important;
+    text-transform: none !important;
+    text-shadow: none !important;
+}
+
+.heart-icon {
+    font-size: 1.2rem !important;
+    opacity: 0.6;
+}
+
+/* Visibility Fixes for internal names/boxes */
+.team-name {
+    font-size: 2.8rem !important;
+    font-weight: 800 !important;
+    margin-bottom: 10px;
+}
+
+.score {
+    font-size: 5rem !important;
+    line-height: 1;
+}
+
+.player-scores div, .player-name {
+    font-size: 1.8rem !important;
+    font-weight: 600 !important;
+}
+
+.answer-box .text, .fm-answer-slot .text {
+    font-size: 2rem !important;
+}
+
+.question-text {
+    font-size: 2.5rem !important;
+}
+
+/* Center title refined */
+.gala-title-container {
+    top: 20px !important;
+}
+
+.gala-title {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    font-size: 3rem !important;
+    letter-spacing: 10px !important;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8) !important;
+}
+/* ====================================
+   FINAL LAYOUT & OVERFLOW FIXES
+   ==================================== */
+
+/* Hide logos permanently */
+.global-header, .brand-logo {
+    display: none !important;
+}
+
+/* Manage Overflow with Sliders (Scrollbars) */
+.answers-container, .answers-list, .fm-answers-grid, .fm-content, .display-container, .host-container {
+    overflow-y: auto !important;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-gold) transparent;
+}
+
+/* Custom Scrollbar for Chrome/Safari */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary-gold);
+    border-radius: 10px;
+}
+
+/* Soften Branding Typography */
+.vsm-branding {
+    font-weight: 300 !important; /* Not bold as requested */
+    color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.gala-title {
+    font-weight: 600 !important; /* Less bold for a more natural look */
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.6) !important;
+}
+
+/* Prevent clipping of center title with other elements */
+.gala-title-container {
+    margin-bottom: 2rem;
+    position: relative !important; /* Make it part of page flow to avoid overlapping */
+    top: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+    padding-top: 20px;
+}
+
+.round-header {
+    margin-top: 10px !important;
+}
+
+/* Ensure boxes have min-height but allow expansion */
+.team-box, .answer-box, .fm-score-box {
+    min-height: fit-content !important;
+    height: auto !important;
+    max-height: 40vh;
+    overflow-y: auto;
+}
+/* ====================================
+   PROFESSIONAL LAYOUT & SLIDER FIXES
+   ==================================== */
+
+/* Clear Logo Remnants */
+.global-header, .brand-logo, .logo-left, .logo-right {
+    display: none !important;
+}
+
+/* Base Layout Resilience */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden !important; /* Force overall app to stay in viewport */
+}
+
+/* Root containers for all screens */
+.display-container, .fm-container, .host-container, .index-container, .game-screen, .fm-content-wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px 100px 40px !important; /* Leave space for footer */
+    box-sizing: border-box;
+    overflow: hidden !important;
+}
+
+/* Consolidated Professional Header */
+.gala-title-container {
+    flex: 0 0 auto;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+}
+
+.gala-title {
+    font-size: 2.8rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 15px !important;
+    color: #ffd700 !important;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+    margin: 0 !important;
+}
+
+.round-title {
+    font-size: 4rem !important; /* Slightly smaller for balance */
+    margin-top: -10px !important;
+}
+
+/* Robust Sliders (Scroll Boxes) */
+.scroll-box, 
+.scoreboard, 
+.answer-board, 
+.answers-list, 
+.player-scores,
+.fm-content,
+.board-grid {
+    flex: 1;
+    min-height: 0; /* CRITICAL: allows flex item to shrink and scroll */
+    overflow-y: auto !important;
+    padding-right: 15px; /* Space for scrollbar */
+}
+
+/* Custom Professional Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #ffd700, #ff8c00);
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+/* Component Sizing Visibility */
+.team-box, .score-team {
+    padding: 25px !important;
+    background: rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(255, 215, 0, 0.2);
+    border-radius: 15px;
+    margin: 10px 0;
+}
+
+.team-name {
+    font-size: 3rem !important;
+    font-weight: 800;
+}
+
+.score, .team-score {
+    font-size: 5.5rem !important;
+}
+
+/* Footer Natural Blend */
+.global-footer {
+    position: fixed !important;
+    bottom: 20px !important;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+    z-index: 1000;
+    background: transparent !important;
+}
+
+.vsm-branding {
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    opacity: 0.5 !important;
+    color: #fff !important;
+    letter-spacing: 3px !important;
+}
+
+/* Fix overlapping overlays */
+#winnerReveal, #teamScoreReveal, #chanceOverlay, .thank-you-screen {
+    z-index: 9999 !important;
+    padding: 40px !important;
+}
+/* ====================================
+   GLOBAL PAGE SCROLL & BLOCK EXPANSION
+   ==================================== */
+
+/* Enable scrolling on the entire page */
+html, body {
+    height: auto !important;
+    min-height: 100%;
+    overflow-y: auto !important; /* Global Slider on the page */
+    overflow-x: hidden !important;
+}
+
+/* Allow main containers to grow with content */
+.display-container, .fm-container, .host-container, .index-container, .game-screen, .fm-content-wrapper {
+    height: auto !important;
+    min-height: 100vh;
+    padding-bottom: 120px !important; /* Space for the scrolling footer */
+    overflow: visible !important; /* No internal sliders */
+    display: block !important; /* Natural vertical flow */
+}
+
+/* Remove internal scroll constraints (Sliders on blocks) */
+.scroll-box, 
+.scoreboard, 
+.answer-board, 
+.answers-list, 
+.player-scores,
+.fm-content,
+.board-grid,
+.team-box,
+.answer-box,
+.fm-score-box,
+.score-team {
+    height: auto !important;
+    max-height: none !important;
+    overflow-y: visible !important;
+    min-height: 0;
+    flex: none !important; /* Don't behave like a flex item that hides overflow */
+}
+
+/* Reposition Footer for Natural Scrolling */
+.global-footer {
+    position: relative !important; /* Moves with content */
+    margin-top: 50px;
+    padding: 40px 0;
+    bottom: auto !important;
+}
+
+/* Refined Typography Weight */
+.vsm-branding {
+    font-weight: 400 !important;
+    letter-spacing: 4px !important;
+    opacity: 0.6 !important;
+}
+
+.gala-title {
+    font-weight: 700 !important;
+    letter-spacing: 10px !important;
+}
+
+/* Ensure no logos overlap anything */
+.global-header, .brand-logo {
+    display: none !important;
+}
+/* ====================================
+   FIXED VIEWPORT (NO SLIDERS)
+   ==================================== */
+
+/* Remove all scrollbars/sliders */
+html, body {
+    overflow: hidden !important;
+    height: 100vh !important;
+}
+
+.display-container, .fm-container, .host-container, .index-container, .game-screen, .fm-content-wrapper {
+    height: 100vh !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    padding: 10px 20px 60px 20px !important; /* Tighter padding */
+}
+
+/* Ensure branding is at the very top */
+.gala-title-container {
+    margin-bottom: 5px !important;
+    padding-top: 5px !important;
+}
+
+.gala-title {
+    font-size: 2.2rem !important; /* Slightly smaller to save space */
+    letter-spacing: 12px !important;
+}
+
+/* Compress Round Headers */
+.round-header {
+    margin-top: 0 !important;
+    margin-bottom: 10px !important;
+}
+
+.round-title {
+    font-size: 3.5rem !important; /* Smaller for fixed viewport */
+}
+
+/* Scaling huge elements to fit */
+.timer-display {
+    font-size: 10rem !important;
+}
+
+.score, .team-score {
+    font-size: 4.5rem !important;
+}
+
+.team-name {
+    font-size: 2.5rem !important;
+}
+
+/* Ensure boxes don't overflow */
+.team-box, .answer-box, .fm-score-box, .score-team {
+    padding: 15px !important;
+    margin: 5px 0 !important;
+}
+
+/* Natural Footer (Small and bottom) */
+.global-footer {
+    position: fixed !important;
+    bottom: 10px !important;
+    margin-top: 0 !important;
+    padding: 5px 0 !important;
+}
+/* ====================================
+   HOST CONTROL LOCALIZED SCROLLER
+   ==================================== */
+
+/* Only for Host Control: Enable scroll for the answer/question panel */
+.host-container .answer-panel {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto !important; /* This is the "proper" scroller for the question tab */
+    padding-right: 15px;
+    margin-top: 10px;
+}
+
+/* Ensure the host container stays fixed so the scroller works */
+.host-container {
+    height: 100vh !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Professional Scrollbar for the question/answer tab */
+.host-container .answer-panel::-webkit-scrollbar {
+    width: 8px;
+}
+.host-container .answer-panel::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+.host-container .answer-panel::-webkit-scrollbar-thumb {
+    background: #ffd700;
+    border-radius: 10px;
+}

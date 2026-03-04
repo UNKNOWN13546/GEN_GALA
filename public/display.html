@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Show Display - Audience Screen</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+</head>
+
+<body>
+
+
+
+    <!-- CENTER TITLE -->
+    <div class="gala-title-container">
+        <h2 class="gala-title">GENERATION GALA</h2>
+    </div>
+
+    <div class="display-container">
+        <!-- Thank You Screen (Hidden by default) -->
+        <div id="thankYouScreen" class="thank-you-screen" style="display: none;">
+            <div class="thank-you-content">
+                <h1 class="thank-you-title">THANK YOU</h1>
+                <h2 class="thank-you-subtitle">FOR PARTICIPATING</h2>
+                <p class="thank-you-event">Generation Gala</p>
+            </div>
+            <div class="confetti"></div>
+        </div>
+
+        <!-- Chance Message Overlay (Hidden by default) -->
+        <div id="chanceOverlay" class="chance-overlay" style="display: none;">
+            <div class="chance-content">
+                <h1 id="chanceMessageText" class="chance-title">CHANCE TO TEAM</h1>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="gameScreen" class="game-screen">
+            <!-- Header -->
+            <div class="header-title">FACE OFF</div>
+
+            <!-- Scoreboard -->
+            <div class="scoreboard">
+                <div class="score-team team-a">
+                    <div class="team-name" id="teamAName">Team A</div>
+                    <div class="team-score" id="teamAScore">0</div>
+                    <div class="strikes">
+                        <span id="strikesA">
+                            <span class="strike empty">○</span>
+                            <span class="strike empty">○</span>
+                            <span class="strike empty">○</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="scoreboard-center">
+                    <div id="timerDisplay" class="timer-display" style="display: none;">00:00</div>
+                </div>
+
+                <div class="score-team team-b">
+                    <div class="team-name" id="teamBName">Team B</div>
+                    <div class="team-score" id="teamBScore">0</div>
+                    <div class="strikes">
+                        <span id="strikesB">
+                            <span class="strike empty">○</span>
+                            <span class="strike empty">○</span>
+                            <span class="strike empty">○</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Answer Board -->
+            <div class="answer-board">
+                <div id="answerBoard" class="board-grid">
+                    <div class="answer-box placeholder">?</div>
+                    <div class="answer-box placeholder">?</div>
+                    <div class="answer-box placeholder">?</div>
+                    <div class="answer-box placeholder">?</div>
+                    <div class="answer-box placeholder">?</div>
+                    <div class="answer-box placeholder">?</div>
+                    <div class="answer-box placeholder">?</div>
+                    <div class="answer-box placeholder">?</div>
+                </div>
+            </div>
+
+            <!-- Audio for buzzer -->
+            <audio id="buzzerSound" preload="auto">
+                <source src="data:audio/wav;base64,UklGRiYAAABXQVZFZm10IBAAAAABAAEAQB8AAAB9AAACABAAZGF0YQIAAAAAAA=="
+                    type="audio/wav">
+            </audio>
+        </div>
+    </div>
+
+    <script src="display.js"></script>
+    <!-- GLOBAL BRANDING FOOTER -->
+    <footer class="global-footer">
+        <div class="vsm-branding">
+                Made with <span class="heart-icon">❤️</span> by VSM Generation Gala ● All Rights Reserved
+            </div>
+    </footer>
+</body>
+
+</html>
+
+
+
+
+

@@ -1,0 +1,3904 @@
+{
+  "sets": [
+    {
+      "set_number": 1,
+      "questions": [
+        {
+          "question": "Name something people do right after waking up.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Use phone",
+              "weight": 28
+            },
+            {
+              "answer": "Laugh",
+              "weight": 20
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 16
+            },
+            {
+              "answer": "Play games",
+              "weight": 12
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 8
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 7
+            },
+            {
+              "answer": "Sleep",
+              "weight": 5
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people check before leaving the house.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Call someone",
+              "weight": 28
+            },
+            {
+              "answer": "Work",
+              "weight": 20
+            },
+            {
+              "answer": "Relax",
+              "weight": 16
+            },
+            {
+              "answer": "Laugh",
+              "weight": 12
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 8
+            },
+            {
+              "answer": "Use phone",
+              "weight": 7
+            },
+            {
+              "answer": "Check messages",
+              "weight": 5
+            },
+            {
+              "answer": "Play games",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people forget to charge.",
+          "multiplier": 3,
+          "answers": [
+            {
+              "answer": "Laugh",
+              "weight": 28
+            },
+            {
+              "answer": "Call someone",
+              "weight": 20
+            },
+            {
+              "answer": "Work",
+              "weight": 16
+            },
+            {
+              "answer": "Drink water",
+              "weight": 12
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 8
+            },
+            {
+              "answer": "Use phone",
+              "weight": 7
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 5
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do before going to bed.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Talk to friends",
+              "weight": 28
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 20
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 16
+            },
+            {
+              "answer": "Call someone",
+              "weight": 12
+            },
+            {
+              "answer": "Drink water",
+              "weight": 8
+            },
+            {
+              "answer": "Check messages",
+              "weight": 7
+            },
+            {
+              "answer": "Laugh",
+              "weight": 5
+            },
+            {
+              "answer": "Work",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do while waiting in line.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Eat snacks",
+              "weight": 28
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 20
+            },
+            {
+              "answer": "Sleep",
+              "weight": 16
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 12
+            },
+            {
+              "answer": "Study",
+              "weight": 8
+            },
+            {
+              "answer": "Work",
+              "weight": 7
+            },
+            {
+              "answer": "Play games",
+              "weight": 5
+            },
+            {
+              "answer": "Relax",
+              "weight": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "set_number": 2,
+      "questions": [
+        {
+          "question": "Name something people bring to a party.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Check messages",
+              "weight": 28
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 20
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 16
+            },
+            {
+              "answer": "Laugh",
+              "weight": 12
+            },
+            {
+              "answer": "Sleep",
+              "weight": 8
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 7
+            },
+            {
+              "answer": "Play games",
+              "weight": 5
+            },
+            {
+              "answer": "Relax",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people lose often.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Check messages",
+              "weight": 28
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 20
+            },
+            {
+              "answer": "Call someone",
+              "weight": 16
+            },
+            {
+              "answer": "Drink water",
+              "weight": 12
+            },
+            {
+              "answer": "Sleep",
+              "weight": 8
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 7
+            },
+            {
+              "answer": "Work",
+              "weight": 5
+            },
+            {
+              "answer": "Play games",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do on weekends.",
+          "multiplier": 3,
+          "answers": [
+            {
+              "answer": "Study",
+              "weight": 28
+            },
+            {
+              "answer": "Sleep",
+              "weight": 20
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 16
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 12
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 8
+            },
+            {
+              "answer": "Work",
+              "weight": 7
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 5
+            },
+            {
+              "answer": "Play games",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when they are stressed.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Play games",
+              "weight": 28
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 20
+            },
+            {
+              "answer": "Laugh",
+              "weight": 16
+            },
+            {
+              "answer": "Work",
+              "weight": 12
+            },
+            {
+              "answer": "Drink water",
+              "weight": 8
+            },
+            {
+              "answer": "Sleep",
+              "weight": 7
+            },
+            {
+              "answer": "Use phone",
+              "weight": 5
+            },
+            {
+              "answer": "Check messages",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do during a long trip.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Call someone",
+              "weight": 28
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 20
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 16
+            },
+            {
+              "answer": "Sleep",
+              "weight": 12
+            },
+            {
+              "answer": "Use phone",
+              "weight": 8
+            },
+            {
+              "answer": "Relax",
+              "weight": 7
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 5
+            },
+            {
+              "answer": "Work",
+              "weight": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "set_number": 3,
+      "questions": [
+        {
+          "question": "Name something people keep in their backpack.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Sleep",
+              "weight": 28
+            },
+            {
+              "answer": "Study",
+              "weight": 20
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 16
+            },
+            {
+              "answer": "Relax",
+              "weight": 12
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 8
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 7
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 5
+            },
+            {
+              "answer": "Use phone",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people search on Google.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Drink water",
+              "weight": 28
+            },
+            {
+              "answer": "Use phone",
+              "weight": 20
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 16
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 12
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 8
+            },
+            {
+              "answer": "Relax",
+              "weight": 7
+            },
+            {
+              "answer": "Call someone",
+              "weight": 5
+            },
+            {
+              "answer": "Laugh",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people watch on YouTube.",
+          "multiplier": 3,
+          "answers": [
+            {
+              "answer": "Sleep",
+              "weight": 28
+            },
+            {
+              "answer": "Play games",
+              "weight": 20
+            },
+            {
+              "answer": "Relax",
+              "weight": 16
+            },
+            {
+              "answer": "Call someone",
+              "weight": 12
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 8
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 7
+            },
+            {
+              "answer": "Use phone",
+              "weight": 5
+            },
+            {
+              "answer": "Check messages",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when they can't sleep.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Sleep",
+              "weight": 28
+            },
+            {
+              "answer": "Relax",
+              "weight": 20
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 16
+            },
+            {
+              "answer": "Laugh",
+              "weight": 12
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 8
+            },
+            {
+              "answer": "Play games",
+              "weight": 7
+            },
+            {
+              "answer": "Study",
+              "weight": 5
+            },
+            {
+              "answer": "Work",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people complain about at work.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Eat snacks",
+              "weight": 28
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 20
+            },
+            {
+              "answer": "Use phone",
+              "weight": 16
+            },
+            {
+              "answer": "Study",
+              "weight": 12
+            },
+            {
+              "answer": "Drink water",
+              "weight": 8
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 7
+            },
+            {
+              "answer": "Play games",
+              "weight": 5
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "set_number": 4,
+      "questions": [
+        {
+          "question": "Name something people buy online frequently.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Use phone",
+              "weight": 28
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 20
+            },
+            {
+              "answer": "Call someone",
+              "weight": 16
+            },
+            {
+              "answer": "Play games",
+              "weight": 12
+            },
+            {
+              "answer": "Drink water",
+              "weight": 8
+            },
+            {
+              "answer": "Sleep",
+              "weight": 7
+            },
+            {
+              "answer": "Work",
+              "weight": 5
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people forget at a hotel.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Check messages",
+              "weight": 28
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 20
+            },
+            {
+              "answer": "Sleep",
+              "weight": 16
+            },
+            {
+              "answer": "Play games",
+              "weight": 12
+            },
+            {
+              "answer": "Study",
+              "weight": 8
+            },
+            {
+              "answer": "Relax",
+              "weight": 7
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 5
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do while watching TV.",
+          "multiplier": 3,
+          "answers": [
+            {
+              "answer": "Eat snacks",
+              "weight": 28
+            },
+            {
+              "answer": "Relax",
+              "weight": 20
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 16
+            },
+            {
+              "answer": "Use phone",
+              "weight": 12
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 8
+            },
+            {
+              "answer": "Drink water",
+              "weight": 7
+            },
+            {
+              "answer": "Work",
+              "weight": 5
+            },
+            {
+              "answer": "Play games",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when they are sick.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Work",
+              "weight": 28
+            },
+            {
+              "answer": "Use phone",
+              "weight": 20
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 16
+            },
+            {
+              "answer": "Laugh",
+              "weight": 12
+            },
+            {
+              "answer": "Relax",
+              "weight": 8
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 7
+            },
+            {
+              "answer": "Sleep",
+              "weight": 5
+            },
+            {
+              "answer": "Call someone",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when they are bored at home.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Call someone",
+              "weight": 28
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 20
+            },
+            {
+              "answer": "Sleep",
+              "weight": 16
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 12
+            },
+            {
+              "answer": "Laugh",
+              "weight": 8
+            },
+            {
+              "answer": "Relax",
+              "weight": 7
+            },
+            {
+              "answer": "Play games",
+              "weight": 5
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "set_number": 5,
+      "questions": [
+        {
+          "question": "Name something people take to the beach.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Talk to friends",
+              "weight": 28
+            },
+            {
+              "answer": "Check messages",
+              "weight": 20
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 16
+            },
+            {
+              "answer": "Laugh",
+              "weight": 12
+            },
+            {
+              "answer": "Relax",
+              "weight": 8
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 7
+            },
+            {
+              "answer": "Study",
+              "weight": 5
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do in a gym.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Scroll social media",
+              "weight": 28
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 20
+            },
+            {
+              "answer": "Use phone",
+              "weight": 16
+            },
+            {
+              "answer": "Laugh",
+              "weight": 12
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 8
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 7
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 5
+            },
+            {
+              "answer": "Work",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people forget to bring to school.",
+          "multiplier": 3,
+          "answers": [
+            {
+              "answer": "Drink water",
+              "weight": 28
+            },
+            {
+              "answer": "Sleep",
+              "weight": 20
+            },
+            {
+              "answer": "Work",
+              "weight": 16
+            },
+            {
+              "answer": "Use phone",
+              "weight": 12
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 8
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 7
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 5
+            },
+            {
+              "answer": "Study",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do during a power cut.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Play games",
+              "weight": 28
+            },
+            {
+              "answer": "Study",
+              "weight": 20
+            },
+            {
+              "answer": "Relax",
+              "weight": 16
+            },
+            {
+              "answer": "Sleep",
+              "weight": 12
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 8
+            },
+            {
+              "answer": "Drink water",
+              "weight": 7
+            },
+            {
+              "answer": "Use phone",
+              "weight": 5
+            },
+            {
+              "answer": "Call someone",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when their internet stops working.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Play games",
+              "weight": 28
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 20
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 16
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 12
+            },
+            {
+              "answer": "Drink water",
+              "weight": 8
+            },
+            {
+              "answer": "Sleep",
+              "weight": 7
+            },
+            {
+              "answer": "Relax",
+              "weight": 5
+            },
+            {
+              "answer": "Study",
+              "weight": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "set_number": 6,
+      "questions": [
+        {
+          "question": "Name something people keep on their desk.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Relax",
+              "weight": 28
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 20
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 16
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 12
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 8
+            },
+            {
+              "answer": "Play games",
+              "weight": 7
+            },
+            {
+              "answer": "Work",
+              "weight": 5
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when they get good news.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Laugh",
+              "weight": 28
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 20
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 16
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 12
+            },
+            {
+              "answer": "Check messages",
+              "weight": 8
+            },
+            {
+              "answer": "Use phone",
+              "weight": 7
+            },
+            {
+              "answer": "Relax",
+              "weight": 5
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when they are late.",
+          "multiplier": 3,
+          "answers": [
+            {
+              "answer": "Drink water",
+              "weight": 28
+            },
+            {
+              "answer": "Study",
+              "weight": 20
+            },
+            {
+              "answer": "Call someone",
+              "weight": 16
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 12
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 8
+            },
+            {
+              "answer": "Relax",
+              "weight": 7
+            },
+            {
+              "answer": "Sleep",
+              "weight": 5
+            },
+            {
+              "answer": "Use phone",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do on their phone every day.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Watch TV",
+              "weight": 28
+            },
+            {
+              "answer": "Sleep",
+              "weight": 20
+            },
+            {
+              "answer": "Check messages",
+              "weight": 16
+            },
+            {
+              "answer": "Relax",
+              "weight": 12
+            },
+            {
+              "answer": "Work",
+              "weight": 8
+            },
+            {
+              "answer": "Play games",
+              "weight": 7
+            },
+            {
+              "answer": "Use phone",
+              "weight": 5
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do before an exam.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Relax",
+              "weight": 28
+            },
+            {
+              "answer": "Check messages",
+              "weight": 20
+            },
+            {
+              "answer": "Laugh",
+              "weight": 16
+            },
+            {
+              "answer": "Study",
+              "weight": 12
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 8
+            },
+            {
+              "answer": "Drink water",
+              "weight": 7
+            },
+            {
+              "answer": "Call someone",
+              "weight": 5
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "set_number": 7,
+      "questions": [
+        {
+          "question": "Name something people forget at the grocery store.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Drink water",
+              "weight": 28
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 20
+            },
+            {
+              "answer": "Call someone",
+              "weight": 16
+            },
+            {
+              "answer": "Relax",
+              "weight": 12
+            },
+            {
+              "answer": "Use phone",
+              "weight": 8
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 7
+            },
+            {
+              "answer": "Study",
+              "weight": 5
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when they get a new phone.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Call someone",
+              "weight": 28
+            },
+            {
+              "answer": "Use phone",
+              "weight": 20
+            },
+            {
+              "answer": "Sleep",
+              "weight": 16
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 12
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 8
+            },
+            {
+              "answer": "Check messages",
+              "weight": 7
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 5
+            },
+            {
+              "answer": "Laugh",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do on a rainy day.",
+          "multiplier": 3,
+          "answers": [
+            {
+              "answer": "Call someone",
+              "weight": 28
+            },
+            {
+              "answer": "Use phone",
+              "weight": 20
+            },
+            {
+              "answer": "Study",
+              "weight": 16
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 12
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 8
+            },
+            {
+              "answer": "Drink water",
+              "weight": 7
+            },
+            {
+              "answer": "Play games",
+              "weight": 5
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do while cooking.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Laugh",
+              "weight": 28
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 20
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 16
+            },
+            {
+              "answer": "Relax",
+              "weight": 12
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 8
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 7
+            },
+            {
+              "answer": "Study",
+              "weight": 5
+            },
+            {
+              "answer": "Use phone",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do while traveling by plane.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Study",
+              "weight": 28
+            },
+            {
+              "answer": "Sleep",
+              "weight": 20
+            },
+            {
+              "answer": "Laugh",
+              "weight": 16
+            },
+            {
+              "answer": "Play games",
+              "weight": 12
+            },
+            {
+              "answer": "Drink water",
+              "weight": 8
+            },
+            {
+              "answer": "Work",
+              "weight": 7
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 5
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "set_number": 8,
+      "questions": [
+        {
+          "question": "Name something people do when they meet an old friend.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Sleep",
+              "weight": 28
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 20
+            },
+            {
+              "answer": "Play games",
+              "weight": 16
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 12
+            },
+            {
+              "answer": "Study",
+              "weight": 8
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 7
+            },
+            {
+              "answer": "Work",
+              "weight": 5
+            },
+            {
+              "answer": "Laugh",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do during lunch break.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Watch TV",
+              "weight": 28
+            },
+            {
+              "answer": "Laugh",
+              "weight": 20
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 16
+            },
+            {
+              "answer": "Call someone",
+              "weight": 12
+            },
+            {
+              "answer": "Play games",
+              "weight": 8
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 7
+            },
+            {
+              "answer": "Relax",
+              "weight": 5
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do after getting paid.",
+          "multiplier": 3,
+          "answers": [
+            {
+              "answer": "Eat snacks",
+              "weight": 28
+            },
+            {
+              "answer": "Work",
+              "weight": 20
+            },
+            {
+              "answer": "Sleep",
+              "weight": 16
+            },
+            {
+              "answer": "Call someone",
+              "weight": 12
+            },
+            {
+              "answer": "Play games",
+              "weight": 8
+            },
+            {
+              "answer": "Study",
+              "weight": 7
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 5
+            },
+            {
+              "answer": "Relax",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when they are nervous.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Sleep",
+              "weight": 28
+            },
+            {
+              "answer": "Use phone",
+              "weight": 20
+            },
+            {
+              "answer": "Call someone",
+              "weight": 16
+            },
+            {
+              "answer": "Work",
+              "weight": 12
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 8
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 7
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 5
+            },
+            {
+              "answer": "Check messages",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do while studying.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Relax",
+              "weight": 28
+            },
+            {
+              "answer": "Work",
+              "weight": 20
+            },
+            {
+              "answer": "Sleep",
+              "weight": 16
+            },
+            {
+              "answer": "Study",
+              "weight": 12
+            },
+            {
+              "answer": "Drink water",
+              "weight": 8
+            },
+            {
+              "answer": "Call someone",
+              "weight": 7
+            },
+            {
+              "answer": "Play games",
+              "weight": 5
+            },
+            {
+              "answer": "Laugh",
+              "weight": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "set_number": 9,
+      "questions": [
+        {
+          "question": "Name something people keep in their wallet.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Listen to music",
+              "weight": 28
+            },
+            {
+              "answer": "Study",
+              "weight": 20
+            },
+            {
+              "answer": "Check messages",
+              "weight": 16
+            },
+            {
+              "answer": "Sleep",
+              "weight": 12
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 8
+            },
+            {
+              "answer": "Relax",
+              "weight": 7
+            },
+            {
+              "answer": "Laugh",
+              "weight": 5
+            },
+            {
+              "answer": "Play games",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do during a boring meeting.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Play games",
+              "weight": 28
+            },
+            {
+              "answer": "Sleep",
+              "weight": 20
+            },
+            {
+              "answer": "Use phone",
+              "weight": 16
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 12
+            },
+            {
+              "answer": "Relax",
+              "weight": 8
+            },
+            {
+              "answer": "Call someone",
+              "weight": 7
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 5
+            },
+            {
+              "answer": "Check messages",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do after finishing work.",
+          "multiplier": 3,
+          "answers": [
+            {
+              "answer": "Use phone",
+              "weight": 28
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 20
+            },
+            {
+              "answer": "Work",
+              "weight": 16
+            },
+            {
+              "answer": "Study",
+              "weight": 12
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 8
+            },
+            {
+              "answer": "Call someone",
+              "weight": 7
+            },
+            {
+              "answer": "Sleep",
+              "weight": 5
+            },
+            {
+              "answer": "Relax",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do while listening to music.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Browse internet",
+              "weight": 28
+            },
+            {
+              "answer": "Relax",
+              "weight": 20
+            },
+            {
+              "answer": "Call someone",
+              "weight": 16
+            },
+            {
+              "answer": "Work",
+              "weight": 12
+            },
+            {
+              "answer": "Use phone",
+              "weight": 8
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 7
+            },
+            {
+              "answer": "Drink water",
+              "weight": 5
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do before taking a photo.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Browse internet",
+              "weight": 28
+            },
+            {
+              "answer": "Work",
+              "weight": 20
+            },
+            {
+              "answer": "Call someone",
+              "weight": 16
+            },
+            {
+              "answer": "Laugh",
+              "weight": 12
+            },
+            {
+              "answer": "Relax",
+              "weight": 8
+            },
+            {
+              "answer": "Check messages",
+              "weight": 7
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 5
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "set_number": 10,
+      "questions": [
+        {
+          "question": "Name something people do during holidays.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Work",
+              "weight": 28
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 20
+            },
+            {
+              "answer": "Laugh",
+              "weight": 16
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 12
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 8
+            },
+            {
+              "answer": "Sleep",
+              "weight": 7
+            },
+            {
+              "answer": "Check messages",
+              "weight": 5
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when they get home.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Study",
+              "weight": 28
+            },
+            {
+              "answer": "Use phone",
+              "weight": 20
+            },
+            {
+              "answer": "Laugh",
+              "weight": 16
+            },
+            {
+              "answer": "Check messages",
+              "weight": 12
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 8
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 7
+            },
+            {
+              "answer": "Relax",
+              "weight": 5
+            },
+            {
+              "answer": "Drink water",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do before going out.",
+          "multiplier": 3,
+          "answers": [
+            {
+              "answer": "Work",
+              "weight": 28
+            },
+            {
+              "answer": "Use phone",
+              "weight": 20
+            },
+            {
+              "answer": "Call someone",
+              "weight": 16
+            },
+            {
+              "answer": "Play games",
+              "weight": 12
+            },
+            {
+              "answer": "Relax",
+              "weight": 8
+            },
+            {
+              "answer": "Laugh",
+              "weight": 7
+            },
+            {
+              "answer": "Check messages",
+              "weight": 5
+            },
+            {
+              "answer": "Drink water",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do during a movie.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Talk to friends",
+              "weight": 28
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 20
+            },
+            {
+              "answer": "Call someone",
+              "weight": 16
+            },
+            {
+              "answer": "Check messages",
+              "weight": 12
+            },
+            {
+              "answer": "Play games",
+              "weight": 8
+            },
+            {
+              "answer": "Laugh",
+              "weight": 7
+            },
+            {
+              "answer": "Use phone",
+              "weight": 5
+            },
+            {
+              "answer": "Sleep",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when they forget something.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Study",
+              "weight": 28
+            },
+            {
+              "answer": "Sleep",
+              "weight": 20
+            },
+            {
+              "answer": "Use phone",
+              "weight": 16
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 12
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 8
+            },
+            {
+              "answer": "Call someone",
+              "weight": 7
+            },
+            {
+              "answer": "Drink water",
+              "weight": 5
+            },
+            {
+              "answer": "Play games",
+              "weight": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "set_number": 11,
+      "questions": [
+        {
+          "question": "Name something people do while using a computer.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Play games",
+              "weight": 28
+            },
+            {
+              "answer": "Drink water",
+              "weight": 20
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 16
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 12
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 8
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 7
+            },
+            {
+              "answer": "Study",
+              "weight": 5
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do before a road trip.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Browse internet",
+              "weight": 28
+            },
+            {
+              "answer": "Call someone",
+              "weight": 20
+            },
+            {
+              "answer": "Sleep",
+              "weight": 16
+            },
+            {
+              "answer": "Study",
+              "weight": 12
+            },
+            {
+              "answer": "Laugh",
+              "weight": 8
+            },
+            {
+              "answer": "Check messages",
+              "weight": 7
+            },
+            {
+              "answer": "Work",
+              "weight": 5
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when they get hungry.",
+          "multiplier": 3,
+          "answers": [
+            {
+              "answer": "Eat snacks",
+              "weight": 28
+            },
+            {
+              "answer": "Work",
+              "weight": 20
+            },
+            {
+              "answer": "Drink water",
+              "weight": 16
+            },
+            {
+              "answer": "Call someone",
+              "weight": 12
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 8
+            },
+            {
+              "answer": "Sleep",
+              "weight": 7
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 5
+            },
+            {
+              "answer": "Use phone",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do after dinner.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Talk to friends",
+              "weight": 28
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 20
+            },
+            {
+              "answer": "Sleep",
+              "weight": 16
+            },
+            {
+              "answer": "Drink water",
+              "weight": 12
+            },
+            {
+              "answer": "Play games",
+              "weight": 8
+            },
+            {
+              "answer": "Use phone",
+              "weight": 7
+            },
+            {
+              "answer": "Work",
+              "weight": 5
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do during a phone call.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Listen to music",
+              "weight": 28
+            },
+            {
+              "answer": "Sleep",
+              "weight": 20
+            },
+            {
+              "answer": "Drink water",
+              "weight": 16
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 12
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 8
+            },
+            {
+              "answer": "Use phone",
+              "weight": 7
+            },
+            {
+              "answer": "Study",
+              "weight": 5
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "set_number": 12,
+      "questions": [
+        {
+          "question": "Name something people do while waiting for food.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Watch TV",
+              "weight": 28
+            },
+            {
+              "answer": "Sleep",
+              "weight": 20
+            },
+            {
+              "answer": "Check messages",
+              "weight": 16
+            },
+            {
+              "answer": "Use phone",
+              "weight": 12
+            },
+            {
+              "answer": "Laugh",
+              "weight": 8
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 7
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 5
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do during a sports game.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Check messages",
+              "weight": 28
+            },
+            {
+              "answer": "Call someone",
+              "weight": 20
+            },
+            {
+              "answer": "Work",
+              "weight": 16
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 12
+            },
+            {
+              "answer": "Play games",
+              "weight": 8
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 7
+            },
+            {
+              "answer": "Laugh",
+              "weight": 5
+            },
+            {
+              "answer": "Sleep",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when they feel cold.",
+          "multiplier": 3,
+          "answers": [
+            {
+              "answer": "Call someone",
+              "weight": 28
+            },
+            {
+              "answer": "Drink water",
+              "weight": 20
+            },
+            {
+              "answer": "Relax",
+              "weight": 16
+            },
+            {
+              "answer": "Play games",
+              "weight": 12
+            },
+            {
+              "answer": "Laugh",
+              "weight": 8
+            },
+            {
+              "answer": "Work",
+              "weight": 7
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 5
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when they feel hot.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Browse internet",
+              "weight": 28
+            },
+            {
+              "answer": "Drink water",
+              "weight": 20
+            },
+            {
+              "answer": "Sleep",
+              "weight": 16
+            },
+            {
+              "answer": "Check messages",
+              "weight": 12
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 8
+            },
+            {
+              "answer": "Laugh",
+              "weight": 7
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 5
+            },
+            {
+              "answer": "Call someone",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do while shopping.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Drink water",
+              "weight": 28
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 20
+            },
+            {
+              "answer": "Laugh",
+              "weight": 16
+            },
+            {
+              "answer": "Sleep",
+              "weight": 12
+            },
+            {
+              "answer": "Relax",
+              "weight": 8
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 7
+            },
+            {
+              "answer": "Study",
+              "weight": 5
+            },
+            {
+              "answer": "Call someone",
+              "weight": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "set_number": 13,
+      "questions": [
+        {
+          "question": "Name something people do when they see a cute pet.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Scroll social media",
+              "weight": 28
+            },
+            {
+              "answer": "Sleep",
+              "weight": 20
+            },
+            {
+              "answer": "Work",
+              "weight": 16
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 12
+            },
+            {
+              "answer": "Check messages",
+              "weight": 8
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 7
+            },
+            {
+              "answer": "Call someone",
+              "weight": 5
+            },
+            {
+              "answer": "Study",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do during a train ride.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Sleep",
+              "weight": 28
+            },
+            {
+              "answer": "Play games",
+              "weight": 20
+            },
+            {
+              "answer": "Study",
+              "weight": 16
+            },
+            {
+              "answer": "Use phone",
+              "weight": 12
+            },
+            {
+              "answer": "Call someone",
+              "weight": 8
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 7
+            },
+            {
+              "answer": "Work",
+              "weight": 5
+            },
+            {
+              "answer": "Check messages",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do while stuck in traffic.",
+          "multiplier": 3,
+          "answers": [
+            {
+              "answer": "Browse internet",
+              "weight": 28
+            },
+            {
+              "answer": "Call someone",
+              "weight": 20
+            },
+            {
+              "answer": "Laugh",
+              "weight": 16
+            },
+            {
+              "answer": "Relax",
+              "weight": 12
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 8
+            },
+            {
+              "answer": "Work",
+              "weight": 7
+            },
+            {
+              "answer": "Study",
+              "weight": 5
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do before going on stage.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Listen to music",
+              "weight": 28
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 20
+            },
+            {
+              "answer": "Work",
+              "weight": 16
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 12
+            },
+            {
+              "answer": "Call someone",
+              "weight": 8
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 7
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 5
+            },
+            {
+              "answer": "Play games",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when they win something.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Laugh",
+              "weight": 28
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 20
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 16
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 12
+            },
+            {
+              "answer": "Sleep",
+              "weight": 8
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 7
+            },
+            {
+              "answer": "Work",
+              "weight": 5
+            },
+            {
+              "answer": "Study",
+              "weight": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "set_number": 14,
+      "questions": [
+        {
+          "question": "Name something people do after waking up late.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Drink water",
+              "weight": 28
+            },
+            {
+              "answer": "Check messages",
+              "weight": 20
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 16
+            },
+            {
+              "answer": "Use phone",
+              "weight": 12
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 8
+            },
+            {
+              "answer": "Sleep",
+              "weight": 7
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 5
+            },
+            {
+              "answer": "Study",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when they are excited.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Listen to music",
+              "weight": 28
+            },
+            {
+              "answer": "Use phone",
+              "weight": 20
+            },
+            {
+              "answer": "Work",
+              "weight": 16
+            },
+            {
+              "answer": "Laugh",
+              "weight": 12
+            },
+            {
+              "answer": "Play games",
+              "weight": 8
+            },
+            {
+              "answer": "Call someone",
+              "weight": 7
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 5
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do before a presentation.",
+          "multiplier": 3,
+          "answers": [
+            {
+              "answer": "Drink water",
+              "weight": 28
+            },
+            {
+              "answer": "Study",
+              "weight": 20
+            },
+            {
+              "answer": "Check messages",
+              "weight": 16
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 12
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 8
+            },
+            {
+              "answer": "Sleep",
+              "weight": 7
+            },
+            {
+              "answer": "Work",
+              "weight": 5
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do while reading a book.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Watch TV",
+              "weight": 28
+            },
+            {
+              "answer": "Relax",
+              "weight": 20
+            },
+            {
+              "answer": "Call someone",
+              "weight": 16
+            },
+            {
+              "answer": "Check messages",
+              "weight": 12
+            },
+            {
+              "answer": "Work",
+              "weight": 8
+            },
+            {
+              "answer": "Play games",
+              "weight": 7
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 5
+            },
+            {
+              "answer": "Use phone",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when they feel tired.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Sleep",
+              "weight": 28
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 20
+            },
+            {
+              "answer": "Check messages",
+              "weight": 16
+            },
+            {
+              "answer": "Laugh",
+              "weight": 12
+            },
+            {
+              "answer": "Work",
+              "weight": 8
+            },
+            {
+              "answer": "Drink water",
+              "weight": 7
+            },
+            {
+              "answer": "Relax",
+              "weight": 5
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "set_number": 15,
+      "questions": [
+        {
+          "question": "Name something people do while sitting in a cafe.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Scroll social media",
+              "weight": 28
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 20
+            },
+            {
+              "answer": "Call someone",
+              "weight": 16
+            },
+            {
+              "answer": "Sleep",
+              "weight": 12
+            },
+            {
+              "answer": "Laugh",
+              "weight": 8
+            },
+            {
+              "answer": "Check messages",
+              "weight": 7
+            },
+            {
+              "answer": "Work",
+              "weight": 5
+            },
+            {
+              "answer": "Relax",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when they hear good music.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Call someone",
+              "weight": 28
+            },
+            {
+              "answer": "Study",
+              "weight": 20
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 16
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 12
+            },
+            {
+              "answer": "Sleep",
+              "weight": 8
+            },
+            {
+              "answer": "Drink water",
+              "weight": 7
+            },
+            {
+              "answer": "Check messages",
+              "weight": 5
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when their phone battery is low.",
+          "multiplier": 3,
+          "answers": [
+            {
+              "answer": "Sleep",
+              "weight": 28
+            },
+            {
+              "answer": "Work",
+              "weight": 20
+            },
+            {
+              "answer": "Check messages",
+              "weight": 16
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 12
+            },
+            {
+              "answer": "Study",
+              "weight": 8
+            },
+            {
+              "answer": "Play games",
+              "weight": 7
+            },
+            {
+              "answer": "Relax",
+              "weight": 5
+            },
+            {
+              "answer": "Laugh",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do before buying something expensive.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Scroll social media",
+              "weight": 28
+            },
+            {
+              "answer": "Laugh",
+              "weight": 20
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 16
+            },
+            {
+              "answer": "Drink water",
+              "weight": 12
+            },
+            {
+              "answer": "Work",
+              "weight": 8
+            },
+            {
+              "answer": "Check messages",
+              "weight": 7
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 5
+            },
+            {
+              "answer": "Study",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do during a family dinner.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Use phone",
+              "weight": 28
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 20
+            },
+            {
+              "answer": "Relax",
+              "weight": 16
+            },
+            {
+              "answer": "Study",
+              "weight": 12
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 8
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 7
+            },
+            {
+              "answer": "Check messages",
+              "weight": 5
+            },
+            {
+              "answer": "Play games",
+              "weight": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "set_number": 16,
+      "questions": [
+        {
+          "question": "Name something people do when they forget a name.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Scroll social media",
+              "weight": 28
+            },
+            {
+              "answer": "Laugh",
+              "weight": 20
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 16
+            },
+            {
+              "answer": "Call someone",
+              "weight": 12
+            },
+            {
+              "answer": "Use phone",
+              "weight": 8
+            },
+            {
+              "answer": "Sleep",
+              "weight": 7
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 5
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do before leaving for work.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Eat snacks",
+              "weight": 28
+            },
+            {
+              "answer": "Check messages",
+              "weight": 20
+            },
+            {
+              "answer": "Relax",
+              "weight": 16
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 12
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 8
+            },
+            {
+              "answer": "Work",
+              "weight": 7
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 5
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when they see a sale.",
+          "multiplier": 3,
+          "answers": [
+            {
+              "answer": "Talk to friends",
+              "weight": 28
+            },
+            {
+              "answer": "Study",
+              "weight": 20
+            },
+            {
+              "answer": "Play games",
+              "weight": 16
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 12
+            },
+            {
+              "answer": "Drink water",
+              "weight": 8
+            },
+            {
+              "answer": "Sleep",
+              "weight": 7
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 5
+            },
+            {
+              "answer": "Call someone",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when they hear a loud noise.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Watch TV",
+              "weight": 28
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 20
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 16
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 12
+            },
+            {
+              "answer": "Relax",
+              "weight": 8
+            },
+            {
+              "answer": "Drink water",
+              "weight": 7
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 5
+            },
+            {
+              "answer": "Study",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when they drop their phone.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Play games",
+              "weight": 28
+            },
+            {
+              "answer": "Work",
+              "weight": 20
+            },
+            {
+              "answer": "Use phone",
+              "weight": 16
+            },
+            {
+              "answer": "Relax",
+              "weight": 12
+            },
+            {
+              "answer": "Call someone",
+              "weight": 8
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 7
+            },
+            {
+              "answer": "Study",
+              "weight": 5
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "set_number": 17,
+      "questions": [
+        {
+          "question": "Name something people do when they meet someone new.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Scroll social media",
+              "weight": 28
+            },
+            {
+              "answer": "Laugh",
+              "weight": 20
+            },
+            {
+              "answer": "Relax",
+              "weight": 16
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 12
+            },
+            {
+              "answer": "Drink water",
+              "weight": 8
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 7
+            },
+            {
+              "answer": "Use phone",
+              "weight": 5
+            },
+            {
+              "answer": "Sleep",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when they feel proud.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Talk to friends",
+              "weight": 28
+            },
+            {
+              "answer": "Call someone",
+              "weight": 20
+            },
+            {
+              "answer": "Laugh",
+              "weight": 16
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 12
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 8
+            },
+            {
+              "answer": "Drink water",
+              "weight": 7
+            },
+            {
+              "answer": "Relax",
+              "weight": 5
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do while walking outside.",
+          "multiplier": 3,
+          "answers": [
+            {
+              "answer": "Work",
+              "weight": 28
+            },
+            {
+              "answer": "Drink water",
+              "weight": 20
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 16
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 12
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 8
+            },
+            {
+              "answer": "Use phone",
+              "weight": 7
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 5
+            },
+            {
+              "answer": "Relax",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when they hear a joke.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Laugh",
+              "weight": 28
+            },
+            {
+              "answer": "Work",
+              "weight": 20
+            },
+            {
+              "answer": "Relax",
+              "weight": 16
+            },
+            {
+              "answer": "Sleep",
+              "weight": 12
+            },
+            {
+              "answer": "Call someone",
+              "weight": 8
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 7
+            },
+            {
+              "answer": "Use phone",
+              "weight": 5
+            },
+            {
+              "answer": "Drink water",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when they feel embarrassed.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Check messages",
+              "weight": 28
+            },
+            {
+              "answer": "Sleep",
+              "weight": 20
+            },
+            {
+              "answer": "Work",
+              "weight": 16
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 12
+            },
+            {
+              "answer": "Relax",
+              "weight": 8
+            },
+            {
+              "answer": "Play games",
+              "weight": 7
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 5
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "set_number": 18,
+      "questions": [
+        {
+          "question": "Name something people do when they get a message.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Listen to music",
+              "weight": 28
+            },
+            {
+              "answer": "Call someone",
+              "weight": 20
+            },
+            {
+              "answer": "Sleep",
+              "weight": 16
+            },
+            {
+              "answer": "Relax",
+              "weight": 12
+            },
+            {
+              "answer": "Laugh",
+              "weight": 8
+            },
+            {
+              "answer": "Play games",
+              "weight": 7
+            },
+            {
+              "answer": "Check messages",
+              "weight": 5
+            },
+            {
+              "answer": "Use phone",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do before sleeping on a trip.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Relax",
+              "weight": 28
+            },
+            {
+              "answer": "Call someone",
+              "weight": 20
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 16
+            },
+            {
+              "answer": "Study",
+              "weight": 12
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 8
+            },
+            {
+              "answer": "Check messages",
+              "weight": 7
+            },
+            {
+              "answer": "Sleep",
+              "weight": 5
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when they wake up early.",
+          "multiplier": 3,
+          "answers": [
+            {
+              "answer": "Eat snacks",
+              "weight": 28
+            },
+            {
+              "answer": "Check messages",
+              "weight": 20
+            },
+            {
+              "answer": "Work",
+              "weight": 16
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 12
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 8
+            },
+            {
+              "answer": "Play games",
+              "weight": 7
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 5
+            },
+            {
+              "answer": "Call someone",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when they find money.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Eat snacks",
+              "weight": 28
+            },
+            {
+              "answer": "Drink water",
+              "weight": 20
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 16
+            },
+            {
+              "answer": "Check messages",
+              "weight": 12
+            },
+            {
+              "answer": "Play games",
+              "weight": 8
+            },
+            {
+              "answer": "Relax",
+              "weight": 7
+            },
+            {
+              "answer": "Call someone",
+              "weight": 5
+            },
+            {
+              "answer": "Study",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do while waiting for a friend.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Talk to friends",
+              "weight": 28
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 20
+            },
+            {
+              "answer": "Play games",
+              "weight": 16
+            },
+            {
+              "answer": "Drink water",
+              "weight": 12
+            },
+            {
+              "answer": "Study",
+              "weight": 8
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 7
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 5
+            },
+            {
+              "answer": "Relax",
+              "weight": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "set_number": 19,
+      "questions": [
+        {
+          "question": "Name something people do when they feel lazy.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Check messages",
+              "weight": 28
+            },
+            {
+              "answer": "Sleep",
+              "weight": 20
+            },
+            {
+              "answer": "Work",
+              "weight": 16
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 12
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 8
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 7
+            },
+            {
+              "answer": "Call someone",
+              "weight": 5
+            },
+            {
+              "answer": "Drink water",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do while browsing social media.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Eat snacks",
+              "weight": 28
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 20
+            },
+            {
+              "answer": "Study",
+              "weight": 16
+            },
+            {
+              "answer": "Drink water",
+              "weight": 12
+            },
+            {
+              "answer": "Sleep",
+              "weight": 8
+            },
+            {
+              "answer": "Play games",
+              "weight": 7
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 5
+            },
+            {
+              "answer": "Relax",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when they hear their favorite song.",
+          "multiplier": 3,
+          "answers": [
+            {
+              "answer": "Play games",
+              "weight": 28
+            },
+            {
+              "answer": "Use phone",
+              "weight": 20
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 16
+            },
+            {
+              "answer": "Relax",
+              "weight": 12
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 8
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 7
+            },
+            {
+              "answer": "Call someone",
+              "weight": 5
+            },
+            {
+              "answer": "Sleep",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when they spill something.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Browse internet",
+              "weight": 28
+            },
+            {
+              "answer": "Sleep",
+              "weight": 20
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 16
+            },
+            {
+              "answer": "Call someone",
+              "weight": 12
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 8
+            },
+            {
+              "answer": "Drink water",
+              "weight": 7
+            },
+            {
+              "answer": "Study",
+              "weight": 5
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when they break something.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Call someone",
+              "weight": 28
+            },
+            {
+              "answer": "Work",
+              "weight": 20
+            },
+            {
+              "answer": "Relax",
+              "weight": 16
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 12
+            },
+            {
+              "answer": "Laugh",
+              "weight": 8
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 7
+            },
+            {
+              "answer": "Play games",
+              "weight": 5
+            },
+            {
+              "answer": "Drink water",
+              "weight": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "set_number": 20,
+      "questions": [
+        {
+          "question": "Name something people do when they feel happy.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Use phone",
+              "weight": 28
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 20
+            },
+            {
+              "answer": "Drink water",
+              "weight": 16
+            },
+            {
+              "answer": "Relax",
+              "weight": 12
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 8
+            },
+            {
+              "answer": "Sleep",
+              "weight": 7
+            },
+            {
+              "answer": "Study",
+              "weight": 5
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when they feel sad.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Work",
+              "weight": 28
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 20
+            },
+            {
+              "answer": "Check messages",
+              "weight": 16
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 12
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 8
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 7
+            },
+            {
+              "answer": "Use phone",
+              "weight": 5
+            },
+            {
+              "answer": "Drink water",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when they feel angry.",
+          "multiplier": 3,
+          "answers": [
+            {
+              "answer": "Sleep",
+              "weight": 28
+            },
+            {
+              "answer": "Study",
+              "weight": 20
+            },
+            {
+              "answer": "Drink water",
+              "weight": 16
+            },
+            {
+              "answer": "Talk to friends",
+              "weight": 12
+            },
+            {
+              "answer": "Use phone",
+              "weight": 8
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 7
+            },
+            {
+              "answer": "Relax",
+              "weight": 5
+            },
+            {
+              "answer": "Call someone",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when they feel confused.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Talk to friends",
+              "weight": 28
+            },
+            {
+              "answer": "Call someone",
+              "weight": 20
+            },
+            {
+              "answer": "Check messages",
+              "weight": 16
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 12
+            },
+            {
+              "answer": "Play games",
+              "weight": 8
+            },
+            {
+              "answer": "Sleep",
+              "weight": 7
+            },
+            {
+              "answer": "Relax",
+              "weight": 5
+            },
+            {
+              "answer": "Work",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when they feel surprised.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Call someone",
+              "weight": 28
+            },
+            {
+              "answer": "Scroll social media",
+              "weight": 20
+            },
+            {
+              "answer": "Relax",
+              "weight": 16
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 12
+            },
+            {
+              "answer": "Study",
+              "weight": 8
+            },
+            {
+              "answer": "Browse internet",
+              "weight": 7
+            },
+            {
+              "answer": "Check messages",
+              "weight": 5
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 4
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
