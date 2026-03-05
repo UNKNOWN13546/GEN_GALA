@@ -1,5 +1,24 @@
 const socket = io();
 
+/* ================= SUPABASE STATUS ================= */
+socket.on("supabaseStatus", (status) => {
+    const statusEl = document.getElementById("supabaseStatus");
+    if (!statusEl) return;
+
+    const dot = statusEl.querySelector(".status-dot");
+    const text = statusEl.querySelector(".status-text");
+
+    if (status.connected) {
+        statusEl.classList.add("connected");
+        statusEl.classList.remove("error");
+        text.textContent = "Supabase Connected";
+    } else {
+        statusEl.classList.remove("connected");
+        statusEl.classList.add("error");
+        text.textContent = status.configured ? "Supabase Error" : "Supabase Not Configured";
+    }
+});
+
 let currentQuestion = null;
 let currentRound = null;
 let allQuestions = [];
@@ -7,6 +26,69 @@ let currentIndex = 0;
 let revealedAnswers = new Set();
 
 const QUALIFY_SCORE_R1R2 = 150;
+
+
+/* =====================================================
+CUSTOM JSON UPLOAD
+===================================================== */
+
+function handleFileUpload(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function (e) {
+        try {
+            const data = JSON.parse(e.target.result);
+            allQuestions = [];
+
+            /* SUPPORT MULTIPLE JSON FORMATS */
+            if (Array.isArray(data?.sets)) {
+                data.sets.forEach(set => {
+                    if (Array.isArray(set.questions)) {
+                        allQuestions = allQuestions.concat(set.questions);
+                    }
+                });
+            }
+            if (Array.isArray(data?.matches)) {
+                data.matches.forEach(match => {
+                    if (Array.isArray(match.questions)) {
+                        allQuestions = allQuestions.concat(match.questions);
+                    }
+                });
+            }
+            if (Array.isArray(data?.questions)) {
+                allQuestions = allQuestions.concat(data.questions);
+            }
+
+            if (!allQuestions.length) {
+                alert("No valid questions found in the uploaded JSON file.");
+                return;
+            }
+
+            /* RESET ROUND STATE */
+            currentRound = "custom";
+            currentIndex = 0;
+            currentQuestion = null;
+            revealedAnswers.clear();
+
+            socket.emit("loadQuestions", { questions: allQuestions });
+            socket.emit("roundChanged", { round: "Custom Upload" });
+
+            const roundSelector = document.getElementById("roundSelector");
+            if (roundSelector) roundSelector.value = "";
+
+            displayQuestion(0);
+
+            alert(`Successfully loaded ${allQuestions.length} questions from ${file.name}`);
+
+        } catch (error) {
+            console.error("Error parsing uploaded JSON:", error);
+            alert("Error parsing JSON file. Please ensure it is correctly formatted.");
+        }
+    };
+    reader.readAsText(file);
+}
 
 
 /* =====================================================
@@ -222,15 +304,66 @@ function revealAnswer(team, answerText, weight) {
 
 
 /* =====================================================
-TEAM MANAGEMENT
+TEAM REGISTRATION & MATCHUP
 ===================================================== */
 
-function updateTeams() {
+function registerTeam() {
 
-    const teamA = document.getElementById("teamA")?.value || "Team A";
-    const teamB = document.getElementById("teamB")?.value || "Team B";
+    const name = document.getElementById('regTeamName')?.value.trim();
+    const p1 = document.getElementById('regPlayer1')?.value.trim();
+    const p2 = document.getElementById('regPlayer2')?.value.trim();
 
-    socket.emit("updateTeams", { teamA, teamB });
+    if (!name) {
+        alert("Please enter a Team Name.");
+        return;
+    }
+
+    const players = [];
+    if (p1) players.push(p1);
+    if (p2) players.push(p2);
+
+    if (players.length === 0) {
+        players.push("Player 1", "Player 2");
+    }
+
+    socket.emit('registerTeam', { name, players });
+
+    /* Clear inputs after registering */
+    const nameEl = document.getElementById('regTeamName');
+    const p1El = document.getElementById('regPlayer1');
+    const p2El = document.getElementById('regPlayer2');
+
+    if (nameEl) nameEl.value = "";
+    if (p1El) p1El.value = "";
+    if (p2El) p2El.value = "";
+
+    alert(`Registered ${name} with players: ${players.join(", ")}`);
+
+}
+
+function removeTeam(teamName) {
+    if (confirm(`Remove ${teamName} from Tournament?`)) {
+        socket.emit('removeTeam', { name: teamName });
+    }
+}
+
+function setMatchupFromSelect() {
+
+    const teamA = document.getElementById('teamSelectA')?.value;
+    const teamB = document.getElementById('teamSelectB')?.value;
+
+    if (!teamA || !teamB) {
+        alert("Please select both Team A and Team B from the dropdowns.");
+        return;
+    }
+
+    if (teamA === teamB) {
+        alert("Team A and Team B cannot be the same team.");
+        return;
+    }
+
+    /* Set them as the active playing teams */
+    socket.emit("setMatchup", { teamA, teamB });
 
 }
 
@@ -323,6 +456,15 @@ function resetStrikes() {
 
     socket.emit("resetStrikes");
 
+}
+
+
+/* =====================================================
+LEADERBOARD TOGGLE
+===================================================== */
+
+function toggleLeaderboard(show) {
+    socket.emit("toggleLeaderboard", { show: show });
 }
 
 
@@ -428,6 +570,75 @@ socket.on("stateUpdate", (state) => {
 
         qualifyMessage.textContent = "";
 
+    }
+
+    /* Update global teams dropdowns */
+    if (state.globalTeams) {
+        const selectA = document.getElementById('teamSelectA');
+        const selectB = document.getElementById('teamSelectB');
+
+        if (selectA) {
+            const currentA = selectA.value;
+            selectA.innerHTML = '<option value="">-- Select Team --</option>';
+            state.globalTeams.forEach(t => {
+                const optA = document.createElement('option');
+                optA.value = t.name;
+                optA.textContent = t.name;
+                selectA.appendChild(optA);
+            });
+            /* Restore selection if it still exists */
+            if (state.globalTeams.some(t => t.name === currentA)) {
+                selectA.value = currentA;
+            }
+        }
+
+        if (selectB) {
+            const currentB = selectB.value;
+            selectB.innerHTML = '<option value="">-- Select Team --</option>';
+            state.globalTeams.forEach(t => {
+                const optB = document.createElement('option');
+                optB.value = t.name;
+                optB.textContent = t.name;
+                selectB.appendChild(optB);
+            });
+            /* Restore selection if it still exists */
+            if (state.globalTeams.some(t => t.name === currentB)) {
+                selectB.value = currentB;
+            }
+        }
+
+        /* Update Global Roster List */
+        const rosterList = document.getElementById('rosterList');
+        if (rosterList) {
+            rosterList.innerHTML = '';
+
+            if (state.globalTeams.length === 0) {
+                rosterList.innerHTML = '<div style="color:#a8b2d1; font-size:12px; font-style:italic;">No teams registered.</div>';
+            } else {
+                state.globalTeams.forEach(t => {
+                    const tCard = document.createElement('div');
+                    tCard.className = 'roster-item';
+
+                    const tInfo = document.createElement('div');
+                    tInfo.className = 'roster-info';
+                    tInfo.innerHTML = `
+                        <span class="roster-team-name">${t.name}</span>
+                        <span class="roster-players">Players: ${t.players.join(', ')}</span>
+                        <span class="roster-score">Points: ${t.score}</span>
+                    `;
+
+                    const tDeleteBtn = document.createElement('button');
+                    tDeleteBtn.className = "btn btn-small btn-danger";
+                    tDeleteBtn.textContent = "X";
+                    tDeleteBtn.title = "Delete Team";
+                    tDeleteBtn.onclick = () => removeTeam(t.name);
+
+                    tCard.appendChild(tInfo);
+                    tCard.appendChild(tDeleteBtn);
+                    rosterList.appendChild(tCard);
+                });
+            }
+        }
     }
 
 });

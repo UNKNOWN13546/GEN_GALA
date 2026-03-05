@@ -55,6 +55,11 @@
 
             </div>
 
+            <div id="supabaseStatus" class="supabase-status">
+                <span class="status-dot"></span>
+                <span class="status-text">Checking Supabase...</span>
+            </div>
+
         </div>
 
 
@@ -70,24 +75,58 @@ LEFT CONTROL PANEL
             <div class="control-panel">
 
 
-                <!-- TEAM SETUP -->
+                <!-- QUESTION UPLOAD -->
 
                 <div class="control-section">
 
-                    <h3>Team Setup</h3>
+                    <h3>Custom JSON Upload</h3>
 
-                    <label for="teamA">Team Name</label>
-                    <input id="teamA" type="text" class="input-field" value="Team A">
+                    <label for="fmJsonUpload">Upload Fast Money JSON</label>
+                    <input type="file" id="fmJsonUpload" accept=".json" class="input-field"
+                        onchange="handleFileUpload(event)">
 
-                    <label for="playerA1">Player 1</label>
-                    <input id="playerA1" type="text" class="input-field" value="Player 1">
+                </div>
 
-                    <label for="playerA2">Player 2</label>
-                    <input id="playerA2" type="text" class="input-field" value="Player 2">
 
-                    <button class="btn btn-primary" onclick="updatePlayers()">
-                        Update Players
-                    </button>
+                <!-- TEAM REGISTRATION -->
+                <div class="control-section">
+                    <h3>Register Team</h3>
+                    <p class="section-note" style="color:#a8b2d1; font-size:12px; margin-bottom:15px;">Add teams to the
+                        Tournament pool.</p>
+
+                    <label for="regTeamName">Team Name</label>
+                    <input id="regTeamName" type="text" class="input-field" placeholder="e.g. Red Team">
+
+                    <label for="regPlayer1">Player 1</label>
+                    <input id="regPlayer1" type="text" class="input-field" placeholder="e.g. Alice">
+
+                    <label for="regPlayer2">Player 2</label>
+                    <input id="regPlayer2" type="text" class="input-field" placeholder="e.g. Bob">
+
+                    <div class="button-row">
+                        <button class="btn btn-primary" onclick="registerTeam()">Add Team</button>
+                    </div>
+                </div>
+
+                <!-- ACTIVE MATCHUP -->
+
+                <div class="control-section">
+
+                    <h3>Active Matchup</h3>
+
+                    <p class="section-note" style="color:#a8b2d1; font-size:12px; margin-bottom:15px;">Select a
+                        registered team to play Fast Money.</p>
+
+                    <label for="teamSelectA">Playing Team</label>
+                    <select id="teamSelectA" class="input-field">
+                        <option value="">-- Select Team --</option>
+                    </select>
+
+                    <div class="button-row">
+                        <button class="btn btn-primary" onclick="setMatchupFromSelect()">
+                            Load Matchup
+                        </button>
+                    </div>
 
                 </div>
 
@@ -213,6 +252,16 @@ LEFT CONTROL PANEL
                 </div>
 
 
+                <!-- LEADERBOARD CONTROL -->
+                <div class="control-section">
+                    <h3>Leaderboard</h3>
+                    <div class="button-row">
+                        <button class="btn btn-primary" onclick="toggleLeaderboard(true)">Show Leaderboard</button>
+                        <button class="btn btn-secondary" onclick="toggleLeaderboard(false)">Hide</button>
+                    </div>
+                </div>
+
+
                 <!-- END ROUND -->
 
                 <div class="control-section">
@@ -298,39 +347,57 @@ RIGHT PANEL
 
                     </div>
 
-                </div>
-
-
-                <!-- QUESTION DISPLAY -->
-
-                <div class="question-display">
-
-                    <div id="questionText" class="question-text">
-                        Load a question to start...
+                    <!-- =====================================================
+            ROSTER PANEL (Tournament List)
+            ===================================================== -->
+                    <div class="roster-panel">
+                        <div class="roster-container">
+                            <div class="roster-header">
+                                <h3>Tournament Roster</h3>
+                            </div>
+                            <div id="rosterList" class="roster-list">
+                                <!-- Teams will be populated here by JS -->
+                                <div style="color:#a8b2d1; font-size:12px; font-style:italic;">No teams registered.
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
 
+            </div>
 
-                <!-- ANSWERS -->
 
-                <div class="answers-container">
+            <!-- QUESTION DISPLAY -->
 
-                    <h3>Answers</h3>
+            <div class="question-display">
 
-                    <div id="answersList" class="answers-list">
-
-                        <p>Select a question to display answers</p>
-
-                    </div>
-
+                <div id="questionText" class="question-text">
+                    Load a question to start...
                 </div>
 
+            </div>
+
+
+            <!-- ANSWERS -->
+
+            <div class="answers-container">
+
+                <h3>Answers</h3>
+
+                <div id="answersList" class="answers-list">
+
+                    <p>Select a question to display answers</p>
+
+                </div>
 
             </div>
 
 
         </div>
+
+
+    </div>
 
     </div>
 

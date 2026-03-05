@@ -434,3 +434,44 @@ socket.on("reconnect", () => {
     console.log("Display reconnected to server");
 
 });
+
+
+/* =====================================================
+LEADERBOARD DISPLAY LOGIC
+===================================================== */
+
+socket.on("leaderboardToggle", (data) => {
+    const overlayElement = document.getElementById("globalLeaderboardOverlay");
+    if (!overlayElement) return;
+
+    if (data.show) {
+
+        const teams = data.teams || [];
+
+        /* Sort by score descending */
+        teams.sort((a, b) => b.score - a.score);
+
+        let highestScore = teams.length > 0 ? teams[0].score : 0;
+
+        let cardsHtml = teams.map((team, index) => {
+            const isWinner = team.score === highestScore && highestScore > 0;
+            return `
+                <div class="leaderboard-card ${isWinner ? 'winner' : ''}" style="animation-delay: ${index * 0.1}s">
+                    <div class="lb-crown">👑</div>
+                    <div class="lb-team-name">${team.name}</div>
+                    <div class="lb-team-score">${team.score}</div>
+                </div>
+            `;
+        }).join('');
+
+        const container = document.getElementById("leaderboardCardsContainer");
+        if (container) {
+            container.innerHTML = cardsHtml;
+        }
+
+        overlayElement.classList.add("show");
+
+    } else {
+        overlayElement.classList.remove("show");
+    }
+});
