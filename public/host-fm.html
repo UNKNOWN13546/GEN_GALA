@@ -69,335 +69,169 @@
 
 
             <!-- =====================================================
-LEFT CONTROL PANEL
-===================================================== -->
-
+            LEFT CONTROL PANEL
+            ===================================================== -->
             <div class="control-panel">
-
-
                 <!-- QUESTION UPLOAD -->
-
                 <div class="control-section">
-
                     <h3>Custom JSON Upload</h3>
-
                     <label for="fmJsonUpload">Upload Fast Money JSON</label>
                     <input type="file" id="fmJsonUpload" accept=".json" class="input-field"
                         onchange="handleFileUpload(event)">
-
                 </div>
-
 
                 <!-- TEAM REGISTRATION -->
                 <div class="control-section">
                     <h3>Register Team</h3>
                     <p class="section-note" style="color:#a8b2d1; font-size:12px; margin-bottom:15px;">Add teams to the
-                        Tournament pool.</p>
-
+                        pool.</p>
                     <label for="regTeamName">Team Name</label>
                     <input id="regTeamName" type="text" class="input-field" placeholder="e.g. Red Team">
-
                     <label for="regPlayer1">Player 1</label>
                     <input id="regPlayer1" type="text" class="input-field" placeholder="e.g. Alice">
-
                     <label for="regPlayer2">Player 2</label>
                     <input id="regPlayer2" type="text" class="input-field" placeholder="e.g. Bob">
-
                     <div class="button-row">
                         <button class="btn btn-primary" onclick="registerTeam()">Add Team</button>
                     </div>
                 </div>
 
                 <!-- ACTIVE MATCHUP -->
-
                 <div class="control-section">
-
                     <h3>Active Matchup</h3>
-
                     <p class="section-note" style="color:#a8b2d1; font-size:12px; margin-bottom:15px;">Select a
-                        registered team to play Fast Money.</p>
-
-                    <label for="teamSelectA">Playing Team</label>
+                        registered team.</p>
                     <select id="teamSelectA" class="input-field">
                         <option value="">-- Select Team --</option>
                     </select>
-
                     <div class="button-row">
-                        <button class="btn btn-primary" onclick="setMatchupFromSelect()">
-                            Load Matchup
-                        </button>
+                        <button class="btn btn-primary" onclick="setMatchupFromSelect()">Set Team</button>
                     </div>
-
                 </div>
-
-
-                <!-- ACTIVE PLAYER -->
-
-                <div class="control-section">
-
-                    <h3>Active Player</h3>
-
-                    <select id="activePlayerSelector" class="input-field" onchange="setActivePlayer()">
-
-                        <option value="none">None (Hide Banner)</option>
-                        <option value="A1">Player 1</option>
-                        <option value="A2">Player 2</option>
-
-                    </select>
-
-                </div>
-
 
                 <!-- SCORE MANAGEMENT -->
-
                 <div class="control-section">
-
-                    <h3>Scores (Target: 200)</h3>
-
+                    <h3>Scores</h3>
                     <div class="score-display">
-
                         <div class="score-item">
-
-                            <span class="score-label">Player 1</span>
-
+                            <span class="score-label">P1</span>
                             <div id="scoreP1" class="score-value">0</div>
-
                         </div>
-
                         <div class="score-item">
-
-                            <span class="score-label">Player 2</span>
-
+                            <span class="score-label">P2</span>
                             <div id="scoreP2" class="score-value">0</div>
-
                         </div>
-
                     </div>
-
-
                     <div class="combined-score-display">
-
-                        <span class="combined-label">COMBINED:</span>
-
                         <span id="scoreCombined" class="combined-value">0</span>
-
                         <span class="combined-target">/ 200</span>
-
                     </div>
 
-
-                    <label for="pointsInput" class="small-label">
-                        Points to add/deduct:
-                    </label>
-
-                    <input id="pointsInput" type="number" class="input-field" value="10" min="1">
-
-
+                    <input id="pointsInput" type="number" class="input-field" value="10">
                     <div class="button-row">
-
-                        <button class="btn btn-success" onclick="addScore('A',0)">
-                            + Player 1
-                        </button>
-
-                        <button class="btn btn-success" onclick="addScore('A',1)">
-                            + Player 2
-                        </button>
-
+                        <button class="btn btn-success" onclick="addScore('A',0)">+ P1</button>
+                        <button class="btn btn-success" onclick="addScore('A',1)">+ P2</button>
                     </div>
-
-
                     <div class="button-row">
-
-                        <button class="btn btn-danger" onclick="deductScore(0)">
-                            − Player 1
-                        </button>
-
-                        <button class="btn btn-danger" onclick="deductScore(1)">
-                            − Player 2
-                        </button>
-
+                        <button class="btn btn-danger" onclick="deductScore(0)">- P1</button>
+                        <button class="btn btn-danger" onclick="deductScore(1)">- P2</button>
                     </div>
-
                 </div>
-
 
                 <!-- TIMER -->
-
                 <div class="control-section">
-
-                    <h3>Timer (60 sec)</h3>
-
-                    <div class="timer-display host-timer" id="timerDisplay">
-                        00:00
-                    </div>
-
-                    <input id="timerInput" type="number" class="input-field" value="60" min="1" max="300">
-
+                    <h3>Timer</h3>
+                    <div class="timer-display host-timer" id="timerDisplay">00:00</div>
                     <div class="button-row">
-
-                        <button class="btn btn-primary" onclick="startTimer()">
-                            Start Timer
-                        </button>
-
-                        <button class="btn btn-secondary" onclick="stopTimer()">
-                            Pause
-                        </button>
-
-                        <button class="btn btn-secondary" onclick="resetTimer()">
-                            Reset
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <!-- LEADERBOARD CONTROL -->
-                <div class="control-section">
-                    <h3>Leaderboard</h3>
-                    <div class="button-row">
-                        <button class="btn btn-primary" onclick="toggleLeaderboard(true)">Show Leaderboard</button>
-                        <button class="btn btn-secondary" onclick="toggleLeaderboard(false)">Hide</button>
+                        <button class="btn btn-primary" onclick="startTimer()">Start</button>
+                        <button class="btn btn-secondary" onclick="stopTimer()">Pause</button>
                     </div>
                 </div>
-
-
-                <!-- END ROUND -->
-
-                <div class="control-section">
-
-                    <h3>🎬 End Round</h3>
-
-                    <p class="section-note">Run at end of round:</p>
-
-                    <div class="button-column">
-
-                        <button class="btn btn-primary" onclick="showTeamScore('A')">
-                            📊 Show Combined Score
-                        </button>
-
-                        <button class="btn btn-success" onclick="checkWin()">
-                            🏆 Check if 200 Reached
-                        </button>
-
-                        <button class="btn btn-secondary" onclick="hideRevealScreen()">
-                            ✕ Hide Reveal Screen
-                        </button>
-
-                        <button class="btn btn-end-game" onclick="showThankYou()">
-                            🎉 Thank You Screen
-                        </button>
-
-                        <button class="btn btn-secondary" onclick="resetGame()">
-                            🔄 Reset Game
-                        </button>
-
-                    </div>
-
-                </div>
-
-
             </div>
 
 
             <!-- =====================================================
-RIGHT PANEL
-===================================================== -->
-
+            MIDDLE PANEL (QUESTIONS & ANSWERS)
+            ===================================================== -->
             <div class="answer-panel">
 
-
                 <!-- QUESTION CONTROLS -->
-
                 <div class="fm-controls">
-
-                    <h3>Current Question</h3>
-
+                    <h3>Fast Money Questions</h3>
                     <select id="questionSelector" class="input-field" onchange="selectQuestion()">
-
-                        <option value="">
-                            Load a question...
-                        </option>
-
+                        <option value="">Load a question...</option>
                     </select>
 
-
                     <div class="button-row">
-
-                        <button class="btn btn-secondary" onclick="prevQuestion()">
-                            ⭠ Previous
-                        </button>
-
-                        <button class="btn btn-primary" onclick="nextQuestion()">
-                            Next ⭢
-                        </button>
-
+                        <button class="btn btn-secondary" onclick="prevQuestion()">⭠ Prev</button>
+                        <button class="btn btn-primary" onclick="nextQuestion()">Next ⭢</button>
                     </div>
 
-
                     <div class="button-row">
-
-                        <button class="btn btn-secondary" onclick="clearBoard()">
-                            🧹 Clear Board
-                        </button>
-
-                        <button class="btn btn-strike" onclick="markCross()">
-                            ❌ Mark Pass / Cross
-                        </button>
-
+                        <button class="btn btn-secondary" onclick="clearBoard()">🧹 Clear</button>
+                        <button class="btn btn-strike" onclick="markCross()">❌ Pass/Cross</button>
                     </div>
 
-                    <!-- =====================================================
+                    <select id="activePlayerSelector" class="input-field" onchange="setActivePlayer()"
+                        style="margin-top:15px;">
+                        <option value="none">Set Active Player...</option>
+                        <option value="A1">Player 1</option>
+                        <option value="A2">Player 2</option>
+                    </select>
+                </div>
+
+                <!-- QUESTION DISPLAY -->
+                <div class="question-display">
+                    <div id="questionText" class="question-text">Load a question...</div>
+                </div>
+
+                <!-- ANSWERS -->
+                <div class="answers-container">
+                    <h3>Answers</h3>
+                    <div id="answersList" class="answers-list">
+                        <p>Select question to see answers</p>
+                    </div>
+                </div>
+
+                <!-- END ROUND -->
+                <div class="control-section" style="margin-top:20px;">
+                    <h3>🎬 End Round</h3>
+                    <div class="button-row">
+                        <button class="btn btn-primary" onclick="showTeamScore('A')">Combined Score</button>
+                        <button class="btn btn-success" onclick="checkWin()">Check 200</button>
+                    </div>
+                    <div class="button-row" style="margin-top:10px;">
+                        <button class="btn btn-end-game" onclick="showThankYou()">🎉 Thank You</button>
+                        <button class="btn btn-secondary" onclick="resetGame()">🔄 Reset</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =====================================================
             ROSTER PANEL (Tournament List)
             ===================================================== -->
-                    <div class="roster-panel">
-                        <div class="roster-container">
-                            <div class="roster-header">
-                                <h3>Tournament Roster</h3>
-                            </div>
-                            <div id="rosterList" class="roster-list">
-                                <!-- Teams will be populated here by JS -->
-                                <div style="color:#a8b2d1; font-size:12px; font-style:italic;">No teams registered.
-                                </div>
-                            </div>
-                        </div>
+            <div class="roster-panel">
+                <div class="roster-container">
+                    <div class="roster-header">
+                        <h3>Tournament Roster</h3>
                     </div>
-
+                    <div id="rosterList" class="roster-list">
+                        <div style="color:#a8b2d1; font-size:12px; font-style:italic;">No teams registered.</div>
+                    </div>
                 </div>
 
-            </div>
-
-
-            <!-- QUESTION DISPLAY -->
-
-            <div class="question-display">
-
-                <div id="questionText" class="question-text">
-                    Load a question to start...
+                <div class="control-section" style="margin-top:20px;">
+                    <h3>Leaderboard</h3>
+                    <button class="btn btn-primary" onclick="toggleLeaderboard(true)" style="width:100%;">Show Over
+                        Screen</button>
+                    <button class="btn btn-secondary" onclick="toggleLeaderboard(false)"
+                        style="width:100%; margin-top:10px;">Hide</button>
                 </div>
-
             </div>
-
-
-            <!-- ANSWERS -->
-
-            <div class="answers-container">
-
-                <h3>Answers</h3>
-
-                <div id="answersList" class="answers-list">
-
-                    <p>Select a question to display answers</p>
-
-                </div>
-
-            </div>
-
-
         </div>
 
-
     </div>
+
 
     </div>
 
