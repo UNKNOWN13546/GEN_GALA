@@ -14,7 +14,7 @@ const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
 // Stricter check to avoid crashes on invalid strings
-const isSupabaseConfigured =
+let isSupabaseConfigured =
   typeof supabaseUrl === 'string' &&
   supabaseUrl.startsWith('http') &&
   typeof supabaseKey === 'string' &&
@@ -127,6 +127,7 @@ async function loadTeamsFromSupabase() {
 
 async function syncTeamToSupabase(team) {
   if (!supabase) return;
+  console.log(`📤 Syncing team "${team.name}" to Supabase...`);
   try {
     const { error } = await supabase
       .from('teams')
@@ -158,9 +159,8 @@ async function removeTeamFromSupabase(teamName) {
 
 async function saveSessionState() {
   if (!supabase) return;
+  console.log("📤 Saving session state to Supabase...");
   try {
-    // We exclude transient data like the timer and questions themselves (to keep JSON small)
-    // but keep indices and revealed state.
     const persistentState = {
       teamA: gameState.teamA,
       teamB: gameState.teamB,
