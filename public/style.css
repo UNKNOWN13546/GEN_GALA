@@ -440,6 +440,32 @@ ROSTER PANEL (RIGHT COLUMN)
     height: 100%;
 }
 
+.roster-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: 600px;
+    overflow-y: auto;
+    padding-right: 10px;
+
+    /* Custom Scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: var(--neon-cyan) rgba(255, 255, 255, 0.05);
+}
+
+.roster-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.roster-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.roster-list::-webkit-scrollbar-thumb {
+    background: var(--neon-cyan);
+    border-radius: 10px;
+}
+
 .roster-container {
     background: var(--glass-bg);
     backdrop-filter: blur(12px);
@@ -1099,7 +1125,8 @@ FACE OFF DISPLAY (AUDIENCE SCREENS)
 .board-grid,
 .button-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: repeat(4, auto);
     gap: 30px 40px;
     width: 100%;
     max-width: 1600px;
