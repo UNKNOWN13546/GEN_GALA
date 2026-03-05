@@ -817,8 +817,16 @@ SERVER START
 
 const PORT = process.env.PORT || 3001;
 
-server.listen(PORT, () => {
+server.listen(PORT, "0.0.0.0", () => {
+  console.log(`🚀 Game Show Server is LIVE!`);
+  console.log(`🔗 Local view: http://localhost:${PORT}`);
+  console.log(`🌐 Production: listening on 0.0.0.0:${PORT}`);
 
-  console.log(`Game Show Server running on http://localhost:${PORT}`);
-
+  if (!isSupabaseConfigured) {
+    console.warn("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+    console.warn("🚨 ATTENTION: SUPABASE NOT CONFIGURED!");
+    console.warn("Game will run, but NO DATA will be saved.");
+    console.warn("Add SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY to Railway Variables.");
+    console.warn("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+  }
 });
