@@ -37,6 +37,10 @@ app.get("/health", (req, res) => {
   res.status(200).send("OK");
 });
 
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/public/index.html");
+});
+
 let timerInterval = null;
 
 
@@ -230,8 +234,12 @@ io.on("connection", (socket) => {
 
   /* Load teams and session from Supabase on initial connection */
   (async () => {
-    await loadTeamsFromSupabase();
-    await loadSessionState();
+    try {
+      await loadTeamsFromSupabase();
+      await loadSessionState();
+    } catch (e) {
+      console.error("⚠️ Startup data fetch failed:", e.message);
+    }
     io.emit("stateUpdate", getSafeState());
     broadcastSupabaseStatus();
   })();
