@@ -12,14 +12,26 @@ SUPABASE CONFIG
 ------------------------------*/
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-const isSupabaseConfigured = supabaseUrl && supabaseKey && supabaseUrl !== 'your_project_url_here';
+
+// Stricter check to avoid crashes on invalid strings
+const isSupabaseConfigured =
+  typeof supabaseUrl === 'string' &&
+  supabaseUrl.startsWith('http') &&
+  typeof supabaseKey === 'string' &&
+  supabaseKey.length > 20;
 
 let supabase = null;
 if (isSupabaseConfigured) {
-  supabase = createClient(supabaseUrl, supabaseKey);
-  console.log("📡 Supabase client initialized");
+  try {
+    supabase = createClient(supabaseUrl, supabaseKey);
+    console.log(`📡 Supabase client initialized (URL starts with: ${supabaseUrl.substring(0, 10)}...)`);
+  } catch (err) {
+    console.error("❌ Failed to initialize Supabase client:", err.message);
+    isSupabaseConfigured = false; // Disable persistence if client creation fails
+  }
 } else {
-  console.warn("⚠️ Supabase not configured. Persistence disabled.");
+  console.warn("⚠️ Supabase not configured correctly. Data will NOT be saved to cloud.");
+  console.log(`🔍 Debug Info - URL present: ${!!supabaseUrl}, Key present: ${!!supabaseKey}`);
 }
 
 const io = socketIO(server, {
