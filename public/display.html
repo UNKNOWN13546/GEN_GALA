@@ -71,8 +71,19 @@
         <!-- LEADERBOARD OVERLAY -->
         <div id="globalLeaderboardOverlay" class="global-leaderboard-overlay">
             <h1 class="leaderboard-title">LEADERBOARD</h1>
-            <div class="leaderboard-cards" id="leaderboardCardsContainer">
-                <!-- Cards will be injected via JS -->
+            <div class="leaderboard-table-container">
+                <table class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>RANK</th>
+                            <th>TEAM NAME</th>
+                            <th>TOTAL SCORE</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboardBody">
+                        <!-- Rows will be injected via JS -->
+                    </tbody>
+                </table>
             </div>
         </div>
 

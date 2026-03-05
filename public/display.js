@@ -445,32 +445,35 @@ socket.on("leaderboardToggle", (data) => {
     if (!overlayElement) return;
 
     if (data.show) {
-
         const teams = data.teams || [];
-
-        /* Sort by score descending */
         teams.sort((a, b) => b.score - a.score);
 
         let highestScore = teams.length > 0 ? teams[0].score : 0;
 
-        let cardsHtml = teams.map((team, index) => {
+        let rowsHtml = teams.map((team, index) => {
             const isWinner = team.score === highestScore && highestScore > 0;
+            const rank = index + 1;
+
             return `
-                <div class="leaderboard-card ${isWinner ? 'winner' : ''}" style="animation-delay: ${index * 0.1}s">
-                    <div class="lb-crown">👑</div>
-                    <div class="lb-team-name">${team.name}</div>
-                    <div class="lb-team-score">${team.score}</div>
-                </div>
+                <tr class="${isWinner ? 'winner-row' : ''}">
+                    <td>
+                        ${isWinner ? '<span class="lb-table-crown">👑</span>' : ''}
+                        <span class="rank-badge">${rank}</span>
+                    </td>
+                    <td>
+                        <div class="lb-table-team-name">${team.name}</div>
+                    </td>
+                    <td>${team.score}</td>
+                </tr>
             `;
         }).join('');
 
-        const container = document.getElementById("leaderboardCardsContainer");
+        const container = document.getElementById("leaderboardBody");
         if (container) {
-            container.innerHTML = cardsHtml;
+            container.innerHTML = rowsHtml;
         }
 
         overlayElement.classList.add("show");
-
     } else {
         overlayElement.classList.remove("show");
     }
