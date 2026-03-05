@@ -32,6 +32,11 @@ const io = socketIO(server, {
 app.use(express.static("public"));
 app.use("/questions", express.static("questions"));
 
+// Health check for deployment
+app.get("/health", (req, res) => {
+  res.status(200).send("OK");
+});
+
 let timerInterval = null;
 
 
