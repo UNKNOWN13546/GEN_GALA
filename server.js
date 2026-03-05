@@ -63,6 +63,15 @@ let gameState = createDefaultState();
 
 
 /* -----------------------------
+SAFE STATE BROADCAST
+------------------------------*/
+
+function getSafeState() {
+  const { allQuestions, ...safeState } = gameState;
+  return safeState;
+}
+
+/* -----------------------------
 SOCKET CONNECTION
 ------------------------------*/
 
@@ -70,12 +79,12 @@ io.on("connection", (socket) => {
 
   console.log("Client connected:", socket.id);
 
-  socket.emit("stateUpdate", gameState);
+  socket.emit("stateUpdate", getSafeState());
 
   /* FIX #6: Resync state on reconnect */
   socket.on("reconnect", () => {
     console.log("Client reconnected:", socket.id);
-    socket.emit("stateUpdate", gameState);
+    socket.emit("stateUpdate", getSafeState());
   });
 
 
@@ -114,7 +123,7 @@ io.on("connection", (socket) => {
     gameState.teamA.name = data.teamA || gameState.teamA.name;
     gameState.teamB.name = data.teamB || gameState.teamB.name;
 
-    io.emit("stateUpdate", gameState);
+    io.emit("stateUpdate", getSafeState());
 
     io.emit("teamUpdate", {
       teamA: gameState.teamA,
@@ -129,7 +138,7 @@ io.on("connection", (socket) => {
     gameState.teamA.players = data.playersA || gameState.teamA.players;
     gameState.teamB.players = data.playersB || gameState.teamB.players;
 
-    io.emit("stateUpdate", gameState);
+    io.emit("stateUpdate", getSafeState());
 
   });
 
@@ -138,7 +147,7 @@ io.on("connection", (socket) => {
 
     gameState.activePlayer = data.player || "none";
 
-    io.emit("stateUpdate", gameState);
+    io.emit("stateUpdate", getSafeState());
 
   });
 
@@ -157,7 +166,7 @@ io.on("connection", (socket) => {
 
     gameState = createDefaultState();
 
-    io.emit("stateUpdate", gameState);
+    io.emit("stateUpdate", getSafeState());
 
   });
 
@@ -187,7 +196,7 @@ io.on("connection", (socket) => {
 
     }
 
-    io.emit("stateUpdate", gameState);
+    io.emit("stateUpdate", getSafeState());
 
     io.emit("scoreUpdate", {
       teamA: gameState.teamA.score,
@@ -203,7 +212,7 @@ io.on("connection", (socket) => {
 
     gameState[teamKey].score = Math.max(0, data.score);
 
-    io.emit("stateUpdate", gameState);
+    io.emit("stateUpdate", getSafeState());
 
     io.emit("scoreUpdate", {
       teamA: gameState.teamA.score,
@@ -229,7 +238,7 @@ io.on("connection", (socket) => {
 
     }
 
-    io.emit("stateUpdate", gameState);
+    io.emit("stateUpdate", getSafeState());
     io.emit("revealTotal", data);
 
   });
@@ -245,7 +254,7 @@ io.on("connection", (socket) => {
 
     gameState[team].strikes = Math.min(3, gameState[team].strikes + 1);
 
-    io.emit("stateUpdate", gameState);
+    io.emit("stateUpdate", getSafeState());
 
     io.emit("strikeUpdate", {
       teamA: gameState.teamA.strikes,
@@ -262,7 +271,7 @@ io.on("connection", (socket) => {
     gameState.teamA.strikes = 0;
     gameState.teamB.strikes = 0;
 
-    io.emit("stateUpdate", gameState);
+    io.emit("stateUpdate", getSafeState());
 
     io.emit("strikeUpdate", { teamA: 0, teamB: 0 });
 
@@ -280,7 +289,7 @@ io.on("connection", (socket) => {
     gameState.currentQuestion = gameState.allQuestions[0] || null;
     gameState.revealedAnswers = [];
 
-    io.emit("stateUpdate", gameState);
+    io.emit("stateUpdate", getSafeState());
 
     if (gameState.currentQuestion) {
       io.emit("questionUpdate", gameState.currentQuestion);
@@ -296,7 +305,7 @@ io.on("connection", (socket) => {
   socket.on("clearBoard", () => {
 
     gameState.revealedAnswers = [];
-    io.emit("stateUpdate", gameState);
+    io.emit("stateUpdate", getSafeState());
 
   });
 
@@ -311,7 +320,7 @@ io.on("connection", (socket) => {
 
     gameState.revealedAnswers.push(wrongAnswer);
 
-    io.emit("stateUpdate", gameState);
+    io.emit("stateUpdate", getSafeState());
 
     io.emit("answerRevealed", {
       answer: wrongAnswer,
@@ -351,7 +360,7 @@ io.on("connection", (socket) => {
 
     }
 
-    io.emit("stateUpdate", gameState);
+    io.emit("stateUpdate", getSafeState());
 
     io.emit("answerRevealed", data);
 

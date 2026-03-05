@@ -109,7 +109,7 @@ if (roundSelector) {
 DISPLAY QUESTION
 ===================================================== */
 
-function displayQuestion(index) {
+function displayQuestion(index, broadcast = true) {
 
     if (!allQuestions.length) {
         console.warn("No questions available");
@@ -130,7 +130,9 @@ function displayQuestion(index) {
 
         questionText.textContent = currentQuestion.question;
 
-        socket.emit("broadcastCurrentQuestion", currentQuestion);
+        if (broadcast) {
+            socket.emit("broadcastCurrentQuestion", currentQuestion);
+        }
 
     }
 
@@ -214,7 +216,7 @@ function revealAnswer(team, answerText, weight) {
 
     });
 
-    displayQuestion(currentIndex);
+    displayQuestion(currentIndex, false);
 
 }
 
@@ -245,6 +247,7 @@ function resetGame() {
     revealedAnswers.clear();
     currentIndex = 0;
     currentQuestion = null;
+    allQuestions = [];
 
     /* Emit reset to server */
     socket.emit("resetGame");
@@ -270,9 +273,7 @@ function resetGame() {
         qualifyMessage.textContent = "";
     }
 
-    if (allQuestions.length) {
-        displayQuestion(0);
-    }
+    socket.emit("broadcastCurrentQuestion", { question: "Load a question to start...", answers: [] });
 
 }
 

@@ -10,30 +10,14 @@ let lastUpdateTime = 0;
 TEAM NAME UPDATE
 ------------------------------*/
 
-socket.on("teamUpdate", (teams) => {
-
-    const teamA = document.getElementById("teamAName");
-    const teamB = document.getElementById("teamBName");
-
-    if (teamA && teams?.teamA) teamA.textContent = teams.teamA.name;
-    if (teamB && teams?.teamB) teamB.textContent = teams.teamB.name;
-
-});
+/* Removed redundant teamUpdate */
 
 
 /* -----------------------------
 SCORE UPDATE
 ------------------------------*/
 
-socket.on("scoreUpdate", (scores) => {
-
-    const scoreA = document.getElementById("teamAScore");
-    const scoreB = document.getElementById("teamBScore");
-
-    if (scoreA) scoreA.textContent = scores?.teamA ?? 0;
-    if (scoreB) scoreB.textContent = scores?.teamB ?? 0;
-
-});
+/* Removed redundant scoreUpdate */
 
 
 /* -----------------------------
@@ -102,11 +86,9 @@ function showChanceMessage(chanceTeam) {
 
 socket.on("strikeUpdate", (strikes) => {
 
+    /* DOM updates are handled by stateUpdate, this only triggers the chance overlay */
     const strikesA = strikes?.teamA ?? 0;
     const strikesB = strikes?.teamB ?? 0;
-
-    updateStrikesDisplay("A", strikesA);
-    updateStrikesDisplay("B", strikesB);
 
     handleStrikesChanged(strikesA, strikesB);
 

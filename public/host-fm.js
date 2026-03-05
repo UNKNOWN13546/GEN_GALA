@@ -79,7 +79,7 @@ function selectQuestion() {
 DISPLAY QUESTION
 ===================================================== */
 
-function displayQuestion() {
+function displayQuestion(shouldBroadcast = true) {
 
     if (!currentQuestion) return;
 
@@ -88,7 +88,9 @@ function displayQuestion() {
 
     if (qText) qText.textContent = currentQuestion.question;
 
-    socket.emit("broadcastCurrentQuestion", currentQuestion);
+    if (shouldBroadcast) {
+        socket.emit("broadcastCurrentQuestion", currentQuestion);
+    }
 
     if (!answersList) return;
 
@@ -178,7 +180,7 @@ function revealAnswer(team, playerIndex, answerText, weight) {
         }
     });
 
-    displayQuestion();
+    displayQuestion(false);
 
     setTimeout(() => {
         nextQuestion();
