@@ -1096,13 +1096,13 @@ FACE OFF DISPLAY (AUDIENCE SCREENS)
     /* added padding */
 }
 
+.board-grid,
 .button-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
-    /* Increased gap to accommodate larger boxes */
-    max-width: 1200px;
-    /* Increased max width so boxes have more breathing room */
+    gap: 30px 40px;
+    width: 100%;
+    max-width: 1600px;
     margin: 0 auto;
     perspective: 1000px;
     z-index: 2;
@@ -1555,8 +1555,10 @@ RESPONSIVE DESIGN
         padding: 1.5rem 2rem;
     }
 
-    .board-grid {
+    .board-grid,
+    .button-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
 
     .player-scores {
