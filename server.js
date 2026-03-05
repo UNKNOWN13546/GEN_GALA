@@ -29,7 +29,7 @@ if (isSupabaseConfigured) {
     console.error("❌ Failed to initialize Supabase client:", err.message);
     isSupabaseConfigured = false; // Disable persistence if client creation fails
   }
-} else {
+  console.log("Environment Variables found:", Object.keys(process.env).filter(k => k.startsWith('SUPABASE')));
   console.warn("⚠️ Supabase not configured correctly. Data will NOT be saved to cloud.");
   console.log(`🔍 Debug Info - URL present: ${!!supabaseUrl}, Key present: ${!!supabaseKey}`);
 }
@@ -246,7 +246,16 @@ io.on("connection", (socket) => {
 
   /* Load teams and session from Supabase on initial connection */
   (async () => {
+    if (!supabase) return;
     try {
+      console.log("🧪 Testing Supabase connection via 'teams' table check...");
+      const { data, error } = await supabase.from('teams').select('*').limit(1);
+      if (error) {
+        console.error("❌ Supabase Connection Test Failed:", error.message, error.details, error.hint);
+      } else {
+        console.log("✅ Supabase Connection Test Passed! Reachable.");
+      }
+
       await loadTeamsFromSupabase();
       await loadSessionState();
     } catch (e) {
