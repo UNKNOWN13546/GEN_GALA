@@ -541,8 +541,37 @@ io.on("connection", (socket) => {
     if (globalT) {
       globalT.score += delta;
       if (globalT.score < 0) globalT.score = 0;
+      syncTeamToSupabase(globalT);
     }
 
+    io.emit("stateUpdate", getSafeState());
+    saveSessionState();
+
+    io.emit("scoreUpdate", {
+      teamA: gameState.teamA.score,
+      teamB: gameState.teamB.score
+    });
+  });
+
+  socket.on("adjustTeamScore", (data) => {
+    if (!data.name) return;
+    const amount = parseInt(data.amount) || 0;
+    if (amount === 0) return;
+
+    const globalT = gameState.globalTeams.find(t => t.name === data.name);
+    if (!globalT) return;
+
+    globalT.score = Math.max(0, (globalT.score || 0) + amount);
+
+    /* Check if this team is currently active as Team A or Team B */
+    if (gameState.teamA.name === globalT.name) {
+      gameState.teamA.score = globalT.score;
+    }
+    if (gameState.teamB.name === globalT.name) {
+      gameState.teamB.score = globalT.score;
+    }
+
+    syncTeamToSupabase(globalT);
     io.emit("stateUpdate", getSafeState());
     saveSessionState();
 

@@ -664,6 +664,15 @@ function handleTeamSearch(query) {
     renderRosterList(globalTeamsData);
 }
 
+function adjustScore(teamName, amount) {
+    if (!amount) {
+        const input = document.getElementById(`scoreAdjustInput_${teamName}`);
+        amount = parseInt(input?.value) || 0;
+    }
+    if (amount === 0) return;
+    socket.emit("adjustTeamScore", { name: teamName, amount: amount });
+}
+
 function renderRosterList(teams) {
     const rosterList = document.getElementById('rosterList');
     if (!rosterList) return;
@@ -693,14 +702,48 @@ function renderRosterList(teams) {
                 <span class="roster-score">Points: ${t.score}</span>
             `;
 
+            const actionsDiv = document.createElement('div');
+            actionsDiv.className = 'roster-actions';
+            actionsDiv.style.display = 'flex';
+            actionsDiv.style.alignItems = 'center';
+            actionsDiv.style.gap = '8px';
+
+            const scoreInput = document.createElement('input');
+            scoreInput.type = 'number';
+            scoreInput.id = `scoreAdjustInput_${t.name}`;
+            scoreInput.className = 'input-field btn-small';
+            scoreInput.style.width = '60px';
+            scoreInput.style.padding = '5px';
+            scoreInput.placeholder = 'Pts';
+            scoreInput.value = '50';
+
+            const addBtn = document.createElement('button');
+            addBtn.className = 'btn btn-small btn-success';
+            addBtn.textContent = '+';
+            addBtn.onclick = () => adjustScore(t.name);
+
+            const subBtn = document.createElement('button');
+            subBtn.className = 'btn btn-small btn-danger';
+            subBtn.textContent = '-';
+            subBtn.onclick = () => {
+                const val = parseInt(scoreInput.value) || 0;
+                adjustScore(t.name, -val);
+            };
+
             const tDeleteBtn = document.createElement('button');
-            tDeleteBtn.className = "btn btn-small btn-danger";
+            tDeleteBtn.className = "btn btn-small btn-secondary";
             tDeleteBtn.textContent = "X";
             tDeleteBtn.title = "Delete Team";
+            tDeleteBtn.style.padding = '5px 10px';
             tDeleteBtn.onclick = () => removeTeam(t.name);
 
+            actionsDiv.appendChild(scoreInput);
+            actionsDiv.appendChild(addBtn);
+            actionsDiv.appendChild(subBtn);
+            actionsDiv.appendChild(tDeleteBtn);
+
             tCard.appendChild(tInfo);
-            tCard.appendChild(tDeleteBtn);
+            tCard.appendChild(actionsDiv);
             rosterList.appendChild(tCard);
         });
     }
