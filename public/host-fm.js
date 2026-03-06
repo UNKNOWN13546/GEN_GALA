@@ -416,8 +416,19 @@ function setMatchupFromSelect() {
         return;
     }
 
+    console.log("Setting Fast Money Matchup:", teamA);
     socket.emit('setMatchup', { teamA, teamB: 'Team B' });
 
+    // Provide visual feedback on the button
+    const btn = event.target;
+    const originalText = btn.textContent;
+    btn.textContent = "Matchup Set!";
+    btn.classList.replace('btn-primary', 'btn-success');
+
+    setTimeout(() => {
+        btn.textContent = originalText;
+        btn.classList.replace('btn-success', 'btn-primary');
+    }, 2000);
 }
 
 
