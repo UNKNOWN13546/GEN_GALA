@@ -428,18 +428,25 @@ io.on("connection", (socket) => {
   -----------------------------*/
 
   socket.on("resetGame", () => {
-
     /* FIX #1: CRITICAL - Clear timer interval before reset */
     if (timerInterval) {
       clearInterval(timerInterval);
       timerInterval = null;
     }
 
+    // Preserve the global teams but reset their scores
+    const preservedTeams = gameState.globalTeams.map(team => ({
+      ...team,
+      score: 0
+    }));
+
     gameState = createDefaultState();
+    gameState.globalTeams = preservedTeams;
+
+    // Sync score resets to Supabase
+    preservedTeams.forEach(team => syncTeamToSupabase(team));
 
     io.emit("stateUpdate", getSafeState());
-
-    /* Clear persistence */
     saveSessionState();
   });
 
