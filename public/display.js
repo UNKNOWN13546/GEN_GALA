@@ -302,8 +302,7 @@ socket.on("stateUpdate", (state) => {
         const shouldShow = state.showQuestion !== false;
 
         if (shouldShow && state.currentQuestion?.question &&
-            state.currentQuestion.question !== "Load a question to start..." &&
-            currentRound && currentRound !== "round0") {
+            state.currentQuestion.question !== "Load a question to start...") {
 
             if (qHeader) qHeader.textContent = state.currentQuestion.question;
             qBox.style.display = "block";

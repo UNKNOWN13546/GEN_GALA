@@ -52,6 +52,15 @@
 
         <div id="activePlayerBanner" class="active-player-banner" style="display:none;"></div>
 
+        <div class="question-container" style="margin-bottom: 20px;">
+            <div id="audienceQuestionDisplay" class="question-inline-display"
+                style="display:none; background: rgba(0,0,0,0.4); padding: 15px; border-radius: 12px; border: 1px solid rgba(0, 243, 255, 0.3); text-align: center;">
+                <h3 id="questionText" style="margin: 0; color: #fff; text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);">
+                    Loading Question...
+                </h3>
+            </div>
+        </div>
+
         <div class="fm-content">
 
             <div class="timer-section">
@@ -172,6 +181,19 @@
             const roundTitle = document.querySelector(".round-title");
             if (roundTitle) {
                 roundTitle.style.display = (state.showQuestion !== false) ? "block" : "none";
+            }
+
+            const qBox = document.getElementById("audienceQuestionDisplay");
+            if (qBox) {
+                const qHeader = document.getElementById("questionText");
+                const shouldShow = state.showQuestion !== false;
+
+                if (shouldShow && state.currentQuestion?.question) {
+                    if (qHeader) qHeader.textContent = state.currentQuestion.question;
+                    qBox.style.display = "block";
+                } else {
+                    qBox.style.display = "none";
+                }
             }
 
             if (state.currentRound !== undefined) {

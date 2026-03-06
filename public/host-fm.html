@@ -74,27 +74,30 @@
             <div class="control-panel">
                 <!-- QUESTION UPLOAD -->
                 <div class="control-section">
-                    <h3>Custom JSON Upload</h3>
-                    <label for="fmJsonUpload">Upload Fast Money JSON</label>
-                    <input type="file" id="fmJsonUpload" accept=".json" class="input-field"
-                        onchange="handleFileUpload(event)">
-                    <div class="button-row" style="margin-top: 10px;">
-                        <button id="fmLoadJsonBtn" class="btn btn-secondary"
-                            style="font-size: 11px; padding: 5px 10px;">
-                            Load JSON
-                        </button>
-                        <span id="fmUploadStatus"
-                            style="font-size: 10px; color: #00ff88; margin-left: 10px; display: none;">
-                            JSON Loaded!
-                        </span>
-                    </div>
-                    <div class="switch-container">
-                        <span class="switch-label">Show Question on Audience Screen</span>
+                    <h3>Custom Question Data</h3>
+
+                    <div class="switch-container" style="margin-bottom: 20px; margin-top: 0;">
+                        <span class="switch-label">Show Question Visibility</span>
                         <label class="switch">
                             <input type="checkbox" id="fmToggleQuestionVisibility" checked
                                 onchange="toggleQuestionVisibility(this.checked)">
                             <span class="slider"></span>
                         </label>
+                    </div>
+
+                    <label for="fmJsonUpload" class="small-label">Upload JSON File</label>
+                    <input type="file" id="fmJsonUpload" accept=".json" class="input-field"
+                        onchange="handleFileUpload(event)">
+
+                    <div class="button-row" style="margin-top: 15px;">
+                        <button id="fmLoadJsonBtn" class="btn btn-primary"
+                            style="padding: 10px 20px; font-size: 14px; background: linear-gradient(135deg, #00f3ff, #0077ff);">
+                            LOAD UPLOADED JSON
+                        </button>
+                        <span id="fmUploadStatus"
+                            style="font-size: 12px; color: #00ff88; font-weight: bold; display: none;">
+                            JSON Loaded!
+                        </span>
                     </div>
                 </div>
 
