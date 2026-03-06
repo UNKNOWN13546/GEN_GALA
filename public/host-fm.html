@@ -235,6 +235,9 @@
                 <div class="roster-container">
                     <div class="roster-header">
                         <h3>Tournament Roster</h3>
+                        <input type="text" id="teamSearchInput" class="input-field" placeholder="Search teams..."
+                            style="width: 200px; padding: 8px 12px; font-size: 0.9rem; margin-left: 10px;"
+                            oninput="handleTeamSearch(this.value)">
                     </div>
                     <div id="rosterList" class="roster-list">
                         <div style="color:#a8b2d1; font-size:12px; font-style:italic;">No teams registered.</div>

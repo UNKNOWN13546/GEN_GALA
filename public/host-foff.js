@@ -643,38 +643,62 @@ socket.on("stateUpdate", (state) => {
         /* Update Global Roster List */
         const rosterList = document.getElementById('rosterList');
         if (rosterList) {
-            rosterList.innerHTML = '';
-
-            if (state.globalTeams.length === 0) {
-                rosterList.innerHTML = '<div style="color:#a8b2d1; font-size:12px; font-style:italic;">No teams registered.</div>';
-            } else {
-                state.globalTeams.forEach(t => {
-                    const tCard = document.createElement('div');
-                    tCard.className = 'roster-item';
-
-                    const tInfo = document.createElement('div');
-                    tInfo.className = 'roster-info';
-                    tInfo.innerHTML = `
-                        <span class="roster-team-name">${t.name}</span>
-                        <span class="roster-players">Players: ${t.players.join(', ')}</span>
-                        <span class="roster-score">Points: ${t.score}</span>
-                    `;
-
-                    const tDeleteBtn = document.createElement('button');
-                    tDeleteBtn.className = "btn btn-small btn-danger";
-                    tDeleteBtn.textContent = "X";
-                    tDeleteBtn.title = "Delete Team";
-                    tDeleteBtn.onclick = () => removeTeam(t.name);
-
-                    tCard.appendChild(tInfo);
-                    tCard.appendChild(tDeleteBtn);
-                    rosterList.appendChild(tCard);
-                });
-            }
+            globalTeamsData = state.globalTeams || [];
+            renderRosterList(globalTeamsData);
         }
     }
 
 });
+
+let globalTeamsData = [];
+let teamSearchQuery = "";
+
+function handleTeamSearch(query) {
+    teamSearchQuery = query.toLowerCase().trim();
+    renderRosterList(globalTeamsData);
+}
+
+function renderRosterList(teams) {
+    const rosterList = document.getElementById('rosterList');
+    if (!rosterList) return;
+
+    rosterList.innerHTML = '';
+
+    const filteredTeams = teams.filter(t => {
+        if (!teamSearchQuery) return true;
+        return t.name.toLowerCase().includes(teamSearchQuery) ||
+            t.players.some(p => p.toLowerCase().includes(teamSearchQuery));
+    });
+
+    if (filteredTeams.length === 0) {
+        rosterList.innerHTML = `<div style="color:#a8b2d1; font-size:12px; font-style:italic;">
+            ${teamSearchQuery ? 'No teams matching your search.' : 'No teams registered.'}
+        </div>`;
+    } else {
+        filteredTeams.forEach(t => {
+            const tCard = document.createElement('div');
+            tCard.className = 'roster-item';
+
+            const tInfo = document.createElement('div');
+            tInfo.className = 'roster-info';
+            tInfo.innerHTML = `
+                <span class="roster-team-name">${t.name}</span>
+                <span class="roster-players">Players: ${t.players.join(', ')}</span>
+                <span class="roster-score">Points: ${t.score}</span>
+            `;
+
+            const tDeleteBtn = document.createElement('button');
+            tDeleteBtn.className = "btn btn-small btn-danger";
+            tDeleteBtn.textContent = "X";
+            tDeleteBtn.title = "Delete Team";
+            tDeleteBtn.onclick = () => removeTeam(t.name);
+
+            tCard.appendChild(tInfo);
+            tCard.appendChild(tDeleteBtn);
+            rosterList.appendChild(tCard);
+        });
+    }
+}
 
 
 /* =====================================================
