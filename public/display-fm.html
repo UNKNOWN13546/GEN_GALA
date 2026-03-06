@@ -147,9 +147,31 @@
         });
 
 
+        /* =====================================================
+        DISPLAY VISIBILITY HELPER
+        ===================================================== */
+        function updateDisplayVisibility(round) {
+            const fmContainer = document.querySelector(".fm-container");
+            const titleContainer = document.querySelector(".gala-title-container");
+
+            if (!fmContainer) return;
+
+            if (!round || round === "" || round === "none") {
+                fmContainer.style.visibility = "hidden";
+                if (titleContainer) titleContainer.style.display = "block";
+            } else {
+                fmContainer.style.visibility = "visible";
+                if (titleContainer) titleContainer.style.display = "none";
+            }
+        }
+
         /* STATE UPDATE */
 
         socket.on("stateUpdate", (state) => {
+
+            if (state.currentRound !== undefined) {
+                updateDisplayVisibility(state.currentRound);
+            }
 
             if (state.currentQuestion && state.currentQuestion.answers) {
 

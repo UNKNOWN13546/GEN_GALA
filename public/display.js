@@ -2,6 +2,7 @@ const socket = io();
 
 let audioContext = null;
 let currentQuestionData = null;
+let currentRound = null;
 
 /* FIX: Track previous state to prevent stale data */
 let lastUpdateTime = 0;
@@ -253,6 +254,26 @@ socket.on("showThankYouScreen", (show) => {
 
 
 /* =====================================================
+DISPLAY VISIBILITY HELPER
+===================================================== */
+function updateDisplayVisibility(round) {
+    const gameScreen = document.getElementById("gameScreen");
+    const boardGrid = document.getElementById("answerBoard");
+    const titleContainer = document.querySelector(".gala-title-container");
+
+    if (!gameScreen) return;
+
+    if (!round || round === "" || round === "none") {
+        gameScreen.style.visibility = "hidden";
+        if (titleContainer) titleContainer.style.display = "block";
+    } else {
+        gameScreen.style.visibility = "visible";
+        if (titleContainer) titleContainer.style.display = "none";
+    }
+}
+
+
+/* =====================================================
 STATE SYNC - COMPREHENSIVE (MAIN UPDATE)
 ===================================================== */
 
@@ -264,8 +285,10 @@ socket.on("stateUpdate", (state) => {
     lastUpdateTime = Date.now();
 
     /* ===== ROUND & QUESTION INFO ===== */
-    if (state.currentRound) {
+    if (state.currentRound !== undefined) {
+        currentRound = state.currentRound;
         updateRoundTitle(state.currentRound);
+        updateDisplayVisibility(state.currentRound);
     }
 
     currentQuestionData = state.currentQuestion || null;
@@ -277,7 +300,8 @@ socket.on("stateUpdate", (state) => {
         const qHeader = qBox.querySelector("h3");
 
         if (state.currentQuestion?.question &&
-            state.currentQuestion.question !== "Load a question to start...") {
+            state.currentQuestion.question !== "Load a question to start..." &&
+            currentRound && currentRound !== "round0") {
 
             if (qHeader) qHeader.textContent = state.currentQuestion.question;
             qBox.style.display = "block";
@@ -368,7 +392,8 @@ socket.on("broadcastCurrentQuestion", (questionData) => {
     const qHeader = qBox.querySelector("h3");
 
     if (questionData?.question &&
-        questionData.question !== "Load a question to start...") {
+        questionData.question !== "Load a question to start..." &&
+        currentRound !== 'round0') {
 
         if (qHeader) qHeader.textContent = questionData.question;
         qBox.style.display = "block";
@@ -407,6 +432,7 @@ function updateRoundTitle(round) {
 socket.on("roundChanged", (data) => {
 
     if (data?.round) {
+        currentRound = data.round;
         updateRoundTitle(data.round);
     }
 

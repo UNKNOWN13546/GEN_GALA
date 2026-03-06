@@ -27,7 +27,7 @@ if (isSupabaseConfigured) {
     console.error("❌ Failed to initialize Supabase client:", err.message);
     isSupabaseConfigured = false; // Disable persistence if client creation fails
   }
-  console.log("Environment Variables found:", Object.keys(process.env).filter(k => k.startsWith('SUPABASE')));
+} else {
   console.warn("⚠️ Supabase not configured correctly. Data will NOT be saved to cloud.");
   console.log(`🔍 Debug Info - URL present: ${!!supabaseUrl}, Key present: ${!!supabaseKey}`);
 }
@@ -80,7 +80,7 @@ function createDefaultState() {
       fmScoreAdded: false
     },
 
-    currentRound: "foff",
+    currentRound: "",
     currentSubRound: 1,
     currentQuestion: null,
     currentQuestionIndex: 0,

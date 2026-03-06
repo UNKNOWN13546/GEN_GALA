@@ -32,6 +32,9 @@ const QUALIFY_SCORE_R1R2 = 150;
 CUSTOM JSON UPLOAD
 ===================================================== */
 
+let pendingQuestions = null;
+let pendingFileName = "";
+
 function handleFileUpload(event) {
     const file = event.target.files[0];
     if (!file) return;
@@ -40,47 +43,41 @@ function handleFileUpload(event) {
     reader.onload = function (e) {
         try {
             const data = JSON.parse(e.target.result);
-            allQuestions = [];
+            let tempQuestions = [];
 
             /* SUPPORT MULTIPLE JSON FORMATS */
             if (Array.isArray(data?.sets)) {
                 data.sets.forEach(set => {
                     if (Array.isArray(set.questions)) {
-                        allQuestions = allQuestions.concat(set.questions);
+                        tempQuestions = tempQuestions.concat(set.questions);
                     }
                 });
             }
             if (Array.isArray(data?.matches)) {
                 data.matches.forEach(match => {
                     if (Array.isArray(match.questions)) {
-                        allQuestions = allQuestions.concat(match.questions);
+                        tempQuestions = tempQuestions.concat(match.questions);
                     }
                 });
             }
             if (Array.isArray(data?.questions)) {
-                allQuestions = allQuestions.concat(data.questions);
+                tempQuestions = tempQuestions.concat(data.questions);
             }
 
-            if (!allQuestions.length) {
+            if (!tempQuestions.length) {
                 alert("No valid questions found in the uploaded JSON file.");
                 return;
             }
 
-            /* RESET ROUND STATE */
-            currentRound = "custom";
-            currentIndex = 0;
-            currentQuestion = null;
-            revealedAnswers.clear();
+            pendingQuestions = tempQuestions;
+            pendingFileName = file.name;
 
-            socket.emit("loadQuestions", { questions: allQuestions });
-            socket.emit("roundChanged", { round: "Custom Upload" });
-
-            const roundSelector = document.getElementById("roundSelector");
-            if (roundSelector) roundSelector.value = "";
-
-            displayQuestion(0);
-
-            alert(`Successfully loaded ${allQuestions.length} questions from ${file.name}`);
+            const statusEl = document.getElementById("foffUploadStatus");
+            if (statusEl) {
+                statusEl.textContent = "Ready to Load";
+                statusEl.style.color = "#ffd700";
+                statusEl.style.display = "inline";
+            }
 
         } catch (error) {
             console.error("Error parsing uploaded JSON:", error);
@@ -89,6 +86,45 @@ function handleFileUpload(event) {
     };
     reader.readAsText(file);
 }
+
+// Add event listener for the Load JSON button
+document.addEventListener("DOMContentLoaded", () => {
+    const loadBtn = document.getElementById("foffLoadJsonBtn");
+    if (loadBtn) {
+        loadBtn.addEventListener("click", () => {
+            if (!pendingQuestions) {
+                alert("Please select a JSON file first.");
+                return;
+            }
+
+            allQuestions = pendingQuestions;
+
+            /* RESET ROUND STATE */
+            currentRound = currentRound || "custom";
+            currentIndex = 0;
+            currentQuestion = null;
+            revealedAnswers.clear();
+
+            socket.emit("loadQuestions", { questions: allQuestions });
+            socket.emit("roundChanged", { round: currentRound === "custom" ? "Custom Upload" : currentRound });
+
+            displayQuestion(0);
+
+            const statusEl = document.getElementById("foffUploadStatus");
+            if (statusEl) {
+                statusEl.textContent = "JSON Loaded!";
+                statusEl.style.color = "#00ff88";
+                statusEl.style.display = "inline";
+                setTimeout(() => {
+                    statusEl.style.display = "none";
+                }, 3000);
+            }
+
+            pendingQuestions = null;
+            pendingFileName = "";
+        });
+    }
+});
 
 
 /* =====================================================
