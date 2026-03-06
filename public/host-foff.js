@@ -217,19 +217,25 @@ QUESTION SELECTOR
 ===================================================== */
 
 function populateQuestionSelector() {
+    console.log("Populating selector, questions count:", allQuestions.length);
     const selector = document.getElementById('questionSelector');
-    if (!selector) return;
+    if (!selector) {
+        console.error("RED ALERT: #questionSelector element NOT found in DOM!");
+        return;
+    }
 
     selector.innerHTML = '<option value="">Select a question...</option>';
 
     allQuestions.forEach((q, idx) => {
         const option = document.createElement('option');
         option.value = idx;
-        option.textContent = `Q${idx + 1}: ${q.question.substring(0, 50)}${q.question.length > 50 ? '...' : ''}`;
+        const qText = q.question || "No Text";
+        option.textContent = `Q${idx + 1}: ${qText.substring(0, 50)}${qText.length > 50 ? '...' : ''}`;
         selector.appendChild(option);
     });
 
     selector.value = currentIndex;
+    console.log("Selector populated and set to index:", currentIndex);
 }
 
 function selectQuestion() {
