@@ -124,22 +124,38 @@ async function loadTeamsFromSupabase() {
   }
 }
 
+let syncTeamTimeouts = new Map();
+
 async function syncTeamToSupabase(team) {
   if (!supabase) return;
-  console.log(`📤 Syncing team "${team.name}" to Supabase...`);
-  try {
-    const { error } = await supabase
-      .from('teams')
-      .upsert({
-        name: team.name,
-        players: team.players,
-        score: team.score
-      }, { onConflict: 'name' });
 
-    if (error) throw error;
-  } catch (err) {
-    console.error(`❌ Error syncing team ${team.name} to Supabase:`, err.message);
+  // Debounce per team name
+  if (syncTeamTimeouts.has(team.name)) {
+    clearTimeout(syncTeamTimeouts.get(team.name));
   }
+
+  const timeout = setTimeout(async () => {
+    const startTime = Date.now();
+    console.log(`📤 Syncing team "${team.name}" to Supabase...`);
+    try {
+      const { error } = await supabase
+        .from('teams')
+        .upsert({
+          name: team.name,
+          players: team.players,
+          score: team.score
+        }, { onConflict: 'name' });
+
+      if (error) throw error;
+      const duration = Date.now() - startTime;
+      console.log(`✅ Synced team "${team.name}" in ${duration}ms`);
+    } catch (err) {
+      console.error(`❌ Error syncing team ${team.name} to Supabase:`, err.message);
+    }
+    syncTeamTimeouts.delete(team.name);
+  }, 1000); // 1-second debounce
+
+  syncTeamTimeouts.set(team.name, timeout);
 }
 
 async function removeTeamFromSupabase(teamName) {
@@ -156,30 +172,43 @@ async function removeTeamFromSupabase(teamName) {
   }
 }
 
+let saveSessionTimeout = null;
+
 async function saveSessionState() {
   if (!supabase) return;
-  console.log("📤 Saving session state to Supabase...");
-  try {
-    // We exclude transient data like the timer and questions themselves
-    const persistentState = {
-      teamA: gameState.teamA,
-      teamB: gameState.teamB,
-      currentRound: gameState.currentRound,
-      currentSubRound: gameState.currentSubRound,
-      currentQuestionIndex: gameState.currentQuestionIndex,
-      revealedAnswers: gameState.revealedAnswers,
-      activePlayer: gameState.activePlayer,
-      showThankYou: gameState.showThankYou
-    };
 
-    const { error } = await supabase
-      .from('session_state')
-      .upsert({ id: 1, data: persistentState });
-
-    if (error) throw error;
-  } catch (err) {
-    console.error("❌ Error saving session state to Supabase:", err.message);
+  if (saveSessionTimeout) {
+    clearTimeout(saveSessionTimeout);
   }
+
+  saveSessionTimeout = setTimeout(async () => {
+    const startTime = Date.now();
+    console.log("📤 Saving session state to Supabase...");
+    try {
+      // We exclude transient data like the timer and questions themselves
+      const persistentState = {
+        teamA: gameState.teamA,
+        teamB: gameState.teamB,
+        currentRound: gameState.currentRound,
+        currentSubRound: gameState.currentSubRound,
+        currentQuestionIndex: gameState.currentQuestionIndex,
+        revealedAnswers: gameState.revealedAnswers,
+        activePlayer: gameState.activePlayer,
+        showThankYou: gameState.showThankYou
+      };
+
+      const { error } = await supabase
+        .from('session_state')
+        .upsert({ id: 1, data: persistentState });
+
+      if (error) throw error;
+      const duration = Date.now() - startTime;
+      console.log(`✅ Session state saved in ${duration}ms`);
+    } catch (err) {
+      console.error("❌ Error saving session state to Supabase:", err.message);
+    }
+    saveSessionTimeout = null;
+  }, 2000); // 2-second debounce for session state
 }
 
 async function loadSessionState() {

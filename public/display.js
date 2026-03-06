@@ -256,16 +256,28 @@ socket.on("showThankYouScreen", (show) => {
 /* =====================================================
 DISPLAY VISIBILITY HELPER
 ===================================================== */
-function updateDisplayVisibility(round) {
+function updateDisplayVisibility(state) {
     const gameScreen = document.getElementById("gameScreen");
-    const boardGrid = document.getElementById("answerBoard");
     const titleContainer = document.querySelector(".gala-title-container");
+    const scoreboard = document.querySelector(".scoreboard");
 
     if (!gameScreen) return;
 
+    const round = state.currentRound;
+    const hasMatchup = state.teamA && state.teamB &&
+        state.teamA.name !== "Team A" &&
+        state.teamB.name !== "Team B";
+
     if (!round || round === "" || round === "none") {
-        gameScreen.style.visibility = "hidden";
-        if (titleContainer) titleContainer.style.display = "block";
+        // If no round, hide the actual game board/question area but maybe show teams?
+        // Actually, let's keep it simple: if there's a matchup, show the screen.
+        if (hasMatchup) {
+            gameScreen.style.visibility = "visible";
+            if (titleContainer) titleContainer.style.display = "none";
+        } else {
+            gameScreen.style.visibility = "hidden";
+            if (titleContainer) titleContainer.style.display = "block";
+        }
     } else {
         gameScreen.style.visibility = "visible";
         if (titleContainer) titleContainer.style.display = "none";
@@ -288,7 +300,7 @@ socket.on("stateUpdate", (state) => {
     if (state.currentRound !== undefined) {
         currentRound = state.currentRound;
         updateRoundTitle(state.currentRound);
-        updateDisplayVisibility(state.currentRound);
+        updateDisplayVisibility(state);
     }
 
     currentQuestionData = state.currentQuestion || null;
