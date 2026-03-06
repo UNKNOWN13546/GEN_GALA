@@ -290,7 +290,7 @@
                     if (ans.answer === "❌") {
 
                         box.className = "answer-box placeholder";
-                        box.textContent = "✕";
+                        box.textContent = "❌";
 
                     } else {
 
@@ -364,20 +364,43 @@
 
         /* STRIKE BUZZER */
 
+        let audioContext;
+
+        function playBuzzerSound() {
+            try {
+                if (!audioContext) {
+                    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                }
+
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+
+                oscillator.frequency.value = 800;
+                oscillator.type = "sine";
+
+                gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.15);
+
+                oscillator.start(audioContext.currentTime);
+                oscillator.stop(audioContext.currentTime + 0.15);
+            } catch (error) {
+                console.warn("Audio blocked by browser.");
+            }
+        }
+
         socket.on("playBuzzer", () => {
-
             const overlay = document.getElementById("massiveStrikeOverlay");
-
             if (!overlay) return;
 
+            playBuzzerSound();
             overlay.style.display = "flex";
 
             setTimeout(() => {
-
                 overlay.style.display = "none";
-
-            }, 1500);
-
+            }, 1000);
         });
 
 

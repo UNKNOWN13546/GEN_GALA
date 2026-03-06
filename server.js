@@ -698,6 +698,8 @@ io.on("connection", (socket) => {
       team: gameState.activePlayer?.[0] || "A",
       playerIndex: 0
     });
+
+    io.emit("playBuzzer");
   });
 
   socket.on("nextQuestion", () => {
