@@ -220,9 +220,15 @@
                     <div class="button-row">
                         <button class="btn btn-primary" onclick="showTeamScore('A')">Combined Score</button>
                         <button class="btn btn-success" onclick="checkWin()">Check 200</button>
+                        <button class="btn btn-winner" onclick="announceWinner()"
+                            style="background: linear-gradient(135deg, #ffd700, #ffa500); color: #000; border: none;">🏆
+                            Winner</button>
                     </div>
                     <div class="button-row" style="margin-top:10px;">
                         <button class="btn btn-end-game" onclick="showThankYou()">🎉 Thank You</button>
+                        <button class="btn btn-secondary" onclick="hideWinnerOverlay()"
+                            style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);">✖ Close
+                            Winner</button>
                         <button class="btn btn-secondary" onclick="resetGame()">🔄 Reset</button>
                     </div>
                 </div>

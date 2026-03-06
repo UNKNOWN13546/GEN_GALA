@@ -610,6 +610,14 @@ io.on("connection", (socket) => {
     io.emit("revealTotal", data);
   });
 
+  socket.on("showWinner", (data) => {
+    io.emit("displayWinner", data);
+  });
+
+  socket.on("hideWinner", () => {
+    io.emit("hideWinner");
+  });
+
 
   /* -----------------------------
   STRIKES

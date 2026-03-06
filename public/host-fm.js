@@ -525,6 +525,22 @@ function hideRevealScreen() {
     socket.emit('hideRevealScreen');
 }
 
+function announceWinner() {
+    const teamSelectA = document.getElementById('teamSelectA');
+    const teamName = teamSelectA ? teamSelectA.value : "Unknown Team";
+
+    if (!teamName || teamName === "") {
+        alert("Please select a team in 'Active Matchup' first!");
+        return;
+    }
+
+    socket.emit('showWinner', { teamName: teamName });
+}
+
+function hideWinnerOverlay() {
+    socket.emit('hideWinner');
+}
+
 function showThankYou() {
 
     if (confirm('End the game and show Thank You screen?')) {

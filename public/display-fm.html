@@ -417,7 +417,7 @@
                 overlay.style.display = "flex";
                 overlay.style.alignItems = "center";
                 overlay.style.justifyContent = "center";
-                overlay.style.zIndex = "5000";
+                overlay.style.zIndex = "10000";
                 overlay.style.color = "white";
 
                 document.body.appendChild(overlay);
@@ -492,6 +492,36 @@
                 overlayElement.classList.remove("show");
             }
         });
+
+        socket.on("displayWinner", (data) => {
+            const teamName = data.teamName || "Winning Team";
+            const content = `
+                <div class="winner-announcement" style="text-align: center; animation: winnerFadeIn 1s cubic-bezier(0.25, 0.8, 0.25, 1); background: rgba(0,0,0,0.85); padding: 50px; border-radius: 40px; box-shadow: 0 0 100px rgba(255, 215, 0, 0.3); border: 2px solid rgba(255, 215, 0, 0.5);">
+                    <div style="font-size: 2.5rem; color: #ffd700; text-transform: uppercase; letter-spacing: 12px; margin-bottom: 20px; font-weight: 300;">Champion</div>
+                    <h1 style="font-size: clamp(4rem, 8vw, 7rem); color: #fff; text-shadow: 0 0 40px rgba(255, 255, 255, 0.6), 0 0 80px rgba(255, 215, 0, 0.4); margin-bottom: 40px; letter-spacing: 5px; text-transform: uppercase; font-weight: 900;">${teamName} 🏆</h1>
+                    <div style="width: 100px; height: 4px; background: linear-gradient(to right, transparent, #ffd700, transparent); margin: 30px auto;"></div>
+                    <div style="font-size: 2.2rem; color: #00f3ff; font-style: italic; line-height: 1.6; max-width: 800px; margin: 40px auto 0;">
+                        "Thank you for attending!<br>
+                        This was <span style="color: #fff; font-weight: 900; background: linear-gradient(135deg, #fff, #ffd700); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Generation Gala 2026</span> for you." ✨
+                    </div>
+                </div>
+            `;
+            showOverlay(content);
+        });
+
+        socket.on("hideWinner", () => {
+            hideOverlay();
+        });
+
+        // Add CSS animation to the document
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes winnerFadeIn {
+                from { opacity: 0; transform: scale(0.8); }
+                to { opacity: 1; transform: scale(1); }
+            }
+        `;
+        document.head.appendChild(style);
 
     </script>
 
