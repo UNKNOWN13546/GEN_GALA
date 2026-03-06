@@ -169,6 +169,11 @@
 
         socket.on("stateUpdate", (state) => {
 
+            const roundTitle = document.querySelector(".round-title");
+            if (roundTitle) {
+                roundTitle.style.display = (state.showQuestion !== false) ? "block" : "none";
+            }
+
             if (state.currentRound !== undefined) {
                 updateDisplayVisibility(state.currentRound);
             }

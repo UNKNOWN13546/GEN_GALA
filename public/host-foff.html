@@ -94,6 +94,25 @@ LEFT CONTROL PANEL
                     <label for="foffJsonUpload" class="small-label">Upload Custom JSON</label>
                     <input type="file" id="foffJsonUpload" accept=".json" class="input-field"
                         onchange="handleFileUpload(event)">
+                    <div class="button-row" style="margin-top: 10px;">
+                        <button id="foffLoadJsonBtn" class="btn btn-secondary"
+                            style="font-size: 11px; padding: 5px 10px;">
+                            Load JSON
+                        </button>
+                        <span id="foffUploadStatus"
+                            style="font-size: 10px; color: #00ff88; margin-left: 10px; display: none;">
+                            JSON Loaded!
+                        </span>
+                    </div>
+
+                    <div class="switch-container">
+                        <span class="switch-label">Show Question on Audience Screen</span>
+                        <label class="switch">
+                            <input type="checkbox" id="toggleQuestionVisibility" checked
+                                onchange="toggleQuestionVisibility(this.checked)">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
 
                 </div>
 

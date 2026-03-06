@@ -299,7 +299,9 @@ socket.on("stateUpdate", (state) => {
 
         const qHeader = qBox.querySelector("h3");
 
-        if (state.currentQuestion?.question &&
+        const shouldShow = state.showQuestion !== false;
+
+        if (shouldShow && state.currentQuestion?.question &&
             state.currentQuestion.question !== "Load a question to start..." &&
             currentRound && currentRound !== "round0") {
 

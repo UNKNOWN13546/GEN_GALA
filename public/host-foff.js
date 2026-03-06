@@ -565,7 +565,16 @@ function previousQuestion() {
 SERVER STATE UPDATE
 ===================================================== */
 
+function toggleQuestionVisibility(show) {
+    socket.emit("toggleQuestionVisibility", { show });
+}
+
 socket.on("stateUpdate", (state) => {
+    if (state.showQuestion !== undefined) {
+        const toggle = document.getElementById("toggleQuestionVisibility");
+        if (toggle) toggle.checked = state.showQuestion;
+    }
+    /* Rest of stateUpdate... */
 
     if (!state?.teamA || !state?.teamB) return;
 

@@ -571,8 +571,18 @@ socket.on('timerUpdate', (seconds) => {
 
 });
 
+function toggleQuestionVisibility(show) {
+    socket.emit("toggleQuestionVisibility", { show });
+}
 
-socket.on('stateUpdate', (state) => {
+/* STATE UPDATE */
+
+socket.on("stateUpdate", (state) => {
+
+    if (state.showQuestion !== undefined) {
+        const toggle = document.getElementById("fmToggleQuestionVisibility");
+        if (toggle) toggle.checked = state.showQuestion;
+    }
 
     if (!state?.teamA) return;
 

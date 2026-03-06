@@ -89,6 +89,7 @@ function createDefaultState() {
     timer: 0,
     timerRunning: false,
     showThankYou: false,
+    showQuestion: true,
     activePlayer: "none",
 
     /* GLOBAL TEAMS */
@@ -599,6 +600,12 @@ io.on("connection", (socket) => {
 
   socket.on("roundChanged", (data) => {
     gameState.currentRound = data.round || "";
+    io.emit("stateUpdate", getSafeState());
+    saveSessionState();
+  });
+
+  socket.on("toggleQuestionVisibility", (data) => {
+    gameState.showQuestion = data.show;
     io.emit("stateUpdate", getSafeState());
     saveSessionState();
   });
