@@ -526,15 +526,18 @@ function hideRevealScreen() {
 }
 
 function announceWinner() {
-    const teamSelectA = document.getElementById('teamSelectA');
-    const teamName = teamSelectA ? teamSelectA.value : "Unknown Team";
+    const w1 = document.getElementById('winner1Inp');
+    const w2 = document.getElementById('winner2Inp');
 
-    if (!teamName || teamName === "") {
-        alert("Please select a team in 'Active Matchup' first!");
+    const winner1 = w1 ? w1.value.trim() : "";
+    const winner2 = w2 ? w2.value.trim() : "";
+
+    if (!winner1 && !winner2) {
+        alert("Please enter at least one winner name!");
         return;
     }
 
-    socket.emit('showWinner', { teamName: teamName });
+    socket.emit('showWinner', { winner1, winner2 });
 }
 
 function hideWinnerOverlay() {

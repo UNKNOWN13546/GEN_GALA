@@ -220,8 +220,14 @@
                     <div class="button-row">
                         <button class="btn btn-primary" onclick="showTeamScore('A')">Combined Score</button>
                         <button class="btn btn-success" onclick="checkWin()">Check 200</button>
+                    </div>
+                    <div class="button-row" style="margin-top:10px;">
+                        <input type="text" id="winner1Inp" class="input-field" placeholder="1st Place Name..."
+                            style="flex:1;">
+                        <input type="text" id="winner2Inp" class="input-field" placeholder="2nd Place Name..."
+                            style="flex:1;">
                         <button class="btn btn-winner" onclick="announceWinner()"
-                            style="background: linear-gradient(135deg, #ffd700, #ffa500); color: #000; border: none;">🏆
+                            style="background: linear-gradient(135deg, #ffd700, #ffa500); color: #000; border: none; min-width: 120px;">🏆
                             Winner</button>
                     </div>
                     <div class="button-row" style="margin-top:10px;">
@@ -268,7 +274,7 @@
 
     <!-- ================= SCRIPTS ================= -->
 
-    <script src="host-fm.js?v=13"></script>
+    <script src="host-fm.js?v=17"></script>
 
 
 </body>
