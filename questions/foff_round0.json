@@ -1,93 +1,689 @@
 {
-    "event_name": "Generation Gala - Round 0 Elimination",
-    "total_sets": 2,
-    "teams_per_match": 2,
-    "sets": [
+    "round": "Sudden Death",
+    "questions": [
         {
-            "set_number": 1,
-            "questions": [
+            "question": "Name something people do when they realize they sent a message to the wrong person.",
+            "answers": [
                 {
-                    "question": "Round 0 - Question 1 (Replace with your question)",
-                    "multiplier": 1,
-                    "answers": [
-                        {
-                            "answer": "Answer 1",
-                            "weight": 25
-                        },
-                        {
-                            "answer": "Answer 2",
-                            "weight": 20
-                        },
-                        {
-                            "answer": "Answer 3",
-                            "weight": 15
-                        },
-                        {
-                            "answer": "Answer 4",
-                            "weight": 12
-                        },
-                        {
-                            "answer": "Answer 5",
-                            "weight": 10
-                        },
-                        {
-                            "answer": "Answer 6",
-                            "weight": 8
-                        },
-                        {
-                            "answer": "Answer 7",
-                            "weight": 6
-                        },
-                        {
-                            "answer": "Answer 8",
-                            "weight": 4
-                        }
-                    ]
+                    "answer": "Delete the message",
+                    "points": 24
+                },
+                {
+                    "answer": "Panic",
+                    "points": 20
+                },
+                {
+                    "answer": "Send apology",
+                    "points": 16
+                },
+                {
+                    "answer": "Pretend it was meant for them",
+                    "points": 14
+                },
+                {
+                    "answer": "Turn off phone",
+                    "points": 10
+                },
+                {
+                    "answer": "Blame autocorrect",
+                    "points": 8
+                },
+                {
+                    "answer": "Ignore it",
+                    "points": 5
+                },
+                {
+                    "answer": "Send correction",
+                    "points": 3
                 }
-            ]
+            ],
+            "total": 100
         },
         {
-            "set_number": 2,
-            "questions": [
+            "question": "Name something people check immediately after waking up.",
+            "answers": [
                 {
-                    "question": "Round 0 - Question 2 (Replace with your question)",
-                    "multiplier": 1,
-                    "answers": [
-                        {
-                            "answer": "Answer 1",
-                            "weight": 25
-                        },
-                        {
-                            "answer": "Answer 2",
-                            "weight": 20
-                        },
-                        {
-                            "answer": "Answer 3",
-                            "weight": 15
-                        },
-                        {
-                            "answer": "Answer 4",
-                            "weight": 12
-                        },
-                        {
-                            "answer": "Answer 5",
-                            "weight": 10
-                        },
-                        {
-                            "answer": "Answer 6",
-                            "weight": 8
-                        },
-                        {
-                            "answer": "Answer 7",
-                            "weight": 6
-                        },
-                        {
-                            "answer": "Answer 8",
-                            "weight": 4
-                        }
-                    ]
+                    "answer": "Phone",
+                    "points": 30
+                },
+                {
+                    "answer": "Time",
+                    "points": 20
+                },
+                {
+                    "answer": "Notifications",
+                    "points": 16
+                },
+                {
+                    "answer": "Messages",
+                    "points": 12
+                },
+                {
+                    "answer": "Weather",
+                    "points": 8
+                },
+                {
+                    "answer": "Missed calls",
+                    "points": 6
+                },
+                {
+                    "answer": "Alarm",
+                    "points": 5
+                },
+                {
+                    "answer": "Calendar",
+                    "points": 3
                 }
-            ]
+            ],
+            "total": 100
+        },
+        {
+            "question": "Name something people pretend to understand but actually don't.",
+            "answers": [
+                {
+                    "answer": "Finance terms",
+                    "points": 22
+                },
+                {
+                    "answer": "Politics",
+                    "points": 18
+                },
+                {
+                    "answer": "Technology",
+                    "points": 16
+                },
+                {
+                    "answer": "Art",
+                    "points": 14
+                },
+                {
+                    "answer": "Sports rules",
+                    "points": 12
+                },
+                {
+                    "answer": "Office jargon",
+                    "points": 8
+                },
+                {
+                    "answer": "Medical terms",
+                    "points": 6
+                },
+                {
+                    "answer": "Legal terms",
+                    "points": 4
+                }
+            ],
+            "total": 100
+        },
+        {
+            "question": "Name something that instantly kills the mood.",
+            "answers": [
+                {
+                    "answer": "Awkward silence",
+                    "points": 24
+                },
+                {
+                    "answer": "Argument",
+                    "points": 20
+                },
+                {
+                    "answer": "Bad comment",
+                    "points": 16
+                },
+                {
+                    "answer": "Phone ringing",
+                    "points": 14
+                },
+                {
+                    "answer": "Bad news",
+                    "points": 10
+                },
+                {
+                    "answer": "Rain ruining plans",
+                    "points": 8
+                },
+                {
+                    "answer": "Someone leaving early",
+                    "points": 5
+                },
+                {
+                    "answer": "Power cut",
+                    "points": 3
+                }
+            ],
+            "total": 100
+        },
+        {
+            "question": "Name something people blame when they are late.",
+            "answers": [
+                {
+                    "answer": "Traffic",
+                    "points": 30
+                },
+                {
+                    "answer": "Oversleeping",
+                    "points": 20
+                },
+                {
+                    "answer": "Alarm not ringing",
+                    "points": 16
+                },
+                {
+                    "answer": "Public transport",
+                    "points": 12
+                },
+                {
+                    "answer": "Weather",
+                    "points": 8
+                },
+                {
+                    "answer": "Car trouble",
+                    "points": 6
+                },
+                {
+                    "answer": "Lost keys",
+                    "points": 5
+                },
+                {
+                    "answer": "Phone battery died",
+                    "points": 3
+                }
+            ],
+            "total": 100
+        },
+        {
+            "question": "Name something people secretly compete with friends about.",
+            "answers": [
+                {
+                    "answer": "Salary",
+                    "points": 20
+                },
+                {
+                    "answer": "Grades",
+                    "points": 18
+                },
+                {
+                    "answer": "Followers",
+                    "points": 16
+                },
+                {
+                    "answer": "Fitness",
+                    "points": 14
+                },
+                {
+                    "answer": "Who is busier",
+                    "points": 12
+                },
+                {
+                    "answer": "Travel destinations",
+                    "points": 8
+                },
+                {
+                    "answer": "Phone model",
+                    "points": 6
+                },
+                {
+                    "answer": "Relationship status",
+                    "points": 6
+                }
+            ],
+            "total": 100
+        },
+        {
+            "question": "Name something people say when they didn’t study for a test.",
+            "answers": [
+                {
+                    "answer": "I didn’t study bro",
+                    "points": 24
+                },
+                {
+                    "answer": "Paper will be easy",
+                    "points": 20
+                },
+                {
+                    "answer": "Let’s see what happens",
+                    "points": 16
+                },
+                {
+                    "answer": "Everyone is in same situation",
+                    "points": 14
+                },
+                {
+                    "answer": "I’ll pass somehow",
+                    "points": 10
+                },
+                {
+                    "answer": "Grace marks",
+                    "points": 8
+                },
+                {
+                    "answer": "Next attempt",
+                    "points": 5
+                },
+                {
+                    "answer": "Guess answers",
+                    "points": 3
+                }
+            ],
+            "total": 100
+        },
+        {
+            "question": "Name something people check before posting on social media.",
+            "answers": [
+                {
+                    "answer": "Caption",
+                    "points": 22
+                },
+                {
+                    "answer": "How they look",
+                    "points": 20
+                },
+                {
+                    "answer": "Filters",
+                    "points": 16
+                },
+                {
+                    "answer": "Lighting",
+                    "points": 14
+                },
+                {
+                    "answer": "Spelling",
+                    "points": 10
+                },
+                {
+                    "answer": "Tags",
+                    "points": 8
+                },
+                {
+                    "answer": "Location",
+                    "points": 6
+                },
+                {
+                    "answer": "Background",
+                    "points": 4
+                }
+            ],
+            "total": 100
+        },
+        {
+            "question": "Name something people do when they are nervous.",
+            "answers": [
+                {
+                    "answer": "Sweat",
+                    "points": 22
+                },
+                {
+                    "answer": "Fidget",
+                    "points": 20
+                },
+                {
+                    "answer": "Talk fast",
+                    "points": 16
+                },
+                {
+                    "answer": "Laugh awkwardly",
+                    "points": 14
+                },
+                {
+                    "answer": "Avoid eye contact",
+                    "points": 12
+                },
+                {
+                    "answer": "Check phone",
+                    "points": 8
+                },
+                {
+                    "answer": "Bite nails",
+                    "points": 5
+                },
+                {
+                    "answer": "Pace",
+                    "points": 3
+                }
+            ],
+            "total": 100
+        },
+        {
+            "question": "Name something people forget to bring on a trip.",
+            "answers": [
+                {
+                    "answer": "Toothbrush",
+                    "points": 24
+                },
+                {
+                    "answer": "Charger",
+                    "points": 20
+                },
+                {
+                    "answer": "Clothes",
+                    "points": 16
+                },
+                {
+                    "answer": "Passport",
+                    "points": 14
+                },
+                {
+                    "answer": "Medication",
+                    "points": 10
+                },
+                {
+                    "answer": "Sunscreen",
+                    "points": 8
+                },
+                {
+                    "answer": "Tickets",
+                    "points": 5
+                },
+                {
+                    "answer": "Sunglasses",
+                    "points": 3
+                }
+            ],
+            "total": 100
+        },
+        {
+            "question": "Name something people do when Wi-Fi stops working.",
+            "answers": [
+                {
+                    "answer": "Restart router",
+                    "points": 26
+                },
+                {
+                    "answer": "Switch to mobile data",
+                    "points": 20
+                },
+                {
+                    "answer": "Complain",
+                    "points": 16
+                },
+                {
+                    "answer": "Check cables",
+                    "points": 14
+                },
+                {
+                    "answer": "Ask others if it works",
+                    "points": 10
+                },
+                {
+                    "answer": "Call provider",
+                    "points": 8
+                },
+                {
+                    "answer": "Move closer to router",
+                    "points": 4
+                },
+                {
+                    "answer": "Give up",
+                    "points": 2
+                }
+            ],
+            "total": 100
+        },
+        {
+            "question": "Name something people regret buying.",
+            "answers": [
+                {
+                    "answer": "Clothes never worn",
+                    "points": 24
+                },
+                {
+                    "answer": "Expensive gadgets",
+                    "points": 20
+                },
+                {
+                    "answer": "Impulse online buys",
+                    "points": 16
+                },
+                {
+                    "answer": "Gym membership",
+                    "points": 14
+                },
+                {
+                    "answer": "Subscriptions",
+                    "points": 10
+                },
+                {
+                    "answer": "Shoes",
+                    "points": 8
+                },
+                {
+                    "answer": "Decor",
+                    "points": 5
+                },
+                {
+                    "answer": "Courses",
+                    "points": 3
+                }
+            ],
+            "total": 100
+        },
+        {
+            "question": "Name something people search on Google a lot.",
+            "answers": [
+                {
+                    "answer": "Weather",
+                    "points": 22
+                },
+                {
+                    "answer": "News",
+                    "points": 20
+                },
+                {
+                    "answer": "Recipes",
+                    "points": 16
+                },
+                {
+                    "answer": "Directions",
+                    "points": 14
+                },
+                {
+                    "answer": "Movie reviews",
+                    "points": 12
+                },
+                {
+                    "answer": "Lyrics",
+                    "points": 8
+                },
+                {
+                    "answer": "Definitions",
+                    "points": 5
+                },
+                {
+                    "answer": "Restaurants near me",
+                    "points": 3
+                }
+            ],
+            "total": 100
+        },
+        {
+            "question": "Name something people check before going to sleep.",
+            "answers": [
+                {
+                    "answer": "Phone",
+                    "points": 30
+                },
+                {
+                    "answer": "Alarm",
+                    "points": 20
+                },
+                {
+                    "answer": "Messages",
+                    "points": 16
+                },
+                {
+                    "answer": "Social media",
+                    "points": 14
+                },
+                {
+                    "answer": "Doors locked",
+                    "points": 10
+                },
+                {
+                    "answer": "Lights",
+                    "points": 6
+                },
+                {
+                    "answer": "Weather",
+                    "points": 3
+                },
+                {
+                    "answer": "Calendar",
+                    "points": 1
+                }
+            ],
+            "total": 100
+        },
+        {
+            "question": "Name something people argue about in relationships.",
+            "answers": [
+                {
+                    "answer": "Late replies",
+                    "points": 22
+                },
+                {
+                    "answer": "Jealousy",
+                    "points": 20
+                },
+                {
+                    "answer": "Where to eat",
+                    "points": 16
+                },
+                {
+                    "answer": "Time spent together",
+                    "points": 14
+                },
+                {
+                    "answer": "Money",
+                    "points": 10
+                },
+                {
+                    "answer": "Friends",
+                    "points": 8
+                },
+                {
+                    "answer": "Plans",
+                    "points": 6
+                },
+                {
+                    "answer": "Social media",
+                    "points": 4
+                }
+            ],
+            "total": 100
+        },
+        {
+            "question": "Name something people clean quickly when guests arrive.",
+            "answers": [
+                {
+                    "answer": "Living room",
+                    "points": 24
+                },
+                {
+                    "answer": "Bathroom",
+                    "points": 20
+                },
+                {
+                    "answer": "Kitchen counter",
+                    "points": 16
+                },
+                {
+                    "answer": "Dining table",
+                    "points": 14
+                },
+                {
+                    "answer": "Hide laundry",
+                    "points": 10
+                },
+                {
+                    "answer": "Sofa cushions",
+                    "points": 8
+                },
+                {
+                    "answer": "Dust surfaces",
+                    "points": 5
+                },
+                {
+                    "answer": "Floor",
+                    "points": 3
+                }
+            ],
+            "total": 100
+        },
+        {
+            "question": "Name something people overthink late at night.",
+            "answers": [
+                {
+                    "answer": "Embarrassing moments",
+                    "points": 22
+                },
+                {
+                    "answer": "Future",
+                    "points": 20
+                },
+                {
+                    "answer": "Relationships",
+                    "points": 16
+                },
+                {
+                    "answer": "Money",
+                    "points": 14
+                },
+                {
+                    "answer": "Career",
+                    "points": 12
+                },
+                {
+                    "answer": "Conversations",
+                    "points": 8
+                },
+                {
+                    "answer": "Health",
+                    "points": 5
+                },
+                {
+                    "answer": "Random thoughts",
+                    "points": 3
+                }
+            ],
+            "total": 100
+        },
+        {
+            "question": "Name something people always carry with them.",
+            "answers": [
+                {
+                    "answer": "Phone",
+                    "points": 30
+                },
+                {
+                    "answer": "Wallet",
+                    "points": 20
+                },
+                {
+                    "answer": "Keys",
+                    "points": 18
+                },
+                {
+                    "answer": "Water bottle",
+                    "points": 10
+                },
+                {
+                    "answer": "Charger",
+                    "points": 8
+                },
+                {
+                    "answer": "ID card",
+                    "points": 6
+                },
+                {
+                    "answer": "Earphones",
+                    "points": 5
+                },
+                {
+                    "answer": "Watch",
+                    "points": 3
+                }
+            ],
+            "total": 100
         }
     ]
 }

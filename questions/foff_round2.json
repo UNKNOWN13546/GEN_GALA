@@ -1,151 +1,525 @@
 {
-  "round_name": "Generation Gala - Round 2",
-  "total_matches": 5,
+  "round": 2,
+  "difficulty": "hard_mixed_genz_funny_clean",
   "matches": [
-
     {
-      "match_number": 1,
+      "match": 1,
       "questions": [
         {
-          "question": "Name something people check before leaving home.",
-          "multiplier": 1,
+          "question": "Name something a college student lies about.",
           "answers": [
-            {"answer": "Phone", "weight": 24},
-            {"answer": "Wallet", "weight": 20},
-            {"answer": "Keys", "weight": 18},
-            {"answer": "ID card", "weight": 12},
-            {"answer": "Bag", "weight": 10},
-            {"answer": "Hair", "weight": 8},
-            {"answer": "Shoes", "weight": 5},
-            {"answer": "Gas stove", "weight": 3}
-          ]
+            {
+              "answer": "I didn't study bro",
+              "points": 22
+            },
+            {
+              "answer": "I'm 5 minutes away",
+              "points": 18
+            },
+            {
+              "answer": "Attendance is under control",
+              "points": 16
+            },
+            {
+              "answer": "Assignment is almost done",
+              "points": 14
+            },
+            {
+              "answer": "I slept early",
+              "points": 10
+            },
+            {
+              "answer": "I understand everything",
+              "points": 8
+            },
+            {
+              "answer": "I didn't see the message",
+              "points": 7
+            },
+            {
+              "answer": "I'll start from tomorrow",
+              "points": 5
+            }
+          ],
+          "total": 100
         },
         {
-          "question": "Name something that runs out quickly.",
-          "multiplier": 2,
+          "question": "Name something that makes someone instantly jealous in a relationship.",
           "answers": [
-            {"answer": "Money", "weight": 24},
-            {"answer": "Mobile data", "weight": 20},
-            {"answer": "Battery", "weight": 16},
-            {"answer": "Patience", "weight": 14},
-            {"answer": "Snacks", "weight": 10},
-            {"answer": "Salary", "weight": 8},
-            {"answer": "Time", "weight": 5},
-            {"answer": "Fuel", "weight": 3}
-          ]
+            {
+              "answer": "Who is that?",
+              "points": 22
+            },
+            {
+              "answer": "Liking someone else's photo",
+              "points": 18
+            },
+            {
+              "answer": "Late-night online status",
+              "points": 16
+            },
+            {
+              "answer": "New close friend",
+              "points": 14
+            },
+            {
+              "answer": "Inside jokes with someone else",
+              "points": 12
+            },
+            {
+              "answer": "Phone suddenly on silent",
+              "points": 8
+            },
+            {
+              "answer": "Replying late",
+              "points": 6
+            },
+            {
+              "answer": "Changed display picture",
+              "points": 4
+            }
+          ],
+          "total": 100
         },
         {
-          "question": "Name something people overthink.",
-          "multiplier": 3,
+          "question": "Name something people say when they’re confused.",
           "answers": [
-            {"answer": "Relationship", "weight": 26},
-            {"answer": "Text message", "weight": 22},
-            {"answer": "Future", "weight": 18},
-            {"answer": "Career", "weight": 12},
-            {"answer": "Money", "weight": 8},
-            {"answer": "Exams", "weight": 6},
-            {"answer": "Social media post", "weight": 5},
-            {"answer": "Outfit", "weight": 3}
-          ]
+            {
+              "answer": "Bro what?",
+              "points": 20
+            },
+            {
+              "answer": "Wait, what just happened?",
+              "points": 18
+            },
+            {
+              "answer": "Explain properly",
+              "points": 16
+            },
+            {
+              "answer": "I need context",
+              "points": 14
+            },
+            {
+              "answer": "This makes no sense",
+              "points": 12
+            },
+            {
+              "answer": "Repeat that",
+              "points": 8
+            },
+            {
+              "answer": "I'm processing",
+              "points": 7
+            },
+            {
+              "answer": "Hold on",
+              "points": 5
+            }
+          ],
+          "total": 100
         }
       ]
     },
-
     {
-      "match_number": 2,
+      "match": 2,
       "questions": [
         {
-          "question": "Name something people do when they are angry.",
-          "multiplier": 1,
+          "question": "Name something people overthink at 2 AM.",
           "answers": [
-            {"answer": "Shout", "weight": 28},
-            {"answer": "Stay silent", "weight": 18},
-            {"answer": "Cry", "weight": 16},
-            {"answer": "Slam door", "weight": 12},
-            {"answer": "Ignore", "weight": 10},
-            {"answer": "Text angrily", "weight": 8},
-            {"answer": "Walk away", "weight": 5},
-            {"answer": "Throw pillow", "weight": 3}
-          ]
+            {
+              "answer": "That embarrassing moment from years ago",
+              "points": 24
+            },
+            {
+              "answer": "Did I reply too fast?",
+              "points": 18
+            },
+            {
+              "answer": "My career",
+              "points": 16
+            },
+            {
+              "answer": "Relationship problems",
+              "points": 14
+            },
+            {
+              "answer": "Exam results",
+              "points": 10
+            },
+            {
+              "answer": "Future plans",
+              "points": 8
+            },
+            {
+              "answer": "Money issues",
+              "points": 6
+            },
+            {
+              "answer": "Random conversations",
+              "points": 4
+            }
+          ],
+          "total": 100
         },
         {
-          "question": "Name something people hide.",
-          "multiplier": 2,
+          "question": "Name something couples argue about that’s actually small.",
           "answers": [
-            {"answer": "Snacks", "weight": 22},
-            {"answer": "Phone", "weight": 20},
-            {"answer": "Money", "weight": 16},
-            {"answer": "Diary", "weight": 14},
-            {"answer": "Marks", "weight": 10},
-            {"answer": "Feelings", "weight": 8},
-            {"answer": "Password", "weight": 6},
-            {"answer": "Gifts", "weight": 4}
-          ]
+            {
+              "answer": "Late replies",
+              "points": 22
+            },
+            {
+              "answer": "Where to eat",
+              "points": 18
+            },
+            {
+              "answer": "Who ended the call first",
+              "points": 16
+            },
+            {
+              "answer": "Changing display picture",
+              "points": 14
+            },
+            {
+              "answer": "Not sending reels",
+              "points": 12
+            },
+            {
+              "answer": "Tone of message",
+              "points": 8
+            },
+            {
+              "answer": "Who said sorry first",
+              "points": 6
+            },
+            {
+              "answer": "Seen but no reply",
+              "points": 4
+            }
+          ],
+          "total": 100
         },
         {
-          "question": "Name something embarrassing that can happen in public.",
-          "multiplier": 3,
+          "question": "Name something students suddenly do when exams are near.",
           "answers": [
-            {"answer": "Trip and fall", "weight": 24},
-            {"answer": "Wrong text sent", "weight": 20},
-            {"answer": "Voice crack", "weight": 18},
-            {"answer": "Call someone wrong name", "weight": 12},
-            {"answer": "Food on face", "weight": 10},
-            {"answer": "Wardrobe issue", "weight": 8},
-            {"answer": "Slip while walking", "weight": 5},
-            {"answer": "Phone drops loudly", "weight": 3}
-          ]
+            {
+              "answer": "Become very religious",
+              "points": 26
+            },
+            {
+              "answer": "Make color-coded notes",
+              "points": 18
+            },
+            {
+              "answer": "Delete social media temporarily",
+              "points": 14
+            },
+            {
+              "answer": "Ask topper for notes",
+              "points": 12
+            },
+            {
+              "answer": "Watch crash course videos",
+              "points": 10
+            },
+            {
+              "answer": "Calculate minimum passing marks",
+              "points": 8
+            },
+            {
+              "answer": "Promise to change habits",
+              "points": 7
+            },
+            {
+              "answer": "Blame the syllabus",
+              "points": 5
+            }
+          ],
+          "total": 100
         }
       ]
     },
-
     {
-      "match_number": 3,
+      "match": 3,
       "questions": [
         {
-          "question": "Name something people search on YouTube.",
-          "multiplier": 1,
+          "question": "Name something people do when they realize they waved back at someone who wasn’t waving at them.",
           "answers": [
-            {"answer": "Music", "weight": 28},
-            {"answer": "Tutorials", "weight": 20},
-            {"answer": "Comedy videos", "weight": 16},
-            {"answer": "Reviews", "weight": 12},
-            {"answer": "Movie trailers", "weight": 10},
-            {"answer": "News", "weight": 6},
-            {"answer": "Recipes", "weight": 5},
-            {"answer": "Workout videos", "weight": 3}
-          ]
+            {
+              "answer": "Pretend to fix hair",
+              "points": 22
+            },
+            {
+              "answer": "Look at phone immediately",
+              "points": 18
+            },
+            {
+              "answer": "Act like they were stretching",
+              "points": 16
+            },
+            {
+              "answer": "Turn around casually",
+              "points": 14
+            },
+            {
+              "answer": "Walk confidently like nothing happened",
+              "points": 12
+            },
+            {
+              "answer": "Laugh awkwardly",
+              "points": 8
+            },
+            {
+              "answer": "Adjust glasses",
+              "points": 6
+            },
+            {
+              "answer": "Act like they were waving at someone else",
+              "points": 4
+            }
+          ],
+          "total": 100
         },
         {
-          "question": "Name something people argue about.",
-          "multiplier": 2,
+          "question": "Name something that can ruin a first date instantly.",
           "answers": [
-            {"answer": "Money", "weight": 22},
-            {"answer": "Food", "weight": 20},
-            {"answer": "Remote control", "weight": 16},
-            {"answer": "Being right", "weight": 14},
-            {"answer": "Relationship", "weight": 12},
-            {"answer": "Plans", "weight": 8},
-            {"answer": "WiFi", "weight": 5},
-            {"answer": "Borrowed items", "weight": 3}
-          ]
+            {
+              "answer": "Talking about ex",
+              "points": 22
+            },
+            {
+              "answer": "Being on phone constantly",
+              "points": 18
+            },
+            {
+              "answer": "Bad manners",
+              "points": 16
+            },
+            {
+              "answer": "Awkward silence",
+              "points": 14
+            },
+            {
+              "answer": "Arriving late",
+              "points": 12
+            },
+            {
+              "answer": "Bill argument",
+              "points": 8
+            },
+            {
+              "answer": "No common interests",
+              "points": 6
+            },
+            {
+              "answer": "Rude comments",
+              "points": 4
+            }
+          ],
+          "total": 100
         },
         {
-          "question": "Name something people dream about.",
-          "multiplier": 3,
+          "question": "Name something that makes the whole class panic.",
           "answers": [
-            {"answer": "Money", "weight": 28},
-            {"answer": "Success", "weight": 22},
-            {"answer": "Love", "weight": 18},
-            {"answer": "Travel", "weight": 12},
-            {"answer": "Fame", "weight": 8},
-            {"answer": "Food", "weight": 6},
-            {"answer": "Flying", "weight": 4},
-            {"answer": "Vacation", "weight": 2}
-          ]
+            {
+              "answer": "Surprise test",
+              "points": 30
+            },
+            {
+              "answer": "Assignment due today",
+              "points": 18
+            },
+            {
+              "answer": "Viva announcement",
+              "points": 14
+            },
+            {
+              "answer": "Attendance shortage list",
+              "points": 12
+            },
+            {
+              "answer": "Project demo",
+              "points": 10
+            },
+            {
+              "answer": "Result declared",
+              "points": 6
+            },
+            {
+              "answer": "Parent call",
+              "points": 5
+            },
+            {
+              "answer": "Lab external",
+              "points": 5
+            }
+          ],
+          "total": 100
+        }
+      ]
+    },
+    {
+      "match": 4,
+      "questions": [
+        {
+          "question": "Name something people pretend not to care about but actually do.",
+          "answers": [
+            {
+              "answer": "Story views",
+              "points": 22
+            },
+            {
+              "answer": "Number of likes",
+              "points": 18
+            },
+            {
+              "answer": "Crush watching story",
+              "points": 16
+            },
+            {
+              "answer": "CGPA",
+              "points": 14
+            },
+            {
+              "answer": "Followers count",
+              "points": 12
+            },
+            {
+              "answer": "Being left on read",
+              "points": 8
+            },
+            {
+              "answer": "Group chat activity",
+              "points": 6
+            },
+            {
+              "answer": "Comments section",
+              "points": 4
+            }
+          ],
+          "total": 100
+        },
+        {
+          "question": "Name something that always disappears in a house.",
+          "answers": [
+            {
+              "answer": "TV remote",
+              "points": 24
+            },
+            {
+              "answer": "Socks",
+              "points": 20
+            },
+            {
+              "answer": "Keys",
+              "points": 16
+            },
+            {
+              "answer": "Phone charger",
+              "points": 14
+            },
+            {
+              "answer": "Pens",
+              "points": 10
+            },
+            {
+              "answer": "Scissors",
+              "points": 8
+            },
+            {
+              "answer": "Hair ties",
+              "points": 5
+            },
+            {
+              "answer": "Water bottle lid",
+              "points": 3
+            }
+          ],
+          "total": 100
+        }
+      ]
+    },
+    {
+      "match": 5,
+      "questions": [
+        {
+          "question": "Name something that feels illegal but isn’t.",
+          "answers": [
+            {
+              "answer": "Walking out of store without buying",
+              "points": 22
+            },
+            {
+              "answer": "Taking extra ketchup packets",
+              "points": 18
+            },
+            {
+              "answer": "Using someone else’s charger",
+              "points": 16
+            },
+            {
+              "answer": "Screenshotting a story",
+              "points": 14
+            },
+            {
+              "answer": "Skipping ads instantly",
+              "points": 12
+            },
+            {
+              "answer": "Reading old messages",
+              "points": 8
+            },
+            {
+              "answer": "Not holding elevator",
+              "points": 6
+            },
+            {
+              "answer": "Finishing shared snacks",
+              "points": 4
+            }
+          ],
+          "total": 100
+        },
+        {
+          "question": "Name something people dramatically say but rarely follow through on.",
+          "answers": [
+            {
+              "answer": "I’m starting gym from Monday",
+              "points": 24
+            },
+            {
+              "answer": "I’ll wake up early tomorrow",
+              "points": 18
+            },
+            {
+              "answer": "No more junk food",
+              "points": 16
+            },
+            {
+              "answer": "I’m deleting social media",
+              "points": 14
+            },
+            {
+              "answer": "I’ll study daily",
+              "points": 12
+            },
+            {
+              "answer": "I’m going to save money",
+              "points": 8
+            },
+            {
+              "answer": "I’ll reply later",
+              "points": 5
+            },
+            {
+              "answer": "New life starts today",
+              "points": 3
+            }
+          ],
+          "total": 100
         }
       ]
     }
-
   ]
 }

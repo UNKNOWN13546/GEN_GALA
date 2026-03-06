@@ -1,5 +1,6 @@
 {
   "event_name": "Generation Gala - Family Feud Format",
+  "round": 1,
   "total_sets": 10,
   "teams_per_match": 2,
   "sets": [
@@ -7,97 +8,1191 @@
       "set_number": 1,
       "questions": [
         {
-          "question": "Name something people do when they are bored.",
+          "question": "Name a common item in a student's pocket.",
           "multiplier": 1,
           "answers": [
-            {"answer": "Scroll social media", "weight": 28},
-            {"answer": "Watch TV / Netflix", "weight": 20},
-            {"answer": "Sleep", "weight": 16},
-            {"answer": "Eat snacks", "weight": 12},
-            {"answer": "Call a friend", "weight": 8},
-            {"answer": "Listen to music", "weight": 7},
-            {"answer": "Play games", "weight": 5},
-            {"answer": "Clean room", "weight": 4}
+            {
+              "answer": "Phone",
+              "weight": 34
+            },
+            {
+              "answer": "Coins / Money",
+              "weight": 22
+            },
+            {
+              "answer": "Keys",
+              "weight": 18
+            },
+            {
+              "answer": "Handkerchief",
+              "weight": 10
+            },
+            {
+              "answer": "Pen",
+              "weight": 8
+            },
+            {
+              "answer": "Earphones",
+              "weight": 4
+            },
+            {
+              "answer": "ID card",
+              "weight": 3
+            },
+            {
+              "answer": "Chocolate / Candy",
+              "weight": 1
+            }
           ]
         },
         {
-          "question": "Name something people forget often.",
+          "question": "Name something people do when they're bored at home.",
           "multiplier": 2,
           "answers": [
-            {"answer": "Password", "weight": 22},
-            {"answer": "Keys", "weight": 20},
-            {"answer": "Phone", "weight": 16},
-            {"answer": "Birthday", "weight": 14},
-            {"answer": "Wallet", "weight": 10},
-            {"answer": "Charger", "weight": 8},
-            {"answer": "Names", "weight": 6},
-            {"answer": "Anniversary", "weight": 4}
+            {
+              "answer": "Scroll social media",
+              "weight": 28
+            },
+            {
+              "answer": "Watch movies",
+              "weight": 22
+            },
+            {
+              "answer": "Sleep",
+              "weight": 20
+            },
+            {
+              "answer": "Eat snacks",
+              "weight": 10
+            },
+            {
+              "answer": "Play games",
+              "weight": 8
+            },
+            {
+              "answer": "Listen to music",
+              "weight": 6
+            },
+            {
+              "answer": "Talk on phone",
+              "weight": 4
+            },
+            {
+              "answer": "Clean room",
+              "weight": 2
+            }
           ]
         },
         {
-          "question": "Name something people pretend to like.",
+          "question": "Name something people take photos of.",
           "multiplier": 3,
           "answers": [
-            {"answer": "Waking up early", "weight": 24},
-            {"answer": "Dieting", "weight": 18},
-            {"answer": "Gym", "weight": 16},
-            {"answer": "Small talk", "weight": 14},
-            {"answer": "Family functions", "weight": 12},
-            {"answer": "Long meetings", "weight": 8},
-            {"answer": "Healthy food", "weight": 5},
-            {"answer": "Cleaning", "weight": 3}
+            {
+              "answer": "Food",
+              "weight": 26
+            },
+            {
+              "answer": "Friends / Family",
+              "weight": 22
+            },
+            {
+              "answer": "Sunset / Nature",
+              "weight": 18
+            },
+            {
+              "answer": "Selfie",
+              "weight": 14
+            },
+            {
+              "answer": "Pets",
+              "weight": 10
+            },
+            {
+              "answer": "Events / Parties",
+              "weight": 6
+            },
+            {
+              "answer": "Landmarks",
+              "weight": 3
+            },
+            {
+              "answer": "Outfits",
+              "weight": 1
+            }
           ]
         }
       ]
     },
-
     {
       "set_number": 2,
       "questions": [
         {
-          "question": "Name something people do first after getting paid.",
+          "question": "Name something you associate with a party.",
           "multiplier": 1,
           "answers": [
-            {"answer": "Shop", "weight": 26},
-            {"answer": "Pay bills", "weight": 20},
-            {"answer": "Order food", "weight": 16},
-            {"answer": "Transfer money", "weight": 12},
-            {"answer": "Save it", "weight": 10},
-            {"answer": "Party", "weight": 8},
-            {"answer": "Buy gadgets", "weight": 5},
-            {"answer": "Check balance again", "weight": 3}
+            {
+              "answer": "Music / DJ",
+              "weight": 30
+            },
+            {
+              "answer": "Dance",
+              "weight": 20
+            },
+            {
+              "answer": "Food / Snacks",
+              "weight": 18
+            },
+            {
+              "answer": "Cake",
+              "weight": 12
+            },
+            {
+              "answer": "Balloons / Decoration",
+              "weight": 8
+            },
+            {
+              "answer": "Drinks",
+              "weight": 6
+            },
+            {
+              "answer": "Friends",
+              "weight": 4
+            },
+            {
+              "answer": "Games",
+              "weight": 2
+            }
           ]
         },
         {
-          "question": "Name something people lose at home.",
+          "question": "Name something people lose often.",
           "multiplier": 2,
           "answers": [
-            {"answer": "Phone", "weight": 24},
-            {"answer": "Remote", "weight": 20},
-            {"answer": "Keys", "weight": 16},
-            {"answer": "Charger", "weight": 14},
-            {"answer": "Socks", "weight": 10},
-            {"answer": "Wallet", "weight": 8},
-            {"answer": "Glasses", "weight": 5},
-            {"answer": "Temper", "weight": 3}
+            {
+              "answer": "Keys",
+              "weight": 26
+            },
+            {
+              "answer": "Phone",
+              "weight": 22
+            },
+            {
+              "answer": "Pen",
+              "weight": 16
+            },
+            {
+              "answer": "Remote control",
+              "weight": 14
+            },
+            {
+              "answer": "Wallet",
+              "weight": 10
+            },
+            {
+              "answer": "Charger",
+              "weight": 6
+            },
+            {
+              "answer": "Socks",
+              "weight": 4
+            },
+            {
+              "answer": "Hair ties",
+              "weight": 2
+            }
           ]
         },
         {
-          "question": "Name something people complain about daily.",
+          "question": "Name something that scares people.",
           "multiplier": 3,
           "answers": [
-            {"answer": "Work", "weight": 22},
-            {"answer": "Traffic", "weight": 20},
-            {"answer": "Weather", "weight": 16},
-            {"answer": "Money", "weight": 14},
-            {"answer": "Lack of sleep", "weight": 10},
-            {"answer": "WiFi", "weight": 8},
-            {"answer": "Family", "weight": 6},
-            {"answer": "Weight", "weight": 4}
+            {
+              "answer": "Failure",
+              "weight": 24
+            },
+            {
+              "answer": "Darkness",
+              "weight": 20
+            },
+            {
+              "answer": "Heights",
+              "weight": 18
+            },
+            {
+              "answer": "Snakes",
+              "weight": 14
+            },
+            {
+              "answer": "Ghost",
+              "weight": 10
+            },
+            {
+              "answer": "Exams",
+              "weight": 8
+            },
+            {
+              "answer": "Bugs",
+              "weight": 4
+            },
+            {
+              "answer": "Public speaking",
+              "weight": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "set_number": 3,
+      "questions": [
+        {
+          "question": "Name something people check before leaving home.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Phone",
+              "weight": 28
+            },
+            {
+              "answer": "Wallet",
+              "weight": 22
+            },
+            {
+              "answer": "Keys",
+              "weight": 20
+            },
+            {
+              "answer": "Bag",
+              "weight": 10
+            },
+            {
+              "answer": "Hair / Appearance",
+              "weight": 8
+            },
+            {
+              "answer": "Gas stove",
+              "weight": 6
+            },
+            {
+              "answer": "Shoes",
+              "weight": 4
+            },
+            {
+              "answer": "Door lock",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "question": "Name something that wakes you up in the morning.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Alarm",
+              "weight": 34
+            },
+            {
+              "answer": "Phone notification",
+              "weight": 18
+            },
+            {
+              "answer": "Parents",
+              "weight": 14
+            },
+            {
+              "answer": "Sunlight",
+              "weight": 12
+            },
+            {
+              "answer": "Loud noise",
+              "weight": 8
+            },
+            {
+              "answer": "Doorbell",
+              "weight": 6
+            },
+            {
+              "answer": "Dog barking",
+              "weight": 5
+            },
+            {
+              "answer": "Water splash",
+              "weight": 3
+            }
+          ]
+        },
+        {
+          "question": "Name something people argue about in a family.",
+          "multiplier": 3,
+          "answers": [
+            {
+              "answer": "Money",
+              "weight": 24
+            },
+            {
+              "answer": "House chores",
+              "weight": 20
+            },
+            {
+              "answer": "Remote control",
+              "weight": 16
+            },
+            {
+              "answer": "Curfew",
+              "weight": 14
+            },
+            {
+              "answer": "Food choice",
+              "weight": 10
+            },
+            {
+              "answer": "Phone usage",
+              "weight": 8
+            },
+            {
+              "answer": "TV volume",
+              "weight": 5
+            },
+            {
+              "answer": "AC temperature",
+              "weight": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "set_number": 4,
+      "questions": [
+        {
+          "question": "Name something people do while watching TV.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Eat snacks",
+              "weight": 26
+            },
+            {
+              "answer": "Use phone",
+              "weight": 22
+            },
+            {
+              "answer": "Talk",
+              "weight": 14
+            },
+            {
+              "answer": "Sleep",
+              "weight": 12
+            },
+            {
+              "answer": "Change channels",
+              "weight": 10
+            },
+            {
+              "answer": "Comment loudly",
+              "weight": 8
+            },
+            {
+              "answer": "Google actors",
+              "weight": 5
+            },
+            {
+              "answer": "Argue about show",
+              "weight": 3
+            }
+          ]
+        },
+        {
+          "question": "Name something people always run out of.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Money",
+              "weight": 24
+            },
+            {
+              "answer": "Mobile data",
+              "weight": 18
+            },
+            {
+              "answer": "Battery",
+              "weight": 16
+            },
+            {
+              "answer": "Patience",
+              "weight": 14
+            },
+            {
+              "answer": "Milk",
+              "weight": 10
+            },
+            {
+              "answer": "Time",
+              "weight": 8
+            },
+            {
+              "answer": "Toothpaste",
+              "weight": 6
+            },
+            {
+              "answer": "Charger cable",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people post on social media.",
+          "multiplier": 3,
+          "answers": [
+            {
+              "answer": "Selfie",
+              "weight": 24
+            },
+            {
+              "answer": "Food picture",
+              "weight": 20
+            },
+            {
+              "answer": "Travel photo",
+              "weight": 16
+            },
+            {
+              "answer": "Birthday wish",
+              "weight": 14
+            },
+            {
+              "answer": "Quotes",
+              "weight": 10
+            },
+            {
+              "answer": "Reels",
+              "weight": 8
+            },
+            {
+              "answer": "Workout pic",
+              "weight": 5
+            },
+            {
+              "answer": "Memes",
+              "weight": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "set_number": 5,
+      "questions": [
+        {
+          "question": "Name something people do when they’re nervous.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Sweat",
+              "weight": 22
+            },
+            {
+              "answer": "Talk fast",
+              "weight": 18
+            },
+            {
+              "answer": "Laugh awkwardly",
+              "weight": 16
+            },
+            {
+              "answer": "Check phone",
+              "weight": 14
+            },
+            {
+              "answer": "Fidget",
+              "weight": 12
+            },
+            {
+              "answer": "Avoid eye contact",
+              "weight": 8
+            },
+            {
+              "answer": "Bite nails",
+              "weight": 6
+            },
+            {
+              "answer": "Pace around",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something that can ruin a vacation.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Rain",
+              "weight": 22
+            },
+            {
+              "answer": "Flight delay",
+              "weight": 20
+            },
+            {
+              "answer": "Lost luggage",
+              "weight": 16
+            },
+            {
+              "answer": "Bad hotel",
+              "weight": 14
+            },
+            {
+              "answer": "Getting sick",
+              "weight": 10
+            },
+            {
+              "answer": "Argument",
+              "weight": 8
+            },
+            {
+              "answer": "No network",
+              "weight": 6
+            },
+            {
+              "answer": "Overspending",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "question": "Name something people forget on vacation.",
+          "multiplier": 3,
+          "answers": [
+            {
+              "answer": "Toothbrush",
+              "weight": 24
+            },
+            {
+              "answer": "Charger",
+              "weight": 20
+            },
+            {
+              "answer": "Passport",
+              "weight": 16
+            },
+            {
+              "answer": "Tickets",
+              "weight": 14
+            },
+            {
+              "answer": "Sunscreen",
+              "weight": 10
+            },
+            {
+              "answer": "Clothes",
+              "weight": 8
+            },
+            {
+              "answer": "Medication",
+              "weight": 5
+            },
+            {
+              "answer": "Sunglasses",
+              "weight": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "set_number": 6,
+      "questions": [
+        {
+          "question": "Name something people do before going to bed.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Scroll on phone",
+              "weight": 30
+            },
+            {
+              "answer": "Brush teeth",
+              "weight": 20
+            },
+            {
+              "answer": "Set alarm",
+              "weight": 16
+            },
+            {
+              "answer": "Watch videos",
+              "weight": 14
+            },
+            {
+              "answer": "Drink water",
+              "weight": 10
+            },
+            {
+              "answer": "Check messages",
+              "weight": 6
+            },
+            {
+              "answer": "Pray",
+              "weight": 3
+            },
+            {
+              "answer": "Plan next day",
+              "weight": 1
+            }
+          ]
+        },
+        {
+          "question": "Name something people share with friends.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Food",
+              "weight": 24
+            },
+            {
+              "answer": "Secrets",
+              "weight": 20
+            },
+            {
+              "answer": "Memes",
+              "weight": 16
+            },
+            {
+              "answer": "Clothes",
+              "weight": 14
+            },
+            {
+              "answer": "Notes",
+              "weight": 10
+            },
+            {
+              "answer": "Photos",
+              "weight": 8
+            },
+            {
+              "answer": "Headphones",
+              "weight": 5
+            },
+            {
+              "answer": "Charger",
+              "weight": 3
+            }
+          ]
+        },
+        {
+          "question": "Name something people are afraid of.",
+          "multiplier": 3,
+          "answers": [
+            {
+              "answer": "Heights",
+              "weight": 22
+            },
+            {
+              "answer": "Darkness",
+              "weight": 20
+            },
+            {
+              "answer": "Failure",
+              "weight": 16
+            },
+            {
+              "answer": "Public speaking",
+              "weight": 14
+            },
+            {
+              "answer": "Exams",
+              "weight": 12
+            },
+            {
+              "answer": "Snakes",
+              "weight": 8
+            },
+            {
+              "answer": "Ghosts",
+              "weight": 5
+            },
+            {
+              "answer": "Rejection",
+              "weight": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "set_number": 7,
+      "questions": [
+        {
+          "question": "Name something people do when they are late.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Run",
+              "weight": 26
+            },
+            {
+              "answer": "Make excuses",
+              "weight": 20
+            },
+            {
+              "answer": "Call ahead",
+              "weight": 16
+            },
+            {
+              "answer": "Blame traffic",
+              "weight": 14
+            },
+            {
+              "answer": "Rush dressing",
+              "weight": 10
+            },
+            {
+              "answer": "Skip breakfast",
+              "weight": 8
+            },
+            {
+              "answer": "Ignore calls",
+              "weight": 4
+            },
+            {
+              "answer": "Take shortcut",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "question": "Name something people waste time on.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Social media",
+              "weight": 28
+            },
+            {
+              "answer": "Watching reels",
+              "weight": 20
+            },
+            {
+              "answer": "Overthinking",
+              "weight": 16
+            },
+            {
+              "answer": "Gaming",
+              "weight": 12
+            },
+            {
+              "answer": "Gossiping",
+              "weight": 10
+            },
+            {
+              "answer": "TV shows",
+              "weight": 8
+            },
+            {
+              "answer": "Online shopping",
+              "weight": 4
+            },
+            {
+              "answer": "Daydreaming",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "question": "Name something people celebrate.",
+          "multiplier": 3,
+          "answers": [
+            {
+              "answer": "Birthday",
+              "weight": 26
+            },
+            {
+              "answer": "Festival",
+              "weight": 20
+            },
+            {
+              "answer": "Promotion",
+              "weight": 16
+            },
+            {
+              "answer": "Graduation",
+              "weight": 14
+            },
+            {
+              "answer": "Anniversary",
+              "weight": 10
+            },
+            {
+              "answer": "New job",
+              "weight": 8
+            },
+            {
+              "answer": "Victory",
+              "weight": 4
+            },
+            {
+              "answer": "New year",
+              "weight": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "set_number": 8,
+      "questions": [
+        {
+          "question": "Name something people always carry.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Phone",
+              "weight": 34
+            },
+            {
+              "answer": "Wallet",
+              "weight": 20
+            },
+            {
+              "answer": "Keys",
+              "weight": 18
+            },
+            {
+              "answer": "Water bottle",
+              "weight": 10
+            },
+            {
+              "answer": "Charger",
+              "weight": 8
+            },
+            {
+              "answer": "ID card",
+              "weight": 6
+            },
+            {
+              "answer": "Earphones",
+              "weight": 3
+            },
+            {
+              "answer": "Watch",
+              "weight": 1
+            }
+          ]
+        },
+        {
+          "question": "Name something people do when they are happy.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Smile",
+              "weight": 24
+            },
+            {
+              "answer": "Dance",
+              "weight": 18
+            },
+            {
+              "answer": "Call someone",
+              "weight": 16
+            },
+            {
+              "answer": "Post online",
+              "weight": 14
+            },
+            {
+              "answer": "Treat friends",
+              "weight": 12
+            },
+            {
+              "answer": "Laugh loudly",
+              "weight": 8
+            },
+            {
+              "answer": "Take photos",
+              "weight": 5
+            },
+            {
+              "answer": "Celebrate with food",
+              "weight": 3
+            }
+          ]
+        },
+        {
+          "question": "Name something people complain about in college.",
+          "multiplier": 3,
+          "answers": [
+            {
+              "answer": "Assignments",
+              "weight": 24
+            },
+            {
+              "answer": "Attendance",
+              "weight": 20
+            },
+            {
+              "answer": "Exams",
+              "weight": 18
+            },
+            {
+              "answer": "Timetable",
+              "weight": 14
+            },
+            {
+              "answer": "Faculty",
+              "weight": 10
+            },
+            {
+              "answer": "WiFi",
+              "weight": 6
+            },
+            {
+              "answer": "Canteen food",
+              "weight": 5
+            },
+            {
+              "answer": "Group projects",
+              "weight": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "set_number": 9,
+      "questions": [
+        {
+          "question": "Name something people search on Google daily.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Weather",
+              "weight": 22
+            },
+            {
+              "answer": "News",
+              "weight": 20
+            },
+            {
+              "answer": "Movie reviews",
+              "weight": 16
+            },
+            {
+              "answer": "Recipes",
+              "weight": 14
+            },
+            {
+              "answer": "Directions",
+              "weight": 12
+            },
+            {
+              "answer": "Lyrics",
+              "weight": 8
+            },
+            {
+              "answer": "Definitions",
+              "weight": 5
+            },
+            {
+              "answer": "Nearby restaurants",
+              "weight": 3
+            }
+          ]
+        },
+        {
+          "question": "Name something that can ruin your mood instantly.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Bad news",
+              "weight": 24
+            },
+            {
+              "answer": "Low battery",
+              "weight": 18
+            },
+            {
+              "answer": "Argument",
+              "weight": 16
+            },
+            {
+              "answer": "Traffic",
+              "weight": 14
+            },
+            {
+              "answer": "Cancelled plans",
+              "weight": 12
+            },
+            {
+              "answer": "Rain",
+              "weight": 8
+            },
+            {
+              "answer": "Spilling something",
+              "weight": 5
+            },
+            {
+              "answer": "Losing something",
+              "weight": 3
+            }
+          ]
+        },
+        {
+          "question": "Name something people do on weekends.",
+          "multiplier": 3,
+          "answers": [
+            {
+              "answer": "Sleep late",
+              "weight": 26
+            },
+            {
+              "answer": "Go out",
+              "weight": 20
+            },
+            {
+              "answer": "Watch movies",
+              "weight": 16
+            },
+            {
+              "answer": "Meet friends",
+              "weight": 14
+            },
+            {
+              "answer": "Travel",
+              "weight": 10
+            },
+            {
+              "answer": "Clean room",
+              "weight": 8
+            },
+            {
+              "answer": "Play games",
+              "weight": 4
+            },
+            {
+              "answer": "Family time",
+              "weight": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "set_number": 10,
+      "questions": [
+        {
+          "question": "Name something people do when they are sick.",
+          "multiplier": 1,
+          "answers": [
+            {
+              "answer": "Sleep",
+              "weight": 24
+            },
+            {
+              "answer": "Take medicine",
+              "weight": 22
+            },
+            {
+              "answer": "Google symptoms",
+              "weight": 16
+            },
+            {
+              "answer": "Drink hot water",
+              "weight": 14
+            },
+            {
+              "answer": "Call parents",
+              "weight": 10
+            },
+            {
+              "answer": "Skip class/work",
+              "weight": 8
+            },
+            {
+              "answer": "Complain",
+              "weight": 4
+            },
+            {
+              "answer": "Watch TV",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "question": "Name something people are addicted to.",
+          "multiplier": 2,
+          "answers": [
+            {
+              "answer": "Phone",
+              "weight": 30
+            },
+            {
+              "answer": "Social media",
+              "weight": 20
+            },
+            {
+              "answer": "Coffee",
+              "weight": 16
+            },
+            {
+              "answer": "Gaming",
+              "weight": 12
+            },
+            {
+              "answer": "Shopping",
+              "weight": 10
+            },
+            {
+              "answer": "Netflix",
+              "weight": 6
+            },
+            {
+              "answer": "Junk food",
+              "weight": 4
+            },
+            {
+              "answer": "Music",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "question": "Name something people regret buying.",
+          "multiplier": 3,
+          "answers": [
+            {
+              "answer": "Clothes they never wore",
+              "weight": 24
+            },
+            {
+              "answer": "Expensive gadgets",
+              "weight": 20
+            },
+            {
+              "answer": "Online impulse buy",
+              "weight": 16
+            },
+            {
+              "answer": "Gym membership",
+              "weight": 14
+            },
+            {
+              "answer": "Subscription services",
+              "weight": 10
+            },
+            {
+              "answer": "Decor items",
+              "weight": 8
+            },
+            {
+              "answer": "Shoes",
+              "weight": 5
+            },
+            {
+              "answer": "Course they never finished",
+              "weight": 3
+            }
           ]
         }
       ]
     }
-
   ]
 }
