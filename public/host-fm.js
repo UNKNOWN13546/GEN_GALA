@@ -30,6 +30,8 @@ let currentActivePlayer = 'none';
 CUSTOM JSON UPLOAD
 ===================================================== */
 
+let pendingFmQuestions = null;
+
 function handleFileUpload(event) {
     const file = event.target.files[0];
     if (!file) return;
@@ -38,29 +40,31 @@ function handleFileUpload(event) {
     reader.onload = function (e) {
         try {
             const data = JSON.parse(e.target.result);
+            let tempQuestions = [];
 
             if (data?.sets?.length) {
-                fmQuestions = data.sets.flatMap(set => set.questions || []);
+                tempQuestions = data.sets.flatMap(set => set.questions || []);
             }
             else if (data?.questions) {
-                fmQuestions = data.questions;
+                tempQuestions = data.questions;
             }
             else if (Array.isArray(data)) {
-                fmQuestions = data;
+                tempQuestions = data;
             }
-            else {
-                alert('Unknown question format in uploaded file.');
-                fmQuestions = [];
+
+            if (!tempQuestions.length) {
+                alert('No valid questions found in the uploaded JSON file.');
                 return;
             }
 
-            currentQuestionIndex = -1;
-            currentQuestion = null;
-            revealedAnswers = [];
+            pendingFmQuestions = tempQuestions;
 
-            populateQuestionSelector();
-
-            alert(`Successfully loaded ${fmQuestions.length} questions from ${file.name}`);
+            const statusEl = document.getElementById("fmUploadStatus");
+            if (statusEl) {
+                statusEl.textContent = "File Ready";
+                statusEl.style.color = "#ffd700";
+                statusEl.style.display = "inline";
+            }
 
         } catch (error) {
             console.error("Error parsing JSON:", error);
@@ -69,6 +73,38 @@ function handleFileUpload(event) {
     };
     reader.readAsText(file);
 }
+
+// Add event listener for the Load JSON button
+document.addEventListener("DOMContentLoaded", () => {
+    const loadBtn = document.getElementById("fmLoadJsonBtn");
+    if (loadBtn) {
+        loadBtn.addEventListener("click", () => {
+            if (!pendingFmQuestions) {
+                alert("Please select a JSON file first.");
+                return;
+            }
+
+            fmQuestions = pendingFmQuestions;
+            currentQuestionIndex = -1;
+            currentQuestion = null;
+            revealedAnswers = [];
+
+            populateQuestionSelector();
+
+            const statusEl = document.getElementById("fmUploadStatus");
+            if (statusEl) {
+                statusEl.textContent = "JSON Loaded!";
+                statusEl.style.color = "#00ff88";
+                statusEl.style.display = "inline";
+                setTimeout(() => {
+                    statusEl.style.display = "none";
+                }, 3000);
+            }
+
+            pendingFmQuestions = null;
+        });
+    }
+});
 
 
 /* =====================================================
