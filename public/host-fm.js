@@ -170,6 +170,9 @@ function selectQuestion() {
     currentQuestion = fmQuestions[idx];
     revealedAnswers = [];
 
+    // Trigger display visibility
+    socket.emit("roundChanged", { round: "Fast Money" });
+
     displayQuestion();
 
 }

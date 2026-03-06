@@ -597,6 +597,12 @@ io.on("connection", (socket) => {
     }
   });
 
+  socket.on("roundChanged", (data) => {
+    gameState.currentRound = data.round || "";
+    io.emit("stateUpdate", getSafeState());
+    saveSessionState();
+  });
+
   /* -----------------------------
   BOARD CONTROL
   ------------------------------*/
