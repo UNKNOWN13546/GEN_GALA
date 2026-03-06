@@ -735,38 +735,49 @@ function renderRosterList(teams) {
         filteredTeams.forEach(t => {
             const tCard = document.createElement('div');
             tCard.className = 'roster-item';
+            tCard.style.flexDirection = 'column';
+            tCard.style.alignItems = 'flex-start';
+            tCard.style.gap = '15px';
 
             const tInfo = document.createElement('div');
             tInfo.className = 'roster-info';
+            tInfo.style.width = '100%';
             tInfo.innerHTML = `
-                <span class="roster-team-name">${t.name}</span>
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <span class="roster-team-name" style="font-size:1.3rem;">${t.name}</span>
+                    <span class="roster-score" style="font-size:1.1rem;">Points: ${t.score}</span>
+                </div>
                 <span class="roster-players">Players: ${t.players.join(', ')}</span>
-                <span class="roster-score">Points: ${t.score}</span>
             `;
 
             const actionsDiv = document.createElement('div');
             actionsDiv.className = 'roster-actions';
             actionsDiv.style.display = 'flex';
             actionsDiv.style.alignItems = 'center';
-            actionsDiv.style.gap = '8px';
+            actionsDiv.style.gap = '12px';
+            actionsDiv.style.width = '100%';
+            actionsDiv.style.paddingTop = '10px';
+            actionsDiv.style.borderTop = '1px solid rgba(255,255,255,0.05)';
 
             const scoreInput = document.createElement('input');
             scoreInput.type = 'number';
             scoreInput.id = `scoreAdjustInput_${t.name}`;
-            scoreInput.className = 'input-field btn-small';
-            scoreInput.style.width = '60px';
-            scoreInput.style.padding = '5px';
-            scoreInput.placeholder = 'Pts';
-            scoreInput.value = '50';
+            scoreInput.className = 'input-field';
+            scoreInput.style.width = '100px';
+            scoreInput.style.padding = '8px 12px';
+            scoreInput.placeholder = '0';
+            scoreInput.value = '';
 
             const addBtn = document.createElement('button');
             addBtn.className = 'btn btn-small btn-success';
-            addBtn.textContent = '+';
+            addBtn.textContent = '+ ADD';
+            addBtn.style.padding = '8px 15px';
             addBtn.onclick = () => adjustScore(t.name);
 
             const subBtn = document.createElement('button');
             subBtn.className = 'btn btn-small btn-danger';
-            subBtn.textContent = '-';
+            subBtn.textContent = '- SUB';
+            subBtn.style.padding = '8px 15px';
             subBtn.onclick = () => {
                 const val = parseInt(scoreInput.value) || 0;
                 adjustScore(t.name, -val);
@@ -774,9 +785,11 @@ function renderRosterList(teams) {
 
             const tDeleteBtn = document.createElement('button');
             tDeleteBtn.className = "btn btn-small btn-secondary";
-            tDeleteBtn.textContent = "X";
+            tDeleteBtn.textContent = "DELETE";
             tDeleteBtn.title = "Delete Team";
-            tDeleteBtn.style.padding = '5px 10px';
+            tDeleteBtn.style.marginLeft = 'auto';
+            tDeleteBtn.style.padding = '8px 12px';
+            tDeleteBtn.style.fontSize = '0.7rem';
             tDeleteBtn.onclick = () => removeTeam(t.name);
 
             actionsDiv.appendChild(scoreInput);
