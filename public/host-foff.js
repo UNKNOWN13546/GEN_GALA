@@ -89,6 +89,7 @@ function handleFileUpload(event) {
 
 // Add event listener for the Load JSON button
 document.addEventListener("DOMContentLoaded", () => {
+    populateQuestionSelector();
     const loadBtn = document.getElementById("foffLoadJsonBtn");
     if (loadBtn) {
         loadBtn.addEventListener("click", () => {
@@ -108,6 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
             socket.emit("loadQuestions", { questions: allQuestions });
             socket.emit("roundChanged", { round: currentRound === "custom" ? "Custom Upload" : currentRound });
 
+            populateQuestionSelector();
             displayQuestion(0);
 
             const statusEl = document.getElementById("foffUploadStatus");
