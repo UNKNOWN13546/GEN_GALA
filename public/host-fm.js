@@ -111,15 +111,21 @@ document.addEventListener("DOMContentLoaded", () => {
 LOAD QUESTIONS
 ===================================================== */
 
-fetch('/questions/fm_questions.json')
+fetch(`/questions/fm_questions.json?v=${Date.now()}`)
     .then(r => r.json())
     .then(data => {
 
-        if (data?.sets?.length) {
+        if (Array.isArray(data?.sets)) {
             fmQuestions = data.sets.flatMap(set => set.questions || []);
         }
-        else if (data?.questions) {
+        else if (Array.isArray(data?.games)) {
+            fmQuestions = data.games.flatMap(game => game.questions || []);
+        }
+        else if (Array.isArray(data?.questions)) {
             fmQuestions = data.questions;
+        }
+        else if (Array.isArray(data)) {
+            fmQuestions = data;
         }
         else {
             console.error('Unknown question format:', data);

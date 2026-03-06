@@ -1,354 +1,947 @@
 {
   "round": "Fast Money",
-  "total_games": 5,
-  "questions_per_game": 5,
+  "total_sets": 5,
+  "questions_per_set": 5,
   "answers_per_question": 8,
-  "games": [
+  "sets": [
     {
-      "game_number": 1,
+      "set_number": 1,
       "questions": [
         {
           "question": "Name something people check immediately after waking up.",
           "answers": [
-            "Phone",
-            "Time",
-            "Messages",
-            "Social Media",
-            "Weather",
-            "Alarm",
-            "Missed Calls",
-            "Email"
+            {
+              "answer": "Phone",
+              "weight": 30
+            },
+            {
+              "answer": "Time",
+              "weight": 20
+            },
+            {
+              "answer": "Messages",
+              "weight": 16
+            },
+            {
+              "answer": "Social Media",
+              "weight": 14
+            },
+            {
+              "answer": "Weather",
+              "weight": 8
+            },
+            {
+              "answer": "Alarm",
+              "weight": 6
+            },
+            {
+              "answer": "Missed Calls",
+              "weight": 4
+            },
+            {
+              "answer": "Email",
+              "weight": 2
+            }
           ]
         },
         {
           "question": "Name something people lose very often.",
           "answers": [
-            "Keys",
-            "Phone",
-            "Wallet",
-            "Socks",
-            "Pen",
-            "Charger",
-            "Earphones",
-            "ID Card"
+            {
+              "answer": "Keys",
+              "weight": 28
+            },
+            {
+              "answer": "Phone",
+              "weight": 22
+            },
+            {
+              "answer": "Wallet",
+              "weight": 18
+            },
+            {
+              "answer": "Socks",
+              "weight": 12
+            },
+            {
+              "answer": "Pen",
+              "weight": 8
+            },
+            {
+              "answer": "Charger",
+              "weight": 6
+            },
+            {
+              "answer": "Earphones",
+              "weight": 4
+            },
+            {
+              "answer": "ID Card",
+              "weight": 2
+            }
           ]
         },
         {
           "question": "Name a place where people whisper.",
           "answers": [
-            "Library",
-            "Temple",
-            "Church",
-            "Hospital",
-            "Movie Theatre",
-            "Classroom",
-            "Meeting Room",
-            "Funeral"
+            {
+              "answer": "Library",
+              "weight": 34
+            },
+            {
+              "answer": "Temple",
+              "weight": 20
+            },
+            {
+              "answer": "Hospital",
+              "weight": 16
+            },
+            {
+              "answer": "Movie Theatre",
+              "weight": 12
+            },
+            {
+              "answer": "Classroom",
+              "weight": 8
+            },
+            {
+              "answer": "Meeting Room",
+              "weight": 6
+            },
+            {
+              "answer": "Funeral",
+              "weight": 4
+            }
           ]
         },
         {
           "question": "Name something people do when they are nervous.",
           "answers": [
-            "Bite Nails",
-            "Shake Leg",
-            "Stutter",
-            "Sweat",
-            "Fidget",
-            "Avoid Eye Contact",
-            "Play With Hair",
-            "Talk Fast"
+            {
+              "answer": "Bite Nails",
+              "weight": 24
+            },
+            {
+              "answer": "Shake Leg",
+              "weight": 20
+            },
+            {
+              "answer": "Stutter",
+              "weight": 16
+            },
+            {
+              "answer": "Sweat",
+              "weight": 14
+            },
+            {
+              "answer": "Fidget",
+              "weight": 10
+            },
+            {
+              "answer": "Avoid Eye Contact",
+              "weight": 8
+            },
+            {
+              "answer": "Play With Hair",
+              "weight": 5
+            },
+            {
+              "answer": "Talk Fast",
+              "weight": 3
+            }
           ]
         },
         {
           "question": "Name a reason someone might stay awake all night.",
           "answers": [
-            "Studying",
-            "Work Deadline",
-            "Watching Movies",
-            "Gaming",
-            "Taking Care of Baby",
-            "Travel",
-            "Party",
-            "Insomnia"
+            {
+              "answer": "Studying",
+              "weight": 30
+            },
+            {
+              "answer": "Work Deadline",
+              "weight": 20
+            },
+            {
+              "answer": "Watching Movies",
+              "weight": 16
+            },
+            {
+              "answer": "Gaming",
+              "weight": 12
+            },
+            {
+              "answer": "Taking Care of Baby",
+              "weight": 8
+            },
+            {
+              "answer": "Travel",
+              "weight": 6
+            },
+            {
+              "answer": "Party",
+              "weight": 5
+            },
+            {
+              "answer": "Insomnia",
+              "weight": 3
+            }
           ]
         }
       ]
     },
     {
-      "game_number": 2,
+      "set_number": 2,
       "questions": [
         {
           "question": "Name something you might find in a backpack.",
           "answers": [
-            "Books",
-            "Laptop",
-            "Water Bottle",
-            "Snacks",
-            "Charger",
-            "Notebook",
-            "Headphones",
-            "Pens"
+            {
+              "answer": "Books",
+              "weight": 30
+            },
+            {
+              "answer": "Laptop",
+              "weight": 20
+            },
+            {
+              "answer": "Water Bottle",
+              "weight": 16
+            },
+            {
+              "answer": "Snacks",
+              "weight": 12
+            },
+            {
+              "answer": "Charger",
+              "weight": 8
+            },
+            {
+              "answer": "Notebook",
+              "weight": 6
+            },
+            {
+              "answer": "Headphones",
+              "weight": 5
+            },
+            {
+              "answer": "Pens",
+              "weight": 3
+            }
           ]
         },
         {
           "question": "Name something people do while waiting in line.",
           "answers": [
-            "Use Phone",
-            "Talk",
-            "Listen to Music",
-            "Check Time",
-            "Look Around",
-            "Scroll Social Media",
-            "Play Games",
-            "Stand Quietly"
+            {
+              "answer": "Use Phone",
+              "weight": 34
+            },
+            {
+              "answer": "Talk",
+              "weight": 18
+            },
+            {
+              "answer": "Listen to Music",
+              "weight": 14
+            },
+            {
+              "answer": "Check Time",
+              "weight": 12
+            },
+            {
+              "answer": "Look Around",
+              "weight": 8
+            },
+            {
+              "answer": "Scroll Social Media",
+              "weight": 6
+            },
+            {
+              "answer": "Play Games",
+              "weight": 5
+            },
+            {
+              "answer": "Stand Quietly",
+              "weight": 3
+            }
           ]
         },
         {
           "question": "Name something people forget to bring on a trip.",
           "answers": [
-            "Charger",
-            "Toothbrush",
-            "Passport",
-            "Clothes",
-            "Medicines",
-            "Tickets",
-            "Power Bank",
-            "Sunglasses"
+            {
+              "answer": "Charger",
+              "weight": 26
+            },
+            {
+              "answer": "Toothbrush",
+              "weight": 20
+            },
+            {
+              "answer": "Passport",
+              "weight": 18
+            },
+            {
+              "answer": "Clothes",
+              "weight": 12
+            },
+            {
+              "answer": "Medicines",
+              "weight": 10
+            },
+            {
+              "answer": "Tickets",
+              "weight": 8
+            },
+            {
+              "answer": "Power Bank",
+              "weight": 4
+            },
+            {
+              "answer": "Sunglasses",
+              "weight": 2
+            }
           ]
         },
         {
           "question": "Name something people do before going to sleep.",
           "answers": [
-            "Use Phone",
-            "Brush Teeth",
-            "Set Alarm",
-            "Pray",
-            "Drink Water",
-            "Read Book",
-            "Watch Videos",
-            "Turn Off Lights"
+            {
+              "answer": "Use Phone",
+              "weight": 32
+            },
+            {
+              "answer": "Brush Teeth",
+              "weight": 20
+            },
+            {
+              "answer": "Set Alarm",
+              "weight": 16
+            },
+            {
+              "answer": "Pray",
+              "weight": 12
+            },
+            {
+              "answer": "Drink Water",
+              "weight": 8
+            },
+            {
+              "answer": "Read Book",
+              "weight": 6
+            },
+            {
+              "answer": "Watch Videos",
+              "weight": 4
+            },
+            {
+              "answer": "Turn Off Lights",
+              "weight": 2
+            }
           ]
         },
         {
           "question": "Name something you see at a wedding.",
           "answers": [
-            "Bride",
-            "Groom",
-            "Cake",
-            "Decorations",
-            "Guests",
-            "Music",
-            "Dance",
-            "Photographer"
+            {
+              "answer": "Bride",
+              "weight": 30
+            },
+            {
+              "answer": "Groom",
+              "weight": 20
+            },
+            {
+              "answer": "Cake",
+              "weight": 16
+            },
+            {
+              "answer": "Decorations",
+              "weight": 12
+            },
+            {
+              "answer": "Guests",
+              "weight": 8
+            },
+            {
+              "answer": "Music",
+              "weight": 6
+            },
+            {
+              "answer": "Dance",
+              "weight": 5
+            },
+            {
+              "answer": "Photographer",
+              "weight": 3
+            }
           ]
         }
       ]
     },
     {
-      "game_number": 3,
+      "set_number": 3,
       "questions": [
         {
           "question": "Name something people do on weekends.",
           "answers": [
-            "Sleep",
-            "Watch Movies",
-            "Go Out",
-            "Shopping",
-            "Sports",
-            "Gaming",
-            "Meet Friends",
-            "Travel"
+            {
+              "answer": "Sleep",
+              "weight": 28
+            },
+            {
+              "answer": "Watch Movies",
+              "weight": 20
+            },
+            {
+              "answer": "Go Out",
+              "weight": 18
+            },
+            {
+              "answer": "Shopping",
+              "weight": 12
+            },
+            {
+              "answer": "Sports",
+              "weight": 8
+            },
+            {
+              "answer": "Gaming",
+              "weight": 6
+            },
+            {
+              "answer": "Meet Friends",
+              "weight": 5
+            },
+            {
+              "answer": "Travel",
+              "weight": 3
+            }
           ]
         },
         {
           "question": "Name something people take photos of.",
           "answers": [
-            "Food",
-            "Friends",
-            "Sunset",
-            "Pets",
-            "Selfies",
-            "Nature",
-            "Events",
-            "Landmarks"
+            {
+              "answer": "Food",
+              "weight": 26
+            },
+            {
+              "answer": "Friends",
+              "weight": 20
+            },
+            {
+              "answer": "Sunset",
+              "weight": 18
+            },
+            {
+              "answer": "Pets",
+              "weight": 14
+            },
+            {
+              "answer": "Selfies",
+              "weight": 10
+            },
+            {
+              "answer": "Nature",
+              "weight": 6
+            },
+            {
+              "answer": "Events",
+              "weight": 4
+            },
+            {
+              "answer": "Landmarks",
+              "weight": 2
+            }
           ]
         },
         {
           "question": "Name something you might borrow from a friend.",
           "answers": [
-            "Money",
-            "Pen",
-            "Notes",
-            "Charger",
-            "Book",
-            "Clothes",
-            "Laptop",
-            "Bike"
+            {
+              "answer": "Money",
+              "weight": 24
+            },
+            {
+              "answer": "Pen",
+              "weight": 20
+            },
+            {
+              "answer": "Notes",
+              "weight": 16
+            },
+            {
+              "answer": "Charger",
+              "weight": 14
+            },
+            {
+              "answer": "Book",
+              "weight": 10
+            },
+            {
+              "answer": "Clothes",
+              "weight": 8
+            },
+            {
+              "answer": "Laptop",
+              "weight": 5
+            },
+            {
+              "answer": "Bike",
+              "weight": 3
+            }
           ]
         },
         {
           "question": "Name something people do when they are bored.",
           "answers": [
-            "Use Phone",
-            "Watch Videos",
-            "Sleep",
-            "Eat Snacks",
-            "Play Games",
-            "Listen to Music",
-            "Scroll Social Media",
-            "Talk to Friends"
+            {
+              "answer": "Use Phone",
+              "weight": 30
+            },
+            {
+              "answer": "Watch Videos",
+              "weight": 20
+            },
+            {
+              "answer": "Sleep",
+              "weight": 16
+            },
+            {
+              "answer": "Eat Snacks",
+              "weight": 12
+            },
+            {
+              "answer": "Play Games",
+              "weight": 10
+            },
+            {
+              "answer": "Listen to Music",
+              "weight": 6
+            },
+            {
+              "answer": "Scroll Social Media",
+              "weight": 4
+            },
+            {
+              "answer": "Talk to Friends",
+              "weight": 2
+            }
           ]
         },
         {
           "question": "Name something people keep in their pockets.",
           "answers": [
-            "Phone",
-            "Keys",
-            "Wallet",
-            "Coins",
-            "Handkerchief",
-            "Earphones",
-            "Cards",
-            "Cash"
+            {
+              "answer": "Phone",
+              "weight": 32
+            },
+            {
+              "answer": "Keys",
+              "weight": 20
+            },
+            {
+              "answer": "Wallet",
+              "weight": 18
+            },
+            {
+              "answer": "Coins",
+              "weight": 12
+            },
+            {
+              "answer": "Handkerchief",
+              "weight": 8
+            },
+            {
+              "answer": "Earphones",
+              "weight": 6
+            },
+            {
+              "answer": "Cards",
+              "weight": 3
+            },
+            {
+              "answer": "Cash",
+              "weight": 1
+            }
           ]
         }
       ]
     },
     {
-      "game_number": 4,
+      "set_number": 4,
       "questions": [
         {
           "question": "Name a place people go to relax.",
           "answers": [
-            "Beach",
-            "Park",
-            "Home",
-            "Cafe",
-            "Resort",
-            "Mountains",
-            "Spa",
-            "Garden"
+            {
+              "answer": "Beach",
+              "weight": 28
+            },
+            {
+              "answer": "Park",
+              "weight": 20
+            },
+            {
+              "answer": "Home",
+              "weight": 18
+            },
+            {
+              "answer": "Cafe",
+              "weight": 12
+            },
+            {
+              "answer": "Resort",
+              "weight": 10
+            },
+            {
+              "answer": "Mountains",
+              "weight": 6
+            },
+            {
+              "answer": "Spa",
+              "weight": 4
+            },
+            {
+              "answer": "Garden",
+              "weight": 2
+            }
           ]
         },
         {
           "question": "Name something people do at the gym.",
           "answers": [
-            "Lift Weights",
-            "Run",
-            "Stretch",
-            "Cycling",
-            "Push-ups",
-            "Squats",
-            "Yoga",
-            "Cardio"
+            {
+              "answer": "Lift Weights",
+              "weight": 30
+            },
+            {
+              "answer": "Run",
+              "weight": 20
+            },
+            {
+              "answer": "Stretch",
+              "weight": 16
+            },
+            {
+              "answer": "Cycling",
+              "weight": 12
+            },
+            {
+              "answer": "Push-ups",
+              "weight": 8
+            },
+            {
+              "answer": "Squats",
+              "weight": 6
+            },
+            {
+              "answer": "Yoga",
+              "weight": 5
+            },
+            {
+              "answer": "Cardio",
+              "weight": 3
+            }
           ]
         },
         {
           "question": "Name something people do during a long trip.",
           "answers": [
-            "Sleep",
-            "Listen to Music",
-            "Watch Movies",
-            "Eat Snacks",
-            "Talk",
-            "Use Phone",
-            "Read",
-            "Look Outside"
+            {
+              "answer": "Sleep",
+              "weight": 32
+            },
+            {
+              "answer": "Listen to Music",
+              "weight": 20
+            },
+            {
+              "answer": "Watch Movies",
+              "weight": 18
+            },
+            {
+              "answer": "Eat Snacks",
+              "weight": 14
+            },
+            {
+              "answer": "Talk",
+              "weight": 8
+            },
+            {
+              "answer": "Use Phone",
+              "weight": 4
+            },
+            {
+              "answer": "Read",
+              "weight": 2
+            },
+            {
+              "answer": "Look Outside",
+              "weight": 2
+            }
           ]
         },
         {
           "question": "Name something people keep on their desk.",
           "answers": [
-            "Laptop",
-            "Notebook",
-            "Pen",
-            "Water Bottle",
-            "Phone",
-            "Lamp",
-            "Calendar",
-            "Sticky Notes"
+            {
+              "answer": "Laptop",
+              "weight": 30
+            },
+            {
+              "answer": "Notebook",
+              "weight": 20
+            },
+            {
+              "answer": "Pen",
+              "weight": 18
+            },
+            {
+              "answer": "Water Bottle",
+              "weight": 12
+            },
+            {
+              "answer": "Phone",
+              "weight": 8
+            },
+            {
+              "answer": "Lamp",
+              "weight": 6
+            },
+            {
+              "answer": "Calendar",
+              "weight": 4
+            },
+            {
+              "answer": "Sticky Notes",
+              "weight": 2
+            }
           ]
         },
         {
           "question": "Name something people do when they are happy.",
           "answers": [
-            "Smile",
-            "Laugh",
-            "Dance",
-            "Celebrate",
-            "Share with Friends",
-            "Take Photos",
-            "Sing",
-            "Hug"
+            {
+              "answer": "Smile",
+              "weight": 28
+            },
+            {
+              "answer": "Laugh",
+              "weight": 20
+            },
+            {
+              "answer": "Dance",
+              "weight": 18
+            },
+            {
+              "answer": "Celebrate",
+              "weight": 14
+            },
+            {
+              "answer": "Share with Friends",
+              "weight": 10
+            },
+            {
+              "answer": "Take Photos",
+              "weight": 6
+            },
+            {
+              "answer": "Sing",
+              "weight": 3
+            },
+            {
+              "answer": "Hug",
+              "weight": 1
+            }
           ]
         }
       ]
     },
     {
-      "game_number": 5,
+      "set_number": 5,
       "questions": [
         {
           "question": "Name something people do when they are late.",
           "answers": [
-            "Run",
-            "Call Someone",
-            "Apologize",
-            "Shortcut",
-            "Rush",
-            "Send Message",
-            "Check Time"
+            {
+              "answer": "Run",
+              "weight": 30
+            },
+            {
+              "answer": "Call Someone",
+              "weight": 20
+            },
+            {
+              "answer": "Apologize",
+              "weight": 16
+            },
+            {
+              "answer": "Shortcut",
+              "weight": 14
+            },
+            {
+              "answer": "Rush",
+              "weight": 10
+            },
+            {
+              "answer": "Send Message",
+              "weight": 6
+            },
+            {
+              "answer": "Check Time",
+              "weight": 4
+            }
           ]
         },
         {
           "question": "Name something people watch on TV.",
           "answers": [
-            "Movies",
-            "News",
-            "Sports",
-            "Reality Shows",
-            "Series",
-            "Cartoons",
-            "Documentaries",
-            "Music"
+            {
+              "answer": "Movies",
+              "weight": 26
+            },
+            {
+              "answer": "News",
+              "weight": 20
+            },
+            {
+              "answer": "Sports",
+              "weight": 18
+            },
+            {
+              "answer": "Reality Shows",
+              "weight": 14
+            },
+            {
+              "answer": "Series",
+              "weight": 10
+            },
+            {
+              "answer": "Cartoons",
+              "weight": 8
+            },
+            {
+              "answer": "Documentaries",
+              "weight": 3
+            },
+            {
+              "answer": "Music",
+              "weight": 1
+            }
           ]
         },
         {
           "question": "Name something people bring to a picnic.",
           "answers": [
-            "Food",
-            "Drinks",
-            "Blanket",
-            "Games",
-            "Snacks",
-            "Music Speaker",
-            "Camera",
-            "Fruits"
+            {
+              "answer": "Food",
+              "weight": 30
+            },
+            {
+              "answer": "Drinks",
+              "weight": 20
+            },
+            {
+              "answer": "Blanket",
+              "weight": 18
+            },
+            {
+              "answer": "Games",
+              "weight": 12
+            },
+            {
+              "answer": "Snacks",
+              "weight": 10
+            },
+            {
+              "answer": "Music Speaker",
+              "weight": 6
+            },
+            {
+              "answer": "Camera",
+              "weight": 3
+            },
+            {
+              "answer": "Fruits",
+              "weight": 1
+            }
           ]
         },
         {
           "question": "Name something people at a party.",
           "answers": [
-            "Dance",
-            "Eat",
-            "Talk",
-            "Take Photos",
-            "Play Games",
-            "Drink",
-            "Listen to Music",
-            "Celebrate"
+            {
+              "answer": "Dance",
+              "weight": 28
+            },
+            {
+              "answer": "Eat",
+              "weight": 20
+            },
+            {
+              "answer": "Talk",
+              "weight": 18
+            },
+            {
+              "answer": "Take Photos",
+              "weight": 14
+            },
+            {
+              "answer": "Play Games",
+              "weight": 10
+            },
+            {
+              "answer": "Drink",
+              "weight": 6
+            },
+            {
+              "answer": "Listen to Music",
+              "weight": 3
+            },
+            {
+              "answer": "Celebrate",
+              "weight": 1
+            }
           ]
         },
         {
           "question": "Name something people keep in their car.",
           "answers": [
-            "Water Bottle",
-            "Documents",
-            "First Aid Kit",
-            "Phone Charger",
-            "Umbrella",
-            "Tissues",
-            "Snacks",
-            "Sunglasses"
+            {
+              "answer": "Water Bottle",
+              "weight": 24
+            },
+            {
+              "answer": "Documents",
+              "weight": 20
+            },
+            {
+              "answer": "First Aid Kit",
+              "weight": 18
+            },
+            {
+              "answer": "Phone Charger",
+              "weight": 14
+            },
+            {
+              "answer": "Umbrella",
+              "weight": 12
+            },
+            {
+              "answer": "Tissues",
+              "weight": 6
+            },
+            {
+              "answer": "Snacks",
+              "weight": 4
+            },
+            {
+              "answer": "Sunglasses",
+              "weight": 2
+            }
           ]
         }
       ]

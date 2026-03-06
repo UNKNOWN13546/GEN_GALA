@@ -158,7 +158,7 @@ if (roundSelector) {
                 return;
             }
 
-            const response = await fetch(url);
+            const response = await fetch(`${url}?v=${Date.now()}`);
 
             if (!response.ok) {
                 throw new Error(`Failed to load question file: ${response.statusText}`);
@@ -169,29 +169,17 @@ if (roundSelector) {
             allQuestions = [];
 
             /* SUPPORT MULTIPLE JSON FORMATS */
-
             if (Array.isArray(data?.sets)) {
-
-                data.sets.forEach(set => {
-                    if (Array.isArray(set.questions)) {
-                        allQuestions = allQuestions.concat(set.questions);
-                    }
-                });
-
+                allQuestions = data.sets.flatMap(set => set.questions || []);
             }
-
-            if (Array.isArray(data?.matches)) {
-
-                data.matches.forEach(match => {
-                    if (Array.isArray(match.questions)) {
-                        allQuestions = allQuestions.concat(match.questions);
-                    }
-                });
-
+            else if (Array.isArray(data?.matches)) {
+                allQuestions = data.matches.flatMap(match => match.questions || []);
             }
-
-            if (Array.isArray(data?.questions)) {
-                allQuestions = allQuestions.concat(data.questions);
+            else if (Array.isArray(data?.questions)) {
+                allQuestions = data.questions;
+            }
+            else if (Array.isArray(data)) {
+                allQuestions = data;
             }
 
             /* RESET ROUND STATE */
