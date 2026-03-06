@@ -194,8 +194,11 @@ function displayQuestion(shouldBroadcast = true) {
 
     const qText = document.getElementById('questionText');
     const answersList = document.getElementById('answersList');
+    const selector = document.getElementById('questionSelector');
 
     if (qText) qText.textContent = currentQuestion.question;
+
+    if (selector) selector.value = currentQuestionIndex;
 
     if (shouldBroadcast) {
         socket.emit("broadcastCurrentQuestion", currentQuestion);

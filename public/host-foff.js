@@ -193,6 +193,7 @@ if (roundSelector) {
             socket.emit("roundChanged", { round: currentRound });
 
             if (allQuestions.length) {
+                populateQuestionSelector();
                 displayQuestion(0);
             } else {
                 console.warn("No questions loaded for round:", round);
@@ -208,6 +209,41 @@ if (roundSelector) {
 
     });
 
+}
+
+
+/* =====================================================
+QUESTION SELECTOR
+===================================================== */
+
+function populateQuestionSelector() {
+    const selector = document.getElementById('questionSelector');
+    if (!selector) return;
+
+    selector.innerHTML = '<option value="">Select a question...</option>';
+
+    allQuestions.forEach((q, idx) => {
+        const option = document.createElement('option');
+        option.value = idx;
+        option.textContent = `Q${idx + 1}: ${q.question.substring(0, 50)}${q.question.length > 50 ? '...' : ''}`;
+        selector.appendChild(option);
+    });
+
+    selector.value = currentIndex;
+}
+
+function selectQuestion() {
+    const selector = document.getElementById('questionSelector');
+    if (!selector) return;
+
+    const idx = parseInt(selector.value);
+    if (isNaN(idx) || !allQuestions[idx]) return;
+
+    revealedAnswers.clear();
+    socket.emit("resetStrikes");
+    socket.emit("clearBoard");
+
+    displayQuestion(idx);
 }
 
 
@@ -229,6 +265,10 @@ function displayQuestion(index, broadcast = true) {
 
     currentIndex = index;
     currentQuestion = allQuestions[index];
+
+    // Sync selector
+    const selector = document.getElementById('questionSelector');
+    if (selector) selector.value = index;
 
     const questionText = document.getElementById("questionText");
 
